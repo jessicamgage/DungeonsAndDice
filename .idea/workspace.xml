@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z8gU12Rz77sjLJxgA5z3dcUq2K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tests/Tests" />
+      <recent name="$PROJECT_DIR$/Tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Tests">
+    <configuration name="Dice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dice" />
+      <module name="DungeonsAndDice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegularFunctions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RegularFunctions" />
+      <module name="DungeonsAndDice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests" type="JUnit" factoryName="JUnit">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Dice" />
+      <item itemvalue="Application.RegularFunctions" />
+      <item itemvalue="JUnit.Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Dice" />
+        <item itemvalue="Application.RegularFunctions" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="" />
+      <created>1584226146086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584226146086</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584306760378">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="184" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1584306760378" />
+    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584306251440">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1584306251440" />
+    <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1584230088641">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1440.900@0.0.1440.900" timestamp="1584230088641" />
+    <state width="1398" height="221" key="GridCell.Tab.0.bottom" timestamp="1584306128240">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584233797702" />
+    <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
+    <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584306128240" />
+    <state width="1398" height="221" key="GridCell.Tab.0.center" timestamp="1584306128240">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
+    <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
+    <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584306128240" />
+    <state width="1398" height="221" key="GridCell.Tab.0.left" timestamp="1584306128239">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="221" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584243926791" />
+    <state width="1398" height="221" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584306128239" />
+    <state width="1398" height="221" key="GridCell.Tab.0.right" timestamp="1584306128240">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
+    <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
+    <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584306128240" />
+    <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584244852434">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584244852434" />
+    <state width="1398" height="266" key="GridCell.Tab.1.center" timestamp="1584244852434">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1584244852434" />
+    <state width="1398" height="266" key="GridCell.Tab.1.left" timestamp="1584244852434">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1584244852434" />
+    <state width="1398" height="266" key="GridCell.Tab.1.right" timestamp="1584244852434">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1584244852434" />
+    <state x="208" y="23" width="1024" height="829" key="SettingsEditor" timestamp="1584306201261">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="208" y="23" width="1024" height="829" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1584306201261" />
+    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584306187913">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.829@0.23.1440.829" timestamp="1584306187913" />
+    <state x="114" y="60" key="new project wizard" timestamp="1584306532605">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="114" y="60" key="new project wizard/0.23.1440.829@0.23.1440.829" timestamp="1584306532605" />
+  </component>
+</project>
