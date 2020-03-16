@@ -2,72 +2,112 @@ import java.util.regex.*;
 import java.util.Random;
 
 public class Dice {
-    static String text = "";
-    static int totalNumber = 0;
+    private String text = "";
+    private int quantity = 0;
+    private int sides = 0;
+    private int modifier = 0;
+    private long seed;
+    private Random rng;
 
-    Dice(String text) {
-        String dicePattern = "(\\d+)([dD])(\\d+)([+-]\\d+)";
-        String dicePatternWithoutMod = "(\\d+)([dD])(\\d+)";
+    private void setSeed(long seed){
+        this.seed = seed;
+        rng = new Random(seed);
+    }
 
-        Pattern patternWithMod = Pattern.compile(dicePattern);
-        Matcher matcherWithMod = patternWithMod.matcher(text.replaceAll("\\s+",""));
+    private void setSeed(){
+        this.seed = System.currentTimeMillis();
+        rng = new Random(seed);
+    }
 
-        Pattern patternWithoutMod = Pattern.compile(dicePatternWithoutMod);
-        Matcher matcherWithoutMod = patternWithoutMod.matcher(text.replaceAll("\\s+",""));
+    public String getText() {
+        return text;
+    }
 
-        if(matcherWithMod.find()){
-            System.out.println("Dice structure: " + matcherWithMod.group(0));
-            System.out.println("Quantity: " + matcherWithMod.group(1));
-            System.out.println("Sides: " + matcherWithMod.group(3));
-            System.out.println("Modifier: " + matcherWithMod.group(4));
+    public void setText(String text) throws DiceFormatException{
+        String trimmedText = text.replaceAll("\\s+", "");
+        String dicePattern = "^(\\d+)?[dD](\\d+)([+-]\\d+)?$";
 
-            Integer diceQuantity = Integer.parseInt(matcherWithMod.group(1));
-            Integer diceType = Integer.parseInt(matcherWithMod.group(3));
-            Integer diceModifier = Integer.parseInt(matcherWithMod.group(4));
+        Pattern pattern = Pattern.compile(dicePattern);
+        Matcher matcher = pattern.matcher(trimmedText);
 
-            while(diceQuantity > 0){
-                RollNumberOfDice(diceType);
-                diceQuantity--;
-
+        if(matcher.find()){
+            // Quantity is optional, initializes to 1 by default.
+            if(matcher.group(1) != null){
+                this.quantity = Integer.parseInt(matcher.group(1));
+            }else{
+                this.quantity = 1;
             }
 
-            totalNumber += diceModifier;
+            this.sides = Integer.parseInt(matcher.group(2));
 
-        }else if(matcherWithoutMod.find()){
-            System.out.println("Dice Structure: " + matcherWithoutMod.group(0));
-            System.out.println("Quantity: " + matcherWithoutMod.group(1));
-            System.out.println("Sides: " + matcherWithoutMod.group(3));
-
-            Integer modlessDiceQuantity = Integer.parseInt(matcherWithoutMod.group(1));
-            Integer modlessDiceType = Integer.parseInt(matcherWithoutMod.group(3));
-
-            while(modlessDiceQuantity > 0){
-                RollNumberOfDice(modlessDiceType);
-                modlessDiceQuantity--;
-
-                System.out.println(totalNumber);
+            //Modifier is optional, initializes to 0 by default.
+            if(matcher.group(3) != null){
+                this.modifier = Integer.parseInt(matcher.group(3));
+            }else{
+                this.modifier = 0;
             }
-        }else{
-            System.out.println("Invalid dice syntax.");
+
+            this.text = this.quantity + "d" + this.sides;
+            if(this.modifier > 0){
+                this.text += "+" + this.modifier;
+            }else if(this.modifier < 0){
+                this.text += this.modifier;
+            }
+
+        }else {
+            throw new DiceFormatException("Invalid dice format.");
         }
+
     }
 
-    public static void main(String[] args) {
-        Dice dice = new Dice("2d4 + 5");
-        Dice dice2 = new Dice("2d4+ 5");
-
-        System.out.println(dice);
-        System.out.println(dice2);
+    public int getQuantity() {
+        return quantity;
     }
 
-    public int RollNumberOfDice(int diceType){
-        Random diceRollRandomizer = new Random();
-        int diceRollNumber = diceRollRandomizer.nextInt(diceType);
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-        diceRollNumber += 1;
+    public int getSides() {
+        return sides;
+    }
 
-        totalNumber += diceRollNumber;
+    public void setSides(int sides) {
+        this.sides = sides;
+    }
 
-        return totalNumber;
+    public int getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(int modifier) {
+        this.modifier = modifier;
+    }
+
+    Dice(){
+        this.setSeed();
+    }
+
+    Dice(long seed){
+        this.setSeed(seed);
+    }
+
+    Dice(String text) throws DiceFormatException {
+        this.setSeed();
+        this.setText(text);
+    }
+
+    Dice(String text, long seed) throws DiceFormatException{
+        this.setSeed(seed);
+        this.setText(text);
+    }
+
+    int Roll(){
+        int sum = 0;
+        for(int i = 0; i < this.quantity; i++){
+            sum += this.rng.nextInt(this.sides) +1;
+        }
+
+        return sum + this.modifier;
     }
 }
