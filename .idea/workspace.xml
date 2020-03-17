@@ -53,7 +53,7 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacterNotValid">
+  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacter">
     <configuration name="CharacterBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CharacterBuilder" />
       <module name="DungeonsAndDice" />
@@ -122,8 +122,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
         <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
+        <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
         <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
         <item itemvalue="JUnit.TestRace.verifyRace" />
         <item itemvalue="Application.CharacterBuilder" />

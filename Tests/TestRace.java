@@ -42,6 +42,12 @@ public class TestRace {
 
         assertEquals(gnome.getIntScore().getText(), "3d6+2");
         assertEquals(gnome.getStrScore().getText(), "3d6");
+
+        Race kobold = new Race();
+        kobold.Load("kobold");
+
+        assertEquals(kobold.getStrScore().getText(), "3d6-2");
+        assertEquals(kobold.getDexScore().getText(), "3d6+2");
     }
 
     @Test
