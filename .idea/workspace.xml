@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DungeonsAndDice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonsAndDice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestRace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/CharacterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/CharacterBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Dice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CharacterBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CharacterBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +22,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Z8gU12Rz77sjLJxgA5z3dcUq2K" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -35,17 +46,25 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Tests/Tests" />
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRace.verifyRace">
+  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacter">
     <configuration name="CharacterBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CharacterBuilder" />
       <module name="DungeonsAndDice" />
@@ -53,21 +72,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCharacterBuilder.testPlayerRest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCharacter.verifyCharacterCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCharacterBuilder" />
-      <option name="METHOD_NAME" value="testPlayerRest" />
+      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
+      <option name="METHOD_NAME" value="verifyCharacterCreation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRace.verifyInvalidStats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRace.verifyLoadCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestRace" />
-      <option name="METHOD_NAME" value="verifyInvalidStats" />
+      <option name="METHOD_NAME" value="verifyLoadCharacter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRace.verifyLoadCharacterNotValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestRace" />
+      <option name="METHOD_NAME" value="verifyLoadCharacterNotValid" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,16 +107,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestRace" />
       <option name="METHOD_NAME" value="verifyRace" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRace.verifyScanner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRace" />
-      <option name="METHOD_NAME" value="verifyScanner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,19 +125,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.TestRace.verifyScanner" />
-      <item itemvalue="JUnit.TestRace.verifyInvalidStats" />
       <item itemvalue="JUnit.TestRace.verifyRace" />
-      <item itemvalue="JUnit.TestCharacterBuilder.testPlayerRest" />
       <item itemvalue="Application.CharacterBuilder" />
+      <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
+      <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
+      <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
+        <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
+        <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
         <item itemvalue="JUnit.TestRace.verifyRace" />
         <item itemvalue="Application.CharacterBuilder" />
-        <item itemvalue="JUnit.TestCharacterBuilder.testPlayerRest" />
-        <item itemvalue="JUnit.TestRace.verifyInvalidStats" />
-        <item itemvalue="JUnit.TestRace.verifyScanner" />
       </list>
     </recent_temporary>
   </component>
@@ -164,10 +183,14 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="184" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1584306760378" />
-    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584306251440">
+    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584416491526">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
-    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1584306251440" />
+    <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1584416491526" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1584414009987">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1584414009987" />
     <state x="297" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584391227981">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -180,29 +203,33 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="362" y="44" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1584392741792" />
-    <state width="1398" height="148" key="GridCell.Tab.0.bottom" timestamp="1584412467700">
+    <state x="482" y="160" key="DetectedRootsChooserDialog" timestamp="1584417209860">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1584471923124">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584233797702" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="148" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584412467700" />
-    <state width="1398" height="148" key="GridCell.Tab.0.center" timestamp="1584412467699">
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
+    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1584471923124">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="148" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584412467699" />
-    <state width="1398" height="148" key="GridCell.Tab.0.left" timestamp="1584412467699">
+    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
+    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1584471923123">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="221" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584243926791" />
-    <state width="1398" height="148" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584412467699" />
-    <state width="1398" height="148" key="GridCell.Tab.0.right" timestamp="1584412467699">
+    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584471923123" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1584471923124">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="148" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584412467699" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -219,14 +246,22 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="266" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1584395564251" />
-    <state x="208" y="23" width="1024" height="829" key="SettingsEditor" timestamp="1584318535826">
+    <state x="208" y="23" width="1024" height="829" key="SettingsEditor" timestamp="1584417293458">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
-    <state x="208" y="23" width="1024" height="829" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1584318535826" />
-    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584306187913">
+    <state x="208" y="23" width="1024" height="829" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1584417293458" />
+    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584417185139">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
-    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.829@0.23.1440.829" timestamp="1584306187913" />
+    <state x="432" y="338" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.829@0.23.1440.829" timestamp="1584417185139" />
+    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584472049444">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1584472049444" />
+    <state x="492" y="187" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584414225546">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="492" y="187" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.829@0.23.1440.829" timestamp="1584414225546" />
     <state x="114" y="60" key="new project wizard" timestamp="1584306532605">
       <screen x="0" y="23" width="1440" height="829" />
     </state>

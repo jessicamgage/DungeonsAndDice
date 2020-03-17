@@ -23,6 +23,15 @@ public class Dice {
         return text;
     }
 
+    private void updateText(){
+        this.text = this.quantity + "d" + this.sides;
+        if(this.modifier > 0){
+            this.text += "+" + this.modifier;
+        }else if(this.modifier < 0){
+            this.text += this.modifier;
+        }
+    }
+
     public void setText(String text) throws DiceFormatException{
         String trimmedText = text.replaceAll("\\s+", "");
         String dicePattern = "^(\\d+)?[dD](\\d+)([+-]\\d+)?$";
@@ -47,12 +56,7 @@ public class Dice {
                 this.modifier = 0;
             }
 
-            this.text = this.quantity + "d" + this.sides;
-            if(this.modifier > 0){
-                this.text += "+" + this.modifier;
-            }else if(this.modifier < 0){
-                this.text += this.modifier;
-            }
+            this.updateText();
 
         }else {
             throw new DiceFormatException("Invalid dice format.");
@@ -66,6 +70,7 @@ public class Dice {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+        this.updateText();
     }
 
     public int getSides() {
@@ -74,6 +79,7 @@ public class Dice {
 
     public void setSides(int sides) {
         this.sides = sides;
+        this.updateText();
     }
 
     public int getModifier() {
@@ -82,6 +88,7 @@ public class Dice {
 
     public void setModifier(int modifier) {
         this.modifier = modifier;
+        this.updateText();
     }
 
     Dice(){
