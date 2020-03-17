@@ -7,15 +7,16 @@ public class Race {
     private Dice wisScore;
     private Dice chaScore;
 
-    Race(String name, Dice str, Dice dex, Dice con, Dice intel, Dice wis, Dice cha) throws DiceFormatException {
+    Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
+            throws DiceFormatException {
         this.name = name;
 
-        this.strScore = str;
-        this.dexScore = dex;
-        this.conScore = con;
-        this.intScore = intel;
-        this.wisScore = wis;
-        this.chaScore = cha;
+        this.strScore = strScore;
+        this.dexScore = dexScore;
+        this.conScore = conScore;
+        this.intScore = intScore;
+        this.wisScore = wisScore;
+        this.chaScore = chaScore;
     }
 
     Race(String name, Dice str) throws DiceFormatException{
@@ -24,11 +25,11 @@ public class Race {
         this.strScore = str;
     }
 
-    public String getPlayerRace(){
+    public String getRace(){
         return name;
     }
 
-    public void setPlayerRace(String name){
+    public void setRace(String name){
         this.name = name;
     }
 }
