@@ -19,12 +19,6 @@ public class Race {
         this.chaScore = chaScore;
     }
 
-    Race(String name, Dice str) throws DiceFormatException{
-        this.name = name;
-
-        this.strScore = str;
-    }
-
     public String getRace(){
         return name;
     }
