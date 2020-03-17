@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestRace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +59,7 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacter">
+  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacterNotValid">
     <configuration name="CharacterBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CharacterBuilder" />
       <module name="DungeonsAndDice" />
@@ -124,8 +128,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
         <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
+        <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
         <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
         <item itemvalue="JUnit.TestRace.verifyRace" />
         <item itemvalue="Application.CharacterBuilder" />
@@ -174,6 +178,10 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="184" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1584306760378" />
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584472978136">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1584472978136" />
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584416491526">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -186,6 +194,10 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="297" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.829@0.23.1440.829" timestamp="1584391227981" />
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584474661887">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584474661887" />
     <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1584230088641">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -198,27 +210,27 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1584471923124">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1584475019289">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584233797702" />
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584475019289" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
     <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
-    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1584471923124">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1584475019288">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
+    <state width="1398" height="262" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584475019288" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
     <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
-    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1584471923123">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1584475019287">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="221" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584243926791" />
+    <state width="1398" height="262" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584475019287" />
     <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584471923123" />
-    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1584471923124">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1584475019289">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584233797701" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584475019289" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
     <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584471923124" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">

@@ -2,6 +2,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Race {
@@ -100,7 +102,7 @@ public class Race {
         }
     }
 
-    public void Load(String filename) throws DiceFormatException{
+    public void Load(String name) throws DiceFormatException, RaceNotFoundException{
         JSONParser jsonParser = new JSONParser();
 
         this.strScore = new Dice("3d6");
@@ -111,7 +113,7 @@ public class Race {
         this.chaScore = new Dice("3d6");
 
         try{
-            FileReader fileReader = new FileReader(getFileName("dragonborn"));
+            FileReader fileReader = new FileReader("data/races/" + name + ".json");
 
             Object obj = jsonParser.parse(fileReader);
             JSONObject json = (JSONObject) obj;
@@ -126,12 +128,11 @@ public class Race {
                 this.UpdateAbilityModifier(ability, (int)modifier);
             });
 
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+            throw new RaceNotFoundException("Sorry, your selected race was not found. Please try again.");
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
-
-    public String getFileName(String name){
-        return "data/races/" + name + ".json";
     }
 }
