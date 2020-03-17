@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceFormatException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CharacterBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CharacterBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
