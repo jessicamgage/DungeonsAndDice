@@ -14,6 +14,8 @@ public class Race {
     private Dice intScore;
     private Dice wisScore;
     private Dice chaScore;
+    private int armorClass;
+    private int hitPoints;
 
     public String getName() {
         return name;
@@ -71,6 +73,14 @@ public class Race {
         this.chaScore = chaScore;
     }
 
+    public int getArmorClass(){ return armorClass; }
+
+    public void setArmorClass(int hitPoints) { this.hitPoints = hitPoints; }
+
+    public int getHitPoints() { return hitPoints; }
+
+    public void setHitPoints(int hitPoints){ this.hitPoints = hitPoints; }
+
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
             throws DiceFormatException {
         this.name = name;
@@ -82,9 +92,7 @@ public class Race {
         this.chaScore = chaScore;
     }
 
-    Race(){
-
-    }
+    Race(){}
 
     private void UpdateAbilityModifier(String ability, int modifier){
         if(ability.equalsIgnoreCase("STR")){
