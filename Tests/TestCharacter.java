@@ -25,18 +25,10 @@ class TestCharacter {
     @Test
     public void verifyDamageDone() throws DiceFormatException{
         Character bob = new Character();
-        bob.DealDamage("piercing", "2d6");
+        bob.DealDamage( "2d6");
 
         assertTrue(bob.getDealtDamage() > 1);
 
-        bob.Weapon("greatsword");
-
-        int numberOfAttacks = 50;
-
-        for(int i = 0; i < numberOfAttacks; i++){
-            int damageDone = bob.getDealtDamage();
-            assertTrue(1 < damageDone && damageDone < 13);
-        }
     }
 
     @BeforeEach

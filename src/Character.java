@@ -1,9 +1,3 @@
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
-import java.io.FileReader;
-
 public class Character {
     private String name;
     private Race race;
@@ -15,7 +9,7 @@ public class Character {
     private int chaScore;
 
     private int armorClass;
-    private int hitPoints;
+    private int hitPoints = 10;
     private int takenDamage;
     private int dealtDamage;
     private int restoredHitPoints;
@@ -140,55 +134,27 @@ public class Character {
         this.chaScore = this.race.getChaScore().Roll();
     }
 
-    public void Attack(String weapon){
+    public void Attack(String weapon) throws DiceFormatException{
         //use setDealtDamage method to take away from this instance of HP, using Weapon as a parameter to determine
         //the range of damage that can be dealt
+
+        Weapon weapon1 = new Weapon();
+        weapon1.WeaponAttack("longsword");
+
     }
 
-    public String Weapon(String weapon){
-        JSONParser jsonParser = new JSONParser();
-
-        try{
-            FileReader fileReader = new FileReader("data/items/" + weapon + ".json");
-
-            Object obj = jsonParser.parse(fileReader);
-            JSONObject json = (JSONObject) obj;
-
-            this.weapon = (String) json.get("name");
-
-            JSONArray damages = (JSONArray) json.get("damage");
-            damages.forEach(damage -> {
-                String damageType = (String) ((JSONObject) damage).get("damage_type");
-                String damageRange = (String) ((JSONObject) damage).get("damage_dice");
-
-                try {
-                    this.DealDamage(damageType, damageRange);
-                } catch (DiceFormatException e) {
-                    e.printStackTrace();
-                }
-            }
-            );
-
-        }catch(Exception e){
-
-        }
-
-        return weapon;
-    }
-
-    public void DealDamage(String damageType, String damageRange) throws DiceFormatException{
+    public void DealDamage(String damageRange) throws DiceFormatException{
 //        if(damageType.equalsIgnoreCase("slashing")){
-//
+//            damageType = "slashing";
 //        }else if(damageType.equalsIgnoreCase("piercing")){
-//
+//            damageType = "piercing";
 //        } else if(damageType.equalsIgnoreCase("bludgeoning")){
-//
-//        }else{
-//
+//            damageType = "bludgeoning";
 //        }
-        //add after damageRange is working
 
         this.dealtDamage = new Dice(damageRange).Roll();
+
+        setHitPoints(dealtDamage);
 
     }
 
