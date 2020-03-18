@@ -10,14 +10,11 @@
         "quantity": 50,
         "unit": "gp"
     },
-    "damage": {
-        "damage_dice": "2d6",
-        "damage_bonus": 0,
-        "damage_type": {
-            "url": "/api/damage-types/slashing",
-            "name": "Slashing"
-        }
-    },
+    "damage": [
+        {"damage_dice": "2d6"},
+        {"damage_bonus": 0},
+        {"damage_type": "Slashing"}
+    ],
     "range": {
         "normal": 5,
         "long": null

@@ -10,14 +10,11 @@
     "quantity": 5,
     "unit": "sp"
   },
-  "damage": {
-    "damage_dice": "1d6",
-    "damage_bonus": 0,
-    "damage_type": {
-      "url": "/api/damage-types/piercing",
-      "name": "Piercing"
-    }
-  },
+  "damage": [
+      {"damage_dice": "1d6"},
+      {"damage_bonus": 0},
+      {"damage_type": "Piercing"}
+    ],
   "range": {
     "normal": 5,
     "long": null

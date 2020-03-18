@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Items/greatsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/greatsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Items/javelin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/javelin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Items/longbow.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/longbow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Items/shortsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/shortsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,19 +65,22 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRace.verifyLoadCharacter">
-    <configuration name="CharacterBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CharacterBuilder" />
-      <module name="DungeonsAndDice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCharacter.verifyDamageDone">
     <configuration name="TestCharacter.verifyCharacterCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCharacter" />
       <option name="METHOD_NAME" value="verifyCharacterCreation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCharacter.verifyDamageDone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
+      <option name="METHOD_NAME" value="verifyDamageDone" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,18 +130,18 @@
     <list>
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.TestRace.verifyRace" />
-      <item itemvalue="Application.CharacterBuilder" />
       <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
       <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
       <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
+      <item itemvalue="JUnit.TestCharacter.verifyDamageDone" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCharacter.verifyDamageDone" />
+        <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
         <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
         <item itemvalue="JUnit.TestRace.verifyLoadCharacterNotValid" />
-        <item itemvalue="JUnit.TestCharacter.verifyCharacterCreation" />
         <item itemvalue="JUnit.TestRace.verifyRace" />
-        <item itemvalue="Application.CharacterBuilder" />
       </list>
     </recent_temporary>
   </component>
@@ -207,29 +219,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1584499067010">
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1584504413672">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584475019289" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584499067010" />
-    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1584499067009">
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584504413672" />
+    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1584504413671">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="262" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584475019288" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584499067009" />
-    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1584499067009">
+    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584504413671" />
+    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1584504413670">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="262" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584475019287" />
-    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584499067009" />
-    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1584499067009">
+    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584504413670" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1584504413671">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="262" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584475019289" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584499067009" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584504413671" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
