@@ -1,8 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.nio.file.NoSuchFileException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestRace {
@@ -46,8 +43,8 @@ public class TestRace {
         Race kobold = new Race();
         kobold.Load("kobold");
 
-        assertEquals(kobold.getStrScore().getText(), "3d6-2");
         assertEquals(kobold.getDexScore().getText(), "3d6+2");
+        assertEquals(kobold.getIntScore().getText(), "3d6");
     }
 
     @Test
