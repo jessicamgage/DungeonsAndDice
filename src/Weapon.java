@@ -1,4 +1,3 @@
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -87,6 +86,8 @@ public class Weapon extends Item {
                 e.printStackTrace();
             }
 
+            LoadItem("weapons", getWeapon());
+
             this.damageBonus = (long) info.get("damage_bonus");
 
             JSONObject damageType = (JSONObject) info.get("damage_type");
@@ -99,8 +100,7 @@ public class Weapon extends Item {
                 this.longWeaponRange = (long) weaponRange.get("long");
             }catch(NullPointerException e){
                 System.out.println("This weapon does not have a long range.");
-            }
-
+                }
         }catch(Exception e){
             e.printStackTrace();
         }

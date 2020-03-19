@@ -13,6 +13,9 @@ public class TestWeapon {
         assertEquals(javelin.getDamageType(), "Piercing");
         assertEquals(javelin.getNormalWeaponRange(), 5);
 
+        assertEquals(javelin.getCost(), 5);
+        assertEquals(javelin.getCostType(), "sp");
+
         Weapon longbow = new Weapon();
         longbow.LoadWeapon("longbow");
 
