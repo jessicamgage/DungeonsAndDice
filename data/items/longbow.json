@@ -10,11 +10,14 @@
     "quantity": 50,
     "unit": "gp"
   },
-  "damage": [
-    {"damage_dice": "1d8"},
-    {"damage_bonus": 0},
-    {"damage_type": "Piercing"}
-  ],
+  "damage": {
+    "damage_dice": "1d8",
+    "damage_bonus": 0,
+    "damage_type": {
+      "url": "/api/damage-types/piercing",
+      "name": "Piercing"
+    }
+  },
   "range": {
     "normal": 150,
     "long": 600

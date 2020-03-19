@@ -22,15 +22,6 @@ class TestCharacter {
 
     }
 
-    @Test
-    public void verifyDamageDone() throws DiceFormatException{
-        Character bob = new Character();
-        bob.DealDamage( "2d6");
-
-        assertTrue(bob.getDealtDamage() > 1);
-
-    }
-
     @BeforeEach
     void setUp() throws DiceFormatException {
         this.human = new Race("human", new Dice("3d6+1"), new Dice("3d6+1"),

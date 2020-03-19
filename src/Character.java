@@ -138,9 +138,6 @@ public class Character {
         //use setDealtDamage method to take away from this instance of HP, using Weapon as a parameter to determine
         //the range of damage that can be dealt
 
-        Weapon weapon1 = new Weapon();
-        weapon1.WeaponAttack("longsword");
-
     }
 
     public void DealDamage(String damageRange) throws DiceFormatException{

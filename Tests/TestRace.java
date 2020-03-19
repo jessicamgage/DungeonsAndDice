@@ -30,18 +30,18 @@ public class TestRace {
     @Test
     public void verifyLoadCharacter() throws DiceFormatException, RaceNotFoundException{
         Race dragonborn = new Race();
-        dragonborn.Load("dragonborn");
+        dragonborn.LoadCharacter("dragonborn");
 
         assertEquals(dragonborn.getStrScore().getText(), "3d6+2");
 
         Race gnome = new Race();
-        gnome.Load("gnome");
+        gnome.LoadCharacter("gnome");
 
         assertEquals(gnome.getIntScore().getText(), "3d6+2");
         assertEquals(gnome.getStrScore().getText(), "3d6");
 
         Race kobold = new Race();
-        kobold.Load("kobold");
+        kobold.LoadCharacter("kobold");
 
         assertEquals(kobold.getDexScore().getText(), "3d6+2");
         assertEquals(kobold.getIntScore().getText(), "3d6");
@@ -50,17 +50,17 @@ public class TestRace {
     @Test
     public void verifyLoadCharacterNotValid() throws DiceFormatException, RaceNotFoundException{
         Race dragonborn = new Race();
-        dragonborn.Load("dragonborn");
+        dragonborn.LoadCharacter("dragonborn");
 
         assertNotEquals(dragonborn.getStrScore().getText(), "3d6");
 
         Race gnome = new Race();
-        gnome.Load("gnome");
+        gnome.LoadCharacter("gnome");
 
         assertNotEquals(gnome.getStrScore(), "3d6+2");
 
         Race centaur = new Race();
 
-        assertThrows(RaceNotFoundException.class, () -> centaur.Load("centaur"));
+        assertThrows(RaceNotFoundException.class, () -> centaur.LoadCharacter("centaur"));
     }
 }
