@@ -1,0 +1,13 @@
+{
+  "_id": "5e5fe5500b1bb138c5bea9b8",
+  "index": "arrow",
+  "name": "Arrow",
+  "equipment_category": "Adventuring Gear",
+  "gear_category": "Ammunition",
+  "cost": {
+    "quantity": 5,
+    "unit": "cp"
+  },
+  "weight": 1,
+  "url": "/api/equipment/arrow"
+}

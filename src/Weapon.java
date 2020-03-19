@@ -72,7 +72,7 @@ public class Weapon extends Item {
         JSONParser jsonParser = new JSONParser();
 
         try{
-            FileReader fileReader = new FileReader("data/items/" + weapon + ".json");
+            FileReader fileReader = new FileReader("data/items/weapons/" + weapon + ".json");
             Object obj = jsonParser.parse(fileReader);
             JSONObject json = (JSONObject) obj;
 

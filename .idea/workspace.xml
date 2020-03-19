@@ -3,21 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestRace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/items/greatsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/greatsword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/items/javelin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/javelin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/items/longbow.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/longbow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/items/shortsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/shortsword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/items/greatsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/weapons/greatsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/items/javelin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/weapons/javelin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/items/longbow.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/weapons/longbow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/items/shortsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/items/weapons/shortsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestRace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestWeapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestWeapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,16 +59,28 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/items/weapons" />
+      <recent name="$PROJECT_DIR$/data/items/ammunition" />
       <recent name="$PROJECT_DIR$/Tests/Tests" />
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestWeapon.testWeaponInfo">
-    <configuration name="TestCharacter.verifyDamageDone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestItem.VerifyItemLoad">
+    <configuration name="TestItem.VerifyItemCost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
-      <option name="METHOD_NAME" value="verifyDamageDone" />
+      <option name="MAIN_CLASS_NAME" value="TestItem" />
+      <option name="METHOD_NAME" value="VerifyItemCost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestItem.VerifyItemLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestItem" />
+      <option name="METHOD_NAME" value="VerifyItemLoad" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,16 +116,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestWeapon.testWeaponRange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestWeapon" />
-      <option name="METHOD_NAME" value="testWeaponRange" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tests" type="JUnit" factoryName="JUnit">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="Tests" />
@@ -136,18 +130,18 @@
     <list>
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
-      <item itemvalue="JUnit.TestCharacter.verifyDamageDone" />
-      <item itemvalue="JUnit.TestWeapon.testWeaponRange" />
       <item itemvalue="JUnit.TestWeapon.testWeaponInfo" />
       <item itemvalue="JUnit.TestWeapon.testWeaponFailure" />
+      <item itemvalue="JUnit.TestItem.VerifyItemCost" />
+      <item itemvalue="JUnit.TestItem.VerifyItemLoad" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestItem.VerifyItemLoad" />
         <item itemvalue="JUnit.TestWeapon.testWeaponInfo" />
         <item itemvalue="JUnit.TestWeapon.testWeaponFailure" />
+        <item itemvalue="JUnit.TestItem.VerifyItemCost" />
         <item itemvalue="JUnit.TestRace.verifyLoadCharacter" />
-        <item itemvalue="JUnit.TestWeapon.testWeaponRange" />
-        <item itemvalue="JUnit.TestCharacter.verifyDamageDone" />
       </list>
     </recent_temporary>
   </component>
@@ -201,10 +195,11 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1584499795331" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1584565003006">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1584586800714">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1584565003006" />
+    <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1584586087142" />
     <state x="297" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584391227981">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -225,29 +220,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="196" key="GridCell.Tab.0.bottom" timestamp="1584583268879">
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom" timestamp="1584587066598">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="196" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584583268879" />
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="280" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584565144258" />
-    <state width="1398" height="196" key="GridCell.Tab.0.center" timestamp="1584583268878">
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1584586695542" />
+    <state width="1398" height="170" key="GridCell.Tab.0.center" timestamp="1584587066593">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="196" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584583268878" />
+    <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="280" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584565144257" />
-    <state width="1398" height="196" key="GridCell.Tab.0.left" timestamp="1584583268878">
+    <state width="1398" height="170" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1584586695539" />
+    <state width="1398" height="170" key="GridCell.Tab.0.left" timestamp="1584587066590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="196" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584583268878" />
-    <state width="1398" height="280" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584565144257" />
-    <state width="1398" height="196" key="GridCell.Tab.0.right" timestamp="1584583268879">
+    <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
+    <state width="1398" height="170" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1584586695537" />
+    <state width="1398" height="170" key="GridCell.Tab.0.right" timestamp="1584587066596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="196" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584583268879" />
+    <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="280" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584565144258" />
+    <state width="1398" height="170" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1584586695540" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
