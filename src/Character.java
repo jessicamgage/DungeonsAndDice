@@ -9,10 +9,14 @@ public class Character {
     private int chaScore;
 
     private int armorClass;
-    private int hitPoints = 10;
+    private int hitPoints;
     private int takenDamage;
     private int dealtDamage;
     private int restoredHitPoints;
+
+    private Dice damageRange;
+
+    private String damageType;
 
     private String weapon;
 
@@ -121,9 +125,7 @@ public class Character {
     }
 
 
-    Character(){
-
-    }
+    Character(){}
 
     public void RollStats(){
         this.strScore = this.race.getStrScore().Roll();
@@ -134,25 +136,6 @@ public class Character {
         this.chaScore = this.race.getChaScore().Roll();
     }
 
-    public void Attack(String weapon) throws DiceFormatException{
-        //use setDealtDamage method to take away from this instance of HP, using Weapon as a parameter to determine
-        //the range of damage that can be dealt
-
-    }
-
-    public void DealDamage(String damageRange) throws DiceFormatException{
-//        if(damageType.equalsIgnoreCase("slashing")){
-//            damageType = "slashing";
-//        }else if(damageType.equalsIgnoreCase("piercing")){
-//            damageType = "piercing";
-//        } else if(damageType.equalsIgnoreCase("bludgeoning")){
-//            damageType = "bludgeoning";
-//        }
-
-        this.dealtDamage = new Dice(damageRange).Roll();
-
-        setHitPoints(dealtDamage);
-
-    }
-
+    public void BuyItem(){}
+    public void SellItem(){}
 }

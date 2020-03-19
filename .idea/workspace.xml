@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestAmmunition.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestAmmunition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Ammunition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Ammunition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestAmmunition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestAmmunition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestWeapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestWeapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ammunition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ammunition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

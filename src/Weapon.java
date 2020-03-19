@@ -27,8 +27,7 @@ public class Weapon extends Item {
     public void setLongWeaponRange(long longWeaponRange) {
         this.longWeaponRange = longWeaponRange;
     }
-
-
+    
     public long getDamageBonus() {
         return damageBonus;
     }
