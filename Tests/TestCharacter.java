@@ -28,6 +28,8 @@ class TestCharacter {
         bob.deathSavingThrows();
 
         assertTrue(bob.getDeathSavesFailed() <= 3 || bob.getDeathSavesPassed() <= 3);
+        assertTrue(bob.getDeathSavesFailed() < 4);
+        assertTrue(bob.getDeathSavesPassed() < 4);
     }
 
     @BeforeEach
