@@ -24,6 +24,9 @@ public class TestBattleClass {
         BattleClass barbarian = new BattleClass();
         barbarian.Load("barbarian");
 
-        assertEquals(barbarian.getSkillProficiency(), "{\"name\":\"Skill: Animal Handling\",\"url\":\"\\/api\\/proficiencies\\/skill-animal-handling\"}");
+        assertEquals(barbarian.getSkillProficiency(),
+                "{\"name\":\"Skill: Animal Handling\",\"url\":\"\\/api\\/proficiencies\\/skill-animal-handling\"}");
+
+        //work on making this not random, as well as the actual being in the format of Skill: Proficiency
     }
 }
