@@ -11,7 +11,7 @@ class TestCharacter {
         character.setName("bob");
         character.setRace(this.human);
 
-        character.RollStats();
+        character.rollStats();
 
         assertTrue(character.getChaScore() > 0);
         assertTrue(character.getWisScore() > 0);
@@ -20,6 +20,14 @@ class TestCharacter {
         assertTrue(character.getDexScore() > 0);
         assertTrue(character.getStrScore() > 0);
 
+    }
+
+    @Test
+    public void verifyDeathSaves() throws DiceFormatException {
+        Character bob = new Character();
+        bob.deathSavingThrows();
+
+        assertTrue(bob.getDeathSavesFailed() <= 3 || bob.getDeathSavesPassed() <= 3);
     }
 
     @BeforeEach

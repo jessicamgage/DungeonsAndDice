@@ -9,12 +9,12 @@ public class Dice {
     private long seed;
     private Random rng;
 
-    private void setSeed(long seed){
+    private void setSeed(long seed) {
         this.seed = seed;
         rng = new Random(seed);
     }
 
-    private void setSeed(){
+    private void setSeed() {
         this.seed = System.currentTimeMillis();
         rng = new Random(seed);
     }
@@ -23,42 +23,42 @@ public class Dice {
         return text;
     }
 
-    private void updateText(){
+    private void updateText() {
         this.text = this.quantity + "d" + this.sides;
-        if(this.modifier > 0){
+        if (this.modifier > 0) {
             this.text += "+" + this.modifier;
-        }else if(this.modifier < 0){
+        } else if (this.modifier < 0) {
             this.text += this.modifier;
         }
     }
 
-    public void setText(String text) throws DiceFormatException{
+    public void setText(String text) throws DiceFormatException {
         String trimmedText = text.replaceAll("\\s+", "");
         String dicePattern = "^(\\d+)?[dD](\\d+)([+-]\\d+)?$";
 
         Pattern pattern = Pattern.compile(dicePattern);
         Matcher matcher = pattern.matcher(trimmedText);
 
-        if(matcher.find()){
+        if (matcher.find()) {
             // Quantity is optional, initializes to 1 by default.
-            if(matcher.group(1) != null){
+            if (matcher.group(1) != null) {
                 this.quantity = Integer.parseInt(matcher.group(1));
-            }else{
+            } else {
                 this.quantity = 1;
             }
 
             this.sides = Integer.parseInt(matcher.group(2));
 
             //Modifier is optional, initializes to 0 by default.
-            if(matcher.group(3) != null){
+            if (matcher.group(3) != null) {
                 this.modifier = Integer.parseInt(matcher.group(3));
-            }else{
+            } else {
                 this.modifier = 0;
             }
 
             this.updateText();
 
-        }else {
+        } else {
             throw new DiceFormatException("Invalid dice format.");
         }
 
@@ -91,11 +91,11 @@ public class Dice {
         this.updateText();
     }
 
-    Dice(){
+    Dice() {
         this.setSeed();
     }
 
-    Dice(long seed){
+    Dice(long seed) {
         this.setSeed(seed);
     }
 
@@ -104,15 +104,15 @@ public class Dice {
         this.setText(text);
     }
 
-    Dice(String text, long seed) throws DiceFormatException{
+    Dice(String text, long seed) throws DiceFormatException {
         this.setSeed(seed);
         this.setText(text);
     }
 
-    int Roll(){
+    int roll() {
         int sum = 0;
-        for(int i = 0; i < this.quantity; i++){
-            sum += this.rng.nextInt(this.sides) +1;
+        for (int i = 0; i < this.quantity; i++) {
+            sum += this.rng.nextInt(this.sides) + 1;
         }
 
         return sum + this.modifier;

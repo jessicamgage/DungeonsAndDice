@@ -14,11 +14,24 @@ public class Character {
     private int dealtDamage;
     private int restoredHitPoints;
 
-    private Dice damageRange;
+    private int deathSavesPassed;
+    private int deathSavesFailed;
 
-    private String damageType;
+    public int getDeathSavesPassed() {
+        return deathSavesPassed;
+    }
 
-    private String weapon;
+    public void setDeathSavesPassed(int deathSavesPassed) {
+        this.deathSavesPassed = deathSavesPassed;
+    }
+
+    public int getDeathSavesFailed() {
+        return deathSavesFailed;
+    }
+
+    public void setDeathSavesFailed(int deathSavesFailed) {
+        this.deathSavesFailed = deathSavesFailed;
+    }
 
     public String getName() {
         return name;
@@ -127,15 +140,32 @@ public class Character {
 
     Character(){}
 
-    public void RollStats(){
-        this.strScore = this.race.getStrScore().Roll();
-        this.dexScore = this.race.getDexScore().Roll();
-        this.conScore = this.race.getConScore().Roll();
-        this.intScore = this.race.getIntScore().Roll();
-        this.wisScore = this.race.getWisScore().Roll();
-        this.chaScore = this.race.getChaScore().Roll();
+    public void rollStats(){
+        this.strScore = this.race.getStrScore().roll();
+        this.dexScore = this.race.getDexScore().roll();
+        this.conScore = this.race.getConScore().roll();
+        this.intScore = this.race.getIntScore().roll();
+        this.wisScore = this.race.getWisScore().roll();
+        this.chaScore = this.race.getChaScore().roll();
     }
 
-    public void BuyItem(){}
-    public void SellItem(){}
+    public void buyItem(){}
+    public void sellItem(){}
+
+    public void deathSavingThrows() throws DiceFormatException{
+        Dice saveThrow = new Dice("1d20");
+        int saveValue = saveThrow.roll();
+
+        do{
+            if(saveValue == 20){
+                this.deathSavesPassed += 2;
+            }else if(saveValue >= 10){
+                this.deathSavesPassed += 1;
+            }else if(saveValue == 1){
+                this.deathSavesFailed += 2;
+            }else{
+                this.deathSavesFailed += 1;
+            }
+        }while(deathSavesFailed <= 3 ^ deathSavesPassed <= 3);
+    }
 }

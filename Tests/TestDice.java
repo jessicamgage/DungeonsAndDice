@@ -44,7 +44,7 @@ class DiceTest {
         int numberOfRolls = 100;
 
         for(int i = 0; i < numberOfRolls; i++){
-            int roll = d6.Roll();
+            int roll = d6.roll();
             assertTrue(roll>0 && roll<7);
         }
 
