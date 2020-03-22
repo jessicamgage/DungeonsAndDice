@@ -100,7 +100,7 @@ public class Race {
         }
     }
 
-    public void LoadCharacter(String name) throws DiceFormatException, RaceNotFoundException{
+    public void Load(String name) throws DiceFormatException, RaceNotFoundException{
         JSONParser jsonParser = new JSONParser();
 
         this.strScore = new Dice("3d6");

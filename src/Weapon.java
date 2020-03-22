@@ -27,7 +27,7 @@ public class Weapon extends Item {
     public void setLongWeaponRange(long longWeaponRange) {
         this.longWeaponRange = longWeaponRange;
     }
-    
+
     public long getDamageBonus() {
         return damageBonus;
     }
@@ -66,7 +66,7 @@ public class Weapon extends Item {
         this.weapon = weapon;
     }
 
-    public void LoadWeapon(String weapon) throws DiceFormatException{
+    public void Load(String weapon) throws DiceFormatException{
         JSONParser jsonParser = new JSONParser();
 
         try{
@@ -85,7 +85,7 @@ public class Weapon extends Item {
                 e.printStackTrace();
             }
 
-            LoadItem("weapons", getWeapon());
+            Load("weapons", getWeapon());
 
             this.damageBonus = (long) info.get("damage_bonus");
 

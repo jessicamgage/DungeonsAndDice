@@ -5,14 +5,14 @@ public class TestItem {
     @Test
     public void VerifyItemLoad(){
         Item arrow = new Item();
-        arrow.LoadItem("ammunition", "arrow");
+        arrow.Load("ammunition", "arrow");
 
         assertEquals(arrow.getItemType(), "Arrow");
         assertEquals(arrow.getCost(), 5);
         assertEquals(arrow.getCostType(), "cp");
 
         Item shortsword = new Item();
-        shortsword.LoadItem("weapons", "shortsword");
+        shortsword.Load("weapons", "shortsword");
 
         assertEquals(shortsword.getItemType(), "Shortsword");
         assertEquals(shortsword.getCost(), 10);

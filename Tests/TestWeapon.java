@@ -6,7 +6,7 @@ public class TestWeapon {
     @Test
     public void testWeaponInfo() throws DiceFormatException{
         Weapon javelin = new Weapon();
-        javelin.LoadWeapon("javelin");
+        javelin.Load("javelin");
 
         assertEquals(javelin.getWeapon(), "Javelin");
         assertEquals(javelin.getDamageRange().getText(), "1d6");
@@ -17,7 +17,7 @@ public class TestWeapon {
         assertEquals(javelin.getCostType(), "sp");
 
         Weapon longbow = new Weapon();
-        longbow.LoadWeapon("longbow");
+        longbow.Load("longbow");
 
         assertEquals(longbow.getNormalWeaponRange(), 150);
         assertEquals(longbow.getLongWeaponRange(), 600);
@@ -26,7 +26,7 @@ public class TestWeapon {
     @Test
     public void testWeaponFailure() throws DiceFormatException{
         Weapon longbow = new Weapon();
-        longbow.LoadWeapon("longbow");
+        longbow.Load("longbow");
 
         assertNotEquals(longbow.getDamageRange().getText(), "1d10");
         assertNotEquals(longbow.getDamageType(), "slashing");

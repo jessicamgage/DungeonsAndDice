@@ -59,7 +59,7 @@ public class Item {
         this.type = type;
     }
 
-    public void LoadItem(String itemDirectory, String itemType){
+    public void Load(String itemDirectory, String itemType){
         JSONParser jsonParser = new JSONParser();
 
         try{

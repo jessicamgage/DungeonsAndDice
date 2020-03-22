@@ -24,7 +24,7 @@ public class Ammunition extends Item{
 
             this.ammoType = ammoType;
 
-            LoadItem("ammunition", getAmmoType());
+            Load("ammunition", getAmmoType());
 
         }catch(Exception e){
             e.printStackTrace();
