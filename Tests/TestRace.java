@@ -13,6 +13,7 @@ public class TestRace {
         assertEquals("human", "human");
         assertEquals("centaur", "centaur");
         assertTrue(elf == elf);
+        assertEquals(elf.getName(), "elf");
     }
 
     @Test
