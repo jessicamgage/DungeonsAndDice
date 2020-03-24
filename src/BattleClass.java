@@ -29,13 +29,12 @@ public class BattleClass {
         return skillProficiency;
     }
 
-    public void setSkillProficiency(String proficiency) {
+    public String setSkillProficiency(String proficiency) {
         String trimmedText = proficiency.replaceAll("Skill: ", "");
 
         this.proficiency = trimmedText;
 
-        this.proficiencyList.add(this.proficiency);
-
+        return this.proficiency;
     }
 
     public boolean proficiencyInClass(String proficiency){
@@ -67,8 +66,12 @@ public class BattleClass {
                 JSONArray proficiencyType = (JSONArray) ((JSONObject)proficiencyKind).get("from");
                 proficiencyType.forEach(proficiencyName -> {
 
+                    proficiencyList = new ArrayList<String>();
+
                     String proficiency = (String) ((JSONObject) proficiencyName).get("name");
-                    setSkillProficiency(proficiency);
+                    String proficiencyInstance = setSkillProficiency(proficiency);
+
+                    proficiencyList.add(proficiencyInstance);
 
                 });
             });

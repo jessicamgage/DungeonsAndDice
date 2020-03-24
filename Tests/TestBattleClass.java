@@ -22,7 +22,7 @@ public class TestBattleClass {
         BattleClass barbarian = new BattleClass();
         barbarian.Load("barbarian");
 
-        assertTrue(barbarian.proficiencyInClass("Animal Handling"));
+        assertTrue(barbarian.proficiencyInClass("Intimidation"));
 
     }
 }
