@@ -34,11 +34,11 @@ public class BattleClass {
 
         this.proficiency = trimmedText;
 
-        return this.proficiency;
+        return trimmedText;
     }
 
-    public boolean proficiencyInClass(String proficiency){
-        boolean isPresent = proficiencyList.contains(proficiency);
+    public boolean proficiencyInClass(String proficiencyInstance){
+        boolean isPresent = proficiencyList.contains(proficiencyInstance);
 
         return isPresent;
     }
@@ -72,7 +72,6 @@ public class BattleClass {
                     String proficiencyInstance = setSkillProficiency(proficiency);
 
                     proficiencyList.add(proficiencyInstance);
-
                 });
             });
 
