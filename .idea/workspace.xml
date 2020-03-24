@@ -62,12 +62,12 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestProficiency.verifyProficiency">
-    <configuration name="TestBattleClass.verifyInvalidClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestBattleClass.verifyProficiency">
+    <configuration name="TestBattleClass.verifyClassLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestBattleClass" />
-      <option name="METHOD_NAME" value="verifyInvalidClass" />
+      <option name="METHOD_NAME" value="verifyClassLoader" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,19 +126,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.TestBattleClass.verifyInvalidClass" />
       <item itemvalue="JUnit.TestBattleClass.verifyProficiency" />
       <item itemvalue="JUnit.TestRace.verifyRacialAttributes" />
       <item itemvalue="JUnit.TestRace.verifyInvalidRacialAttributes" />
       <item itemvalue="JUnit.TestProficiency.verifyProficiency" />
+      <item itemvalue="JUnit.TestBattleClass.verifyClassLoader" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestProficiency.verifyProficiency" />
         <item itemvalue="JUnit.TestBattleClass.verifyProficiency" />
+        <item itemvalue="JUnit.TestBattleClass.verifyClassLoader" />
+        <item itemvalue="JUnit.TestProficiency.verifyProficiency" />
         <item itemvalue="JUnit.TestRace.verifyInvalidRacialAttributes" />
         <item itemvalue="JUnit.TestRace.verifyRacialAttributes" />
-        <item itemvalue="JUnit.TestBattleClass.verifyInvalidClass" />
       </list>
     </recent_temporary>
   </component>
@@ -197,6 +197,10 @@
     </state>
     <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
     <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1585016264382" />
+    <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585017150553">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.829@0.23.1440.829" timestamp="1585017150553" />
     <state x="297" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584391227981">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -218,29 +222,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585017013985">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585020085254">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585017013985" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585017013984">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585020085254" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585020085253">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585017013984" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585017013984">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585020085253" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585020085252">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585017013984" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585017013985">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585020085252" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585020085254">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585017013985" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585020085254" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>

@@ -3,9 +3,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
 
 public class BattleClass {
     private String classType = "";
@@ -16,7 +14,69 @@ public class BattleClass {
     private String savingThrowProficiency;
     private int attackBonus;
 
-    private String text;
+    private String proficiency;
+    private ArrayList<String> proficiencyList;
+
+    public String getClassType() {
+        return classType;
+    }
+
+    public void setClassType(String classType) {
+        this.classType = classType;
+    }
+
+    public String getSkillProficiency() {
+        return skillProficiency;
+    }
+
+    public void setSkillProficiency(String proficiency) {
+        String trimmedText = proficiency.replaceAll("Skill: ", "");
+
+        this.proficiency = trimmedText;
+
+        this.proficiencyList.add(this.proficiency);
+
+    }
+
+    public boolean proficiencyInClass(String proficiency){
+        boolean isPresent = proficiencyList.contains(proficiency);
+
+        return isPresent;
+    }
+
+    BattleClass(){}
+
+    BattleClass(String classType){
+        this.setClassType(classType);
+    }
+
+    public void Load(String classType) throws DiceFormatException{
+        JSONParser jsonParser = new JSONParser();
+
+        try{
+            FileReader fileReader = new FileReader("data/classes/" + classType + ".json");
+
+            Object obj = jsonParser.parse(fileReader);
+            JSONObject json = (JSONObject) obj;
+
+            this.classType = (String) json.get("name");
+
+            JSONArray proficiencyArray = (JSONArray) json.get("proficiency_choices");
+            proficiencyArray.forEach(proficiencyKind -> {
+
+                JSONArray proficiencyType = (JSONArray) ((JSONObject)proficiencyKind).get("from");
+                proficiencyType.forEach(proficiencyName -> {
+
+                    String proficiency = (String) ((JSONObject) proficiencyName).get("name");
+                    setSkillProficiency(proficiency);
+
+                });
+            });
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
     public Dice getHitDice() {
@@ -25,14 +85,6 @@ public class BattleClass {
 
     public void setHitDice(Dice hitDice) {
         this.hitDice = hitDice;
-    }
-
-    public String getSkillProficiency() {
-        return skillProficiency;
-    }
-
-    public void setSkillProficiency(String skillProficiency) {
-        this.skillProficiency = skillProficiency;
     }
 
     public String getArmorProficiency() {
@@ -65,35 +117,5 @@ public class BattleClass {
 
     public void setAttackBonus(int attackBonus) {
         this.attackBonus = attackBonus;
-    }
-
-    public String getClassType() {
-        return classType;
-    }
-
-    public void setClassType(String classType) {
-        this.classType = classType;
-    }
-
-    BattleClass(){}
-
-    BattleClass(String classType){
-        this.setClassType(classType);
-    }
-
-    public void Load(String classType) throws DiceFormatException{
-        JSONParser jsonParser = new JSONParser();
-
-        try{
-            FileReader fileReader = new FileReader("data/classes/" + classType + ".json");
-
-            Object obj = jsonParser.parse(fileReader);
-            JSONObject json = (JSONObject) obj;
-
-            this.classType = (String) json.get("name");
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
 }

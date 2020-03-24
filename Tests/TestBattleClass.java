@@ -22,9 +22,7 @@ public class TestBattleClass {
         BattleClass barbarian = new BattleClass();
         barbarian.Load("barbarian");
 
-        assertEquals(barbarian.getSkillProficiency(),
-                "Animal Handling");
+        assertTrue(barbarian.proficiencyInClass("Animal Handling"));
 
-        //work on making this not random, as well as the actual being in the format of Proficiency
     }
 }
