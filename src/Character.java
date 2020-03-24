@@ -168,4 +168,7 @@ public class Character {
             }
         }while(deathSavesFailed <= 3 ^ deathSavesPassed <= 3);
     }
+
+    public void walk(){}
+    public void dash(){}
 }

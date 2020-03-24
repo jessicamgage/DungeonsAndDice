@@ -17,18 +17,6 @@ public class TestRace {
     }
 
     @Test
-    public void verifyInvalidStats() throws DiceFormatException{
-        Race dwarf = new Race("dwarf", new Dice("3d6"), new Dice("3d6"), new Dice("3d6"),
-                new Dice("3d6"), new Dice("3d6"), new Dice("3d6"));
-
-        Race human = new Race("dwarf", new Dice("3d6"), new Dice("3d6"), new Dice("3d6"),
-                new Dice("3d6"), new Dice("3d6"), new Dice("3d6"));
-
-        assertNotEquals("dwarf", "elf");
-        assertFalse(dwarf == human);
-    }
-
-    @Test
     public void verifyLoadCharacter() throws DiceFormatException, RaceNotFoundException{
         Race dragonborn = new Race();
         dragonborn.Load("dragonborn");
@@ -48,6 +36,22 @@ public class TestRace {
         assertEquals(kobold.getIntScore().getText(), "3d6");
     }
 
+
+    @Test
+    public void verifyRacialAttributes() throws DiceFormatException, RaceNotFoundException{
+        Race dragonborn = new Race();
+        dragonborn.Load("dragonborn");
+
+        assertEquals(dragonborn.getWalkSpeed(), 30);
+        assertEquals(dragonborn.getDashSpeed(), 60);
+
+        Race gnome = new Race();
+        gnome.Load("gnome");
+
+        assertEquals(gnome.getWalkSpeed(), 25);
+        assertEquals(gnome.getDashSpeed(), 50);
+    }
+
     @Test
     public void verifyLoadCharacterNotValid() throws DiceFormatException, RaceNotFoundException{
         Race dragonborn = new Race();
@@ -63,5 +67,33 @@ public class TestRace {
         Race centaur = new Race();
 
         assertThrows(RaceNotFoundException.class, () -> centaur.Load("centaur"));
+    }
+
+
+    @Test
+    public void verifyInvalidStats() throws DiceFormatException{
+        Race dwarf = new Race("dwarf", new Dice("3d6"), new Dice("3d6"), new Dice("3d6"),
+                new Dice("3d6"), new Dice("3d6"), new Dice("3d6"));
+
+        Race human = new Race("dwarf", new Dice("3d6"), new Dice("3d6"), new Dice("3d6"),
+                new Dice("3d6"), new Dice("3d6"), new Dice("3d6"));
+
+        assertNotEquals("dwarf", "elf");
+        assertFalse(dwarf == human);
+    }
+
+    @Test
+    public void verifyInvalidRacialAttributes() throws DiceFormatException, RaceNotFoundException{
+        Race dragonborn = new Race();
+        dragonborn.Load("dragonborn");
+
+        assertNotEquals(dragonborn.getWalkSpeed(), 25);
+        assertNotEquals(dragonborn.getDashSpeed(), 50);
+
+        Race gnome = new Race();
+        gnome.Load("gnome");
+
+        assertNotEquals(gnome.getWalkSpeed(), 30);
+        assertNotEquals(gnome.getDashSpeed(), 60);
     }
 }

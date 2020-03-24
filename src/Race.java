@@ -14,6 +14,20 @@ public class Race {
     private Dice wisScore;
     private Dice chaScore;
 
+    private long walkSpeed;
+
+    public long getWalkSpeed() {
+        return walkSpeed;
+    }
+
+    public void setWalkSpeed(long walkSpeed) {
+        this.walkSpeed = walkSpeed;
+    }
+
+    public long getDashSpeed(){
+        return walkSpeed*2;
+    }
+
     public String getName() {
         return name;
     }
@@ -116,6 +130,7 @@ public class Race {
             JSONObject json = (JSONObject) obj;
 
             this.name = (String) json.get("name");
+            this.walkSpeed = (long) json.get("speed");
 
             JSONArray bonuses = (JSONArray) json.get("ability_bonuses");
             bonuses.forEach(bonus -> {
