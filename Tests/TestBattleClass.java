@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestBattleClass {
@@ -25,8 +23,8 @@ public class TestBattleClass {
         barbarian.Load("barbarian");
 
         assertEquals(barbarian.getSkillProficiency(),
-                "{\"name\":\"Skill: Animal Handling\",\"url\":\"\\/api\\/proficiencies\\/skill-animal-handling\"}");
+                "Animal Handling");
 
-        //work on making this not random, as well as the actual being in the format of Skill: Proficiency
+        //work on making this not random, as well as the actual being in the format of Proficiency
     }
 }

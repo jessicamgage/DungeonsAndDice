@@ -4,6 +4,8 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BattleClass {
     private String classType = "";
@@ -13,6 +15,8 @@ public class BattleClass {
     private String weaponProficiency;
     private String savingThrowProficiency;
     private int attackBonus;
+
+    private String text;
 
 
     public Dice getHitDice() {
@@ -63,7 +67,6 @@ public class BattleClass {
         this.attackBonus = attackBonus;
     }
 
-
     public String getClassType() {
         return classType;
     }
@@ -88,29 +91,6 @@ public class BattleClass {
             JSONObject json = (JSONObject) obj;
 
             this.classType = (String) json.get("name");
-
-            JSONArray proficiencyChoices = (JSONArray) json.get("proficiency_choices");
-            proficiencyChoices.forEach(proficiency -> {
-                JSONArray proficiencyOptions = (JSONArray) ((JSONObject) proficiency).get("from");
-                proficiencyOptions.forEach(skillProficiency ->{
-                    skillProficiency = ((JSONObject)skillProficiency).get("name");
-                    long numberOfOptions = (long) ((JSONObject) proficiency).get("choose");
-
-                    do{
-                        Random proficiencyRandomizer = new Random();
-                        int proficiencySelectionNumber = proficiencyRandomizer.nextInt(proficiencyOptions.size());
-
-                        String proficiencySelected = proficiencyOptions.get(proficiencySelectionNumber).toString();
-
-                        this.setSkillProficiency(proficiencySelected);
-
-                        numberOfOptions--;
-
-                    }while(numberOfOptions > 0);
-
-                });
-
-            });
 
         }catch(Exception e){
             e.printStackTrace();
