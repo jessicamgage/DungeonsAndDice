@@ -5,16 +5,12 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class BattleClass {
+public class CharacterClass {
     private String classType = "";
     private long hitDie;
     private String skillProficiency;
-    private String armorProficiency;
-    private String weaponProficiency;
-    private String savingThrowProficiency;
     private int attackBonus;
 
-    private String proficiency;
     private ArrayList<String> proficiencyList;
     private long numberOfProficiencies;
 
@@ -41,8 +37,6 @@ public class BattleClass {
     public String setSkillProficiency(String proficiency) {
         String trimmedText = proficiency.replaceAll("Skill: ", "");
 
-        this.proficiency = trimmedText;
-
         return trimmedText;
     }
 
@@ -50,9 +44,9 @@ public class BattleClass {
         return proficiencyList.contains(proficiencyInstance);
     }
 
-    BattleClass(){}
+    CharacterClass(){}
 
-    BattleClass(String classType){
+    CharacterClass(String classType){
         this.setClassType(classType);
     }
 
@@ -113,30 +107,6 @@ public class BattleClass {
 
     public void setHitDie(long hitDie) {
         this.hitDie = hitDie;
-    }
-
-    public String getArmorProficiency() {
-        return armorProficiency;
-    }
-
-    public void setArmorProficiency(String armorProficiency) {
-        this.armorProficiency = armorProficiency;
-    }
-
-    public String getWeaponProficiency() {
-        return weaponProficiency;
-    }
-
-    public void setWeaponProficiency(String weaponProficiency) {
-        this.weaponProficiency = weaponProficiency;
-    }
-
-    public String getSavingThrowProficiency() {
-        return savingThrowProficiency;
-    }
-
-    public void setSavingThrowProficiency(String savingThrowProficiency) {
-        this.savingThrowProficiency = savingThrowProficiency;
     }
 
     public int getAttackBonus() {

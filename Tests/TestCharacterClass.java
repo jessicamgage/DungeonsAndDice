@@ -2,17 +2,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestBattleClass {
+public class TestCharacterClass {
 
     @Test
     public void verifyClassLoader() throws DiceFormatException {
-        BattleClass paladin = new BattleClass();
+        CharacterClass paladin = new CharacterClass();
         paladin.Load("paladin");
 
         assertEquals(paladin.getClassType(), "Paladin");
         assertEquals(paladin.getHitDie(), 10);
 
-        BattleClass druid = new BattleClass();
+        CharacterClass druid = new CharacterClass();
         druid.Load("druid");
 
         assertEquals(druid.getClassType(), "Druid");
@@ -21,7 +21,7 @@ public class TestBattleClass {
 
     @Test
     public void verifyProficiency() throws DiceFormatException{
-        BattleClass barbarian = new BattleClass();
+        CharacterClass barbarian = new CharacterClass();
         barbarian.Load("barbarian");
 
         assertTrue(barbarian.proficiencyInClass("STR"));
@@ -29,7 +29,7 @@ public class TestBattleClass {
         assertTrue(barbarian.proficiencyInClass("Simple weapons"));
         assertEquals(barbarian.getNumberOfProficiencies(), 2);
 
-        BattleClass monk = new BattleClass();
+        CharacterClass monk = new CharacterClass();
         monk.Load("monk");
 
         assertTrue(monk.proficiencyInClass("Insight"));
@@ -37,7 +37,7 @@ public class TestBattleClass {
         assertTrue(monk.proficiencyInClass("Simple weapons"));
         assertEquals(monk.getNumberOfProficiencies(), 2);
 
-        BattleClass bard = new BattleClass();
+        CharacterClass bard = new CharacterClass();
         bard.Load("bard");
 
         assertTrue(bard.proficiencyInClass("Persuasion"));
