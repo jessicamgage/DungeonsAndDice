@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class BattleClass {
     private String classType = "";
-    private Dice hitDice;
+    private long hitDie;
     private String skillProficiency;
     private String armorProficiency;
     private String weaponProficiency;
@@ -59,6 +59,7 @@ public class BattleClass {
             JSONObject json = (JSONObject) obj;
 
             this.classType = (String) json.get("name");
+            this.hitDie = (long) json.get("hit_die");
 
             JSONArray proficiencyArray = (JSONArray) json.get("proficiency_choices");
             proficiencyArray.forEach(proficiencyKind -> {
@@ -81,12 +82,12 @@ public class BattleClass {
     }
 
 
-    public Dice getHitDice() {
-        return hitDice;
+    public long getHitDie() {
+        return hitDie;
     }
 
-    public void setHitDice(Dice hitDice) {
-        this.hitDice = hitDice;
+    public void setHitDie(long hitDie) {
+        this.hitDie = hitDie;
     }
 
     public String getArmorProficiency() {

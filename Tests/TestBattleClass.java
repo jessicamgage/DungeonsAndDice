@@ -10,11 +10,13 @@ public class TestBattleClass {
         paladin.Load("paladin");
 
         assertEquals(paladin.getClassType(), "Paladin");
+        assertEquals(paladin.getHitDie(), 10);
 
         BattleClass druid = new BattleClass();
         druid.Load("druid");
 
         assertEquals(druid.getClassType(), "Druid");
+        assertEquals(druid.getHitDie(), 8);
     }
 
     @Test
