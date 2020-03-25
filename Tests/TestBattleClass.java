@@ -24,7 +24,13 @@ public class TestBattleClass {
         BattleClass barbarian = new BattleClass();
         barbarian.Load("barbarian");
 
-        assertTrue(barbarian.proficiencyInClass("Intimidation"));
+        assertTrue(barbarian.proficiencyInClass("STR"));
+        assertTrue(barbarian.proficiencyInClass("Nature"));
+
+        BattleClass monk = new BattleClass();
+        monk.Load("monk");
+
+        assertTrue(monk.proficiencyInClass("Insight"));
 
     }
 }

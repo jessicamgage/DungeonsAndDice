@@ -38,9 +38,7 @@ public class BattleClass {
     }
 
     public boolean proficiencyInClass(String proficiencyInstance){
-        boolean isPresent = proficiencyList.contains(proficiencyInstance);
-
-        return isPresent;
+        return proficiencyList.contains(proficiencyInstance);
     }
 
     BattleClass(){}
@@ -61,19 +59,26 @@ public class BattleClass {
             this.classType = (String) json.get("name");
             this.hitDie = (long) json.get("hit_die");
 
-            JSONArray proficiencyArray = (JSONArray) json.get("proficiency_choices");
-            proficiencyArray.forEach(proficiencyKind -> {
+            JSONArray skillProficiencyArray = (JSONArray) json.get("proficiency_choices");
+            skillProficiencyArray.forEach(skillProficiencyKind -> {
 
-                JSONArray proficiencyType = (JSONArray) ((JSONObject)proficiencyKind).get("from");
-                proficiencyType.forEach(proficiencyName -> {
+                JSONArray skillProficiencyType = (JSONArray) ((JSONObject)skillProficiencyKind).get("from");
+                skillProficiencyType.forEach(skillProficiencyName -> {
 
                     proficiencyList = new ArrayList<String>();
 
-                    String proficiency = (String) ((JSONObject) proficiencyName).get("name");
+                    String proficiency = (String) ((JSONObject) skillProficiencyName).get("name");
                     String proficiencyInstance = setSkillProficiency(proficiency);
 
                     proficiencyList.add(proficiencyInstance);
                 });
+            });
+
+            JSONArray savingThrowArray = (JSONArray) json.get("saving_throws");
+            savingThrowArray.forEach(proficiencySaveKind -> {
+                String savingThrowProficiency = (String) ((JSONObject) proficiencySaveKind).get("name");
+
+                proficiencyList.add(savingThrowProficiency);
             });
 
         }catch(Exception e){
