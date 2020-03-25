@@ -63,9 +63,10 @@ public class BattleClass {
             skillProficiencyArray.forEach(skillProficiencyKind -> {
 
                 JSONArray skillProficiencyType = (JSONArray) ((JSONObject)skillProficiencyKind).get("from");
-                skillProficiencyType.forEach(skillProficiencyName -> {
 
-                    proficiencyList = new ArrayList<String>();
+                proficiencyList = new ArrayList<String>();
+
+                skillProficiencyType.forEach(skillProficiencyName -> {
 
                     String proficiency = (String) ((JSONObject) skillProficiencyName).get("name");
                     String proficiencyInstance = setSkillProficiency(proficiency);
