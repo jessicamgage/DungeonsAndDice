@@ -16,6 +16,15 @@ public class BattleClass {
 
     private String proficiency;
     private ArrayList<String> proficiencyList;
+    private long numberOfProficiencies;
+
+    public long getNumberOfProficiencies() {
+        return numberOfProficiencies;
+    }
+
+    public void setNumberOfProficiencies(long numberOfProficiencies) {
+        this.numberOfProficiencies = numberOfProficiencies;
+    }
 
     public String getClassType() {
         return classType;
@@ -59,12 +68,15 @@ public class BattleClass {
             this.classType = (String) json.get("name");
             this.hitDie = (long) json.get("hit_die");
 
+            proficiencyList = new ArrayList<String>();
+
             JSONArray skillProficiencyArray = (JSONArray) json.get("proficiency_choices");
             skillProficiencyArray.forEach(skillProficiencyKind -> {
 
-                JSONArray skillProficiencyType = (JSONArray) ((JSONObject)skillProficiencyKind).get("from");
+                long numberOfProficiencies = (long) ((JSONObject)skillProficiencyKind).get("choose");
+                this.setNumberOfProficiencies(numberOfProficiencies);
 
-                proficiencyList = new ArrayList<String>();
+                JSONArray skillProficiencyType = (JSONArray) ((JSONObject)skillProficiencyKind).get("from");
 
                 skillProficiencyType.forEach(skillProficiencyName -> {
 
@@ -78,8 +90,15 @@ public class BattleClass {
             JSONArray savingThrowArray = (JSONArray) json.get("saving_throws");
             savingThrowArray.forEach(proficiencySaveKind -> {
                 String savingThrowProficiency = (String) ((JSONObject) proficiencySaveKind).get("name");
-
                 proficiencyList.add(savingThrowProficiency);
+
+            });
+
+            JSONArray armorAndWeaponArray = (JSONArray) json.get("proficiencies");
+            armorAndWeaponArray.forEach(proficiencyItemKind ->{
+                String itemProficiency = (String) ((JSONObject)proficiencyItemKind).get("name");
+                proficiencyList.add(itemProficiency);
+
             });
 
         }catch(Exception e){

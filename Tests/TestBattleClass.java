@@ -26,11 +26,24 @@ public class TestBattleClass {
 
         assertTrue(barbarian.proficiencyInClass("STR"));
         assertTrue(barbarian.proficiencyInClass("Nature"));
+        assertTrue(barbarian.proficiencyInClass("Simple weapons"));
+        assertEquals(barbarian.getNumberOfProficiencies(), 2);
 
         BattleClass monk = new BattleClass();
         monk.Load("monk");
 
         assertTrue(monk.proficiencyInClass("Insight"));
+        assertTrue(monk.proficiencyInClass("STR"));
+        assertTrue(monk.proficiencyInClass("Simple weapons"));
+        assertEquals(monk.getNumberOfProficiencies(), 2);
+
+        BattleClass bard = new BattleClass();
+        bard.Load("bard");
+
+        assertTrue(bard.proficiencyInClass("Persuasion"));
+        assertTrue(bard.proficiencyInClass("DEX"));
+        assertTrue(bard.proficiencyInClass("Drum"));
+        assertEquals(bard.getNumberOfProficiencies(), 3);
 
     }
 }
