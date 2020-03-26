@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class CharacterClass {
+    private Character character;
     private String classType = "";
     private long hitDie;
     private String skillProficiency;
@@ -99,7 +100,6 @@ public class CharacterClass {
             e.printStackTrace();
         }
     }
-
 
     public long getHitDie() {
         return hitDie;

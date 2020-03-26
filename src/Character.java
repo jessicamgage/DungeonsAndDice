@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Character {
     private String name;
     private Race race;
@@ -16,6 +18,35 @@ public class Character {
 
     private int deathSavesPassed;
     private int deathSavesFailed;
+
+    private ArrayList<String> inventory;
+
+    public ArrayList getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(){
+        this.inventory = inventory;
+    }
+
+    public void addToInventory(String inventoryItem) {
+        inventory = new ArrayList<String>();
+        this.inventory.add(inventoryItem);
+    }
+
+    public void removeFromInventory(String inventoryItem){
+        getInventory();
+        if(inventory.contains(inventoryItem)){
+            inventory.remove(inventoryItem);
+            setInventory();
+        }else{
+            System.out.println("Sorry, that item cannot be removed because you do not have it in your inventory.");
+        }
+    }
+
+    public boolean itemHeld(String item){
+        return inventory.contains(item);
+    }
 
     public int getDeathSavesPassed() {
         return deathSavesPassed;
@@ -169,6 +200,6 @@ public class Character {
         }while(deathSavesFailed <= 3 ^ deathSavesPassed <= 3);
     }
 
-    public void walk(){}
+    public void walk(int walkFeet){}
     public void dash(){}
 }

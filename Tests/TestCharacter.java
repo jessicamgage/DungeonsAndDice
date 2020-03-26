@@ -32,6 +32,23 @@ class TestCharacter {
         assertTrue(bob.getDeathSavesPassed() < 4);
     }
 
+    @Test
+    public void verifyInventoryAddition(){
+        Character humanMan = new Character();
+        humanMan.addToInventory("javelin");
+
+        assertTrue(humanMan.itemHeld("javelin"));
+    }
+
+    @Test
+    public void verifyInventoryRemoval(){
+        Character itemHolder = new Character();
+        itemHolder.addToInventory("javelin");
+        itemHolder.removeFromInventory("javelin");
+        
+        assertFalse(itemHolder.itemHeld("javelin"));
+    }
+
     @BeforeEach
     void setUp() throws DiceFormatException {
         this.human = new Race("human", new Dice("3d6+1"), new Dice("3d6+1"),
