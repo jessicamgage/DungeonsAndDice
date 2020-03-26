@@ -19,7 +19,60 @@ public class Character {
     private int deathSavesPassed;
     private int deathSavesFailed;
 
-    private ArrayList<String> inventory;
+    private ArrayList<Item> inventory;
+    private double goldHeld;
+
+    public double getGoldHeld() {
+        return goldHeld;
+    }
+
+    public void setGoldHeld(double goldHeld) {
+        this.goldHeld = goldHeld;
+    }
+
+    public double earnMoney(Item item, String currency, long quantity){
+        String itemDirectory = item.getItemDirectory();
+        String itemType = item.getItemType().toLowerCase();
+
+        item.Load(itemDirectory, itemType);
+
+        currency = item.getCostType();
+        quantity = item.getCost();
+
+        if(currency.equalsIgnoreCase("cp")){
+            setGoldHeld(goldHeld += (quantity/100));
+        }else if(currency.equalsIgnoreCase("sp")){
+            setGoldHeld(goldHeld += (quantity/10));
+        }else if(currency.equalsIgnoreCase("gp")){
+            setGoldHeld(goldHeld += quantity);
+        }else if(currency.equalsIgnoreCase("pp")){
+            setGoldHeld(goldHeld += (quantity*10));
+        }
+
+        return goldHeld;
+    }
+
+    public double spendMoney(Item item, String currency, long quantity){
+        String itemDirectory = item.getItemDirectory();
+        String itemType = item.getItemType().toLowerCase();
+
+        item.Load(itemDirectory, itemType);
+
+        currency = item.getCostType();
+        quantity = item.getCost();
+
+        if(currency.equalsIgnoreCase("cp")){
+            setGoldHeld(goldHeld -= (quantity/100));
+        }else if(currency.equalsIgnoreCase("sp")){
+            setGoldHeld(goldHeld -= (quantity/10));
+        }else if(currency.equalsIgnoreCase("gp")){
+            setGoldHeld(goldHeld -= quantity);
+        }else if(currency.equalsIgnoreCase("pp")){
+            setGoldHeld(goldHeld -= (quantity*10));
+        }
+
+        return goldHeld;
+    }
 
     public ArrayList getInventory() {
         return this.inventory;
@@ -29,22 +82,52 @@ public class Character {
         this.inventory = inventory;
     }
 
-    public void addToInventory(String inventoryItem) {
-        inventory = new ArrayList<String>();
-        this.inventory.add(inventoryItem);
+    public void addToInventory(Item item) {
+        inventory = new ArrayList<Item>();
+
+        this.inventory.add(item);
     }
 
-    public void removeFromInventory(String inventoryItem){
+    public void removeFromInventory(Item item){
         getInventory();
-        if(inventory.contains(inventoryItem)){
-            inventory.remove(inventoryItem);
+
+        if(inventory.contains(item)){
+            inventory.remove(item);
             setInventory();
         }else{
             System.out.println("Sorry, that item cannot be removed because you do not have it in your inventory.");
         }
     }
 
-    public boolean itemHeld(String item){
+    public void buyItem(Item item) throws NotEnoughMoneyException{
+        try{
+            Item itemType = new Item();
+
+            if(itemType.getCost() < goldHeld){
+                spendMoney(item, itemType.getCostType(), item.getCost());
+                addToInventory(item);
+            }else{
+                throw new NotEnoughMoneyException("Sorry, you don't have enough money for that item.");
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void sellItem(Item item){
+        try{
+            Item itemType = new Item();
+            removeFromInventory(item);
+
+            earnMoney(item, itemType.getCostType(), itemType.getCost());
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public boolean itemHeld(Item item){
         return inventory.contains(item);
     }
 
@@ -179,9 +262,6 @@ public class Character {
         this.wisScore = this.race.getWisScore().roll();
         this.chaScore = this.race.getChaScore().roll();
     }
-
-    public void buyItem(){}
-    public void sellItem(){}
 
     public void deathSavingThrows() throws DiceFormatException{
         Dice saveThrow = new Dice("1d20");

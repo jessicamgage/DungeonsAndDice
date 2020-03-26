@@ -11,6 +11,9 @@ public class Item {
     private String type;
     private String itemDirectory;
 
+    Item(){}
+    Item(String itemDirectory, String itemType){}
+
     public String getItemDirectory() {
         return itemDirectory;
     }

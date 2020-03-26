@@ -4,9 +4,11 @@
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CharacterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proficiency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proficiency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +64,22 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestCharacter.verifyInventoryRemoval">
-    <configuration name="TestCharacterClass.verifyClassLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCharacterClass" />
-      <option name="METHOD_NAME" value="verifyClassLoader" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCharacter.verifyBuyingAndSelling">
     <configuration name="TestCharacterClass.verifyProficiency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCharacterClass" />
       <option name="METHOD_NAME" value="verifyProficiency" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCharacter.verifyBuyingAndSelling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
+      <option name="METHOD_NAME" value="verifyBuyingAndSelling" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,21 +95,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCharacter.verifyInventoryRemoval" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCharacter.verifyInventoryAddition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCharacter" />
-      <option name="METHOD_NAME" value="verifyInventoryRemoval" />
+      <option name="METHOD_NAME" value="verifyInventoryAddition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestProficiency.verifyProficiency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCharacter.verifyInventoryRemoval" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestProficiency" />
-      <option name="METHOD_NAME" value="verifyProficiency" />
+      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
+      <option name="METHOD_NAME" value="verifyInventoryRemoval" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,19 +128,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.TestProficiency.verifyProficiency" />
       <item itemvalue="JUnit.TestCharacterClass.verifyProficiency" />
-      <item itemvalue="JUnit.TestCharacterClass.verifyClassLoader" />
       <item itemvalue="JUnit.TestCharacter.verifyInventory" />
       <item itemvalue="JUnit.TestCharacter.verifyInventoryRemoval" />
+      <item itemvalue="JUnit.TestCharacter.verifyInventoryAddition" />
+      <item itemvalue="JUnit.TestCharacter.verifyBuyingAndSelling" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCharacter.verifyBuyingAndSelling" />
         <item itemvalue="JUnit.TestCharacter.verifyInventoryRemoval" />
+        <item itemvalue="JUnit.TestCharacter.verifyInventoryAddition" />
         <item itemvalue="JUnit.TestCharacter.verifyInventory" />
         <item itemvalue="JUnit.TestCharacterClass.verifyProficiency" />
-        <item itemvalue="JUnit.TestCharacterClass.verifyClassLoader" />
-        <item itemvalue="JUnit.TestProficiency.verifyProficiency" />
       </list>
     </recent_temporary>
   </component>
@@ -192,11 +194,11 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1585015129350" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1585185518422">
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1585249593656">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1585185518421" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1585249593656" />
     <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585017150553">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -222,29 +224,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585186337928">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585253961491">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585186337928" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585186337927">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585253961491" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585253961491">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585186337927" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585186337927">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585253961491" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585253961490">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585186337927" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585186337928">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585253961490" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585253961491">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585186337928" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585253961491" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
