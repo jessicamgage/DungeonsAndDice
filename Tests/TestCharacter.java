@@ -36,9 +36,23 @@ class TestCharacter {
     public void verifyInventoryAddition(){
         Character humanMan = new Character();
         Item javelin = new Item();
+        Item ballBearings = new Item();
 
-        humanMan.addToInventory(javelin);
+        humanMan.addToInventory(javelin, humanMan);
+        humanMan.addToInventory(ballBearings, humanMan);
         assertTrue(humanMan.itemHeld(javelin));
+
+        Character chicken = new Character();
+        Character human = new Character();
+
+        Item egg = new Item();
+        Item knife = new Item();
+
+        chicken.addToInventory(knife, chicken);
+        human.addToInventory(egg, human);
+
+        assertTrue(human.itemHeld(egg));
+        assertTrue(chicken.itemHeld(knife));
     }
 
     @Test
@@ -46,8 +60,8 @@ class TestCharacter {
         Character itemHolder = new Character();
         Item javelin = new Item();
 
-        itemHolder.addToInventory(javelin);
-        itemHolder.removeFromInventory(javelin);
+        itemHolder.addToInventory(javelin, itemHolder);
+        itemHolder.removeFromInventory(javelin, itemHolder);
 
         assertFalse(itemHolder.itemHeld(javelin));
     }
@@ -64,12 +78,12 @@ class TestCharacter {
         greatsword.Load("weapons", "greatsword");
         greatsword.setItemDirectory("weapons");
 
-        shopKeeper.addToInventory(greatsword);
+        shopKeeper.addToInventory(greatsword, shopKeeper);
 
         shopKeeper.sellItem(greatsword);
 
         playableCharacter.buyItem(greatsword);
-        playableCharacter.addToInventory(greatsword);
+        playableCharacter.addToInventory(greatsword, playableCharacter);
 
         assertTrue(playableCharacter.itemHeld(greatsword));
         assertFalse(shopKeeper.itemHeld(greatsword));

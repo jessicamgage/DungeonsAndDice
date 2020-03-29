@@ -30,7 +30,7 @@ public class Character {
     private int deathSavesPassed;
     private int deathSavesFailed;
 
-    private ArrayList<Item> inventory;
+    private ArrayList<Item> inventory = new ArrayList<>();
     private double goldHeld;
 
     public double getGoldHeld() {
@@ -41,7 +41,7 @@ public class Character {
         this.goldHeld = goldHeld;
     }
 
-    public double earnMoney(Item item, String currency, long quantity){
+    public double earnMoney(Item item, String currency, long quantity, Character character){
         String itemDirectory = item.getItemDirectory();
         String itemType = item.getItemType().toLowerCase();
 
@@ -93,13 +93,11 @@ public class Character {
         this.inventory = inventory;
     }
 
-    public void addToInventory(Item item) {
-        inventory = new ArrayList<Item>();
-
+    public void addToInventory(Item item, Character character) {
         this.inventory.add(item);
     }
 
-    public void removeFromInventory(Item item){
+    public void removeFromInventory(Item item, Character character){
         getInventory();
 
         if(inventory.contains(item)){
@@ -113,10 +111,11 @@ public class Character {
     public void buyItem(Item item) throws NotEnoughMoneyException{
         try{
             Item itemType = new Item();
+            Character character = new Character();
 
             if(itemType.getCost() < goldHeld){
                 spendMoney(item, itemType.getCostType(), item.getCost());
-                addToInventory(item);
+                addToInventory(item, character);
             }else{
                 throw new NotEnoughMoneyException("Sorry, you don't have enough money for that item.");
             }
@@ -128,10 +127,11 @@ public class Character {
 
     public void sellItem(Item item){
         try{
+            Character character = new Character();
             Item itemType = new Item();
-            removeFromInventory(item);
+            removeFromInventory(item, character);
 
-            earnMoney(item, itemType.getCostType(), itemType.getCost());
+            earnMoney(item, itemType.getCostType(), itemType.getCost(), character);
 
         }catch(Exception e){
             e.printStackTrace();
