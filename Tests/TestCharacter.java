@@ -83,11 +83,19 @@ class TestCharacter {
         Character mister = new Character();
         CharacterClass fighter = new CharacterClass();
         fighter.Load("fighter");
-        AbilityScoreModifier score = new AbilityScoreModifier();
 
-        mister.setCharacterStats("human", "fighter", score);
+        mister.setCharacterStats("human", "fighter");
 
         assertEquals(mister.getArmorClass(), (10 + mister.getDexMod()));
+
+        Character millie = new Character();
+        CharacterClass monk = new CharacterClass();
+        monk.Load("monk");
+
+        millie.setCharacterStats("elf", "monk");
+
+        assertEquals(millie.getArmorClass(), (10 + millie.getDexMod() + millie.getWisMod()));
+
     }
 
     @BeforeEach

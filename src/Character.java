@@ -241,8 +241,7 @@ public class Character {
         this.hitPoints = hitPoints;
     }
 
-    public void setCharacterStats(String raceType, String charClassType, AbilityScoreModifier modifier) throws
-            Exception {
+    public void setCharacterStats(String raceType, String charClassType) throws Exception {
         Race race = new Race();
         this.race = race;
         race.Load(raceType);
@@ -254,6 +253,7 @@ public class Character {
         this.wisScore = race.getWisScore().roll();
         this.chaScore = race.getChaScore().roll();
 
+        AbilityScoreModifier modifier = new AbilityScoreModifier();
         this.modifier = modifier;
 
         strMod = modifier.setAbilityScoreModifier(strScore);
