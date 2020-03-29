@@ -79,8 +79,7 @@ class TestCharacter {
         greatsword.setItemDirectory("weapons");
 
         shopKeeper.addToInventory(greatsword, shopKeeper);
-
-        shopKeeper.sellItem(greatsword, shopKeeper);
+        shopKeeper.sellItemAsMerchant(greatsword, shopKeeper);
 
         playableCharacter.buyItem(greatsword, playableCharacter);
         playableCharacter.addToInventory(greatsword, playableCharacter);

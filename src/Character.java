@@ -48,7 +48,29 @@ public class Character {
         item.Load(itemDirectory, itemType);
 
         String currency = item.getCostType();
-        long quantity = item.getCost();
+        double quantity = item.getCost() / (4 - (.125 * character.getChaMod()));
+
+        if(currency.equalsIgnoreCase("cp")){
+            setGoldHeld(goldHeld += (quantity/100));
+        }else if(currency.equalsIgnoreCase("sp")){
+            setGoldHeld(goldHeld += (quantity/10));
+        }else if(currency.equalsIgnoreCase("gp")){
+            setGoldHeld(goldHeld += quantity);
+        }else if(currency.equalsIgnoreCase("pp")){
+            setGoldHeld(goldHeld += (quantity*10));
+        }
+
+        return goldHeld;
+    }
+
+    public double earnMoneyAsMerchant(Item item, Character character){
+        String itemDirectory = item.getItemDirectory();
+        String itemType = item.getItemType().toLowerCase();
+
+        item.Load(itemDirectory, itemType);
+
+        String currency = item.getCostType();
+        double quantity = item.getCost();
 
         if(currency.equalsIgnoreCase("cp")){
             setGoldHeld(goldHeld += (quantity/100));
@@ -70,7 +92,7 @@ public class Character {
         item.Load(itemDirectory, itemType);
 
         String currency = item.getCostType();
-        long quantity = item.getCost();
+        double quantity = item.getCost();
 
         if(currency.equalsIgnoreCase("cp")){
             character.setGoldHeld(goldHeld -= (quantity/100));
@@ -132,6 +154,16 @@ public class Character {
             earnMoneyForItem(item, character);
 
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void sellItemAsMerchant(Item item, Character shopkeeper){
+        try{
+            earnMoneyAsMerchant(item, shopkeeper);
+            removeFromInventory(item, shopkeeper);
+
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
