@@ -41,14 +41,14 @@ public class Character {
         this.goldHeld = goldHeld;
     }
 
-    public double earnMoney(Item item, String currency, long quantity, Character character){
+    public double earnMoneyForItem(Item item, Character character){
         String itemDirectory = item.getItemDirectory();
         String itemType = item.getItemType().toLowerCase();
 
         item.Load(itemDirectory, itemType);
 
-        currency = item.getCostType();
-        quantity = item.getCost();
+        String currency = item.getCostType();
+        long quantity = item.getCost();
 
         if(currency.equalsIgnoreCase("cp")){
             setGoldHeld(goldHeld += (quantity/100));
@@ -63,23 +63,23 @@ public class Character {
         return goldHeld;
     }
 
-    public double spendMoney(Item item, String currency, long quantity){
+    public double spendMoneyOnItem(Item item, Character character){
         String itemDirectory = item.getItemDirectory();
         String itemType = item.getItemType().toLowerCase();
 
         item.Load(itemDirectory, itemType);
 
-        currency = item.getCostType();
-        quantity = item.getCost();
+        String currency = item.getCostType();
+        long quantity = item.getCost();
 
         if(currency.equalsIgnoreCase("cp")){
-            setGoldHeld(goldHeld -= (quantity/100));
+            character.setGoldHeld(goldHeld -= (quantity/100));
         }else if(currency.equalsIgnoreCase("sp")){
-            setGoldHeld(goldHeld -= (quantity/10));
+            character.setGoldHeld(goldHeld -= (quantity/10));
         }else if(currency.equalsIgnoreCase("gp")){
-            setGoldHeld(goldHeld -= quantity);
+            character.setGoldHeld(goldHeld -= quantity);
         }else if(currency.equalsIgnoreCase("pp")){
-            setGoldHeld(goldHeld -= (quantity*10));
+            character.setGoldHeld(goldHeld -= (quantity*10));
         }
 
         return goldHeld;
@@ -108,13 +108,12 @@ public class Character {
         }
     }
 
-    public void buyItem(Item item) throws NotEnoughMoneyException{
+    public void buyItem(Item item, Character character) throws NotEnoughMoneyException{
         try{
             Item itemType = new Item();
-            Character character = new Character();
 
             if(itemType.getCost() < goldHeld){
-                spendMoney(item, itemType.getCostType(), item.getCost());
+                spendMoneyOnItem(item, character);
                 addToInventory(item, character);
             }else{
                 throw new NotEnoughMoneyException("Sorry, you don't have enough money for that item.");
@@ -125,13 +124,12 @@ public class Character {
         }
     }
 
-    public void sellItem(Item item){
+    public void sellItem(Item item, Character character){
         try{
-            Character character = new Character();
             Item itemType = new Item();
             removeFromInventory(item, character);
 
-            earnMoney(item, itemType.getCostType(), itemType.getCost(), character);
+            earnMoneyForItem(item, character);
 
         }catch(Exception e){
             e.printStackTrace();

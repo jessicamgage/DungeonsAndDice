@@ -80,9 +80,9 @@ class TestCharacter {
 
         shopKeeper.addToInventory(greatsword, shopKeeper);
 
-        shopKeeper.sellItem(greatsword);
+        shopKeeper.sellItem(greatsword, shopKeeper);
 
-        playableCharacter.buyItem(greatsword);
+        playableCharacter.buyItem(greatsword, playableCharacter);
         playableCharacter.addToInventory(greatsword, playableCharacter);
 
         assertTrue(playableCharacter.itemHeld(greatsword));
