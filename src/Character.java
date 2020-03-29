@@ -178,48 +178,96 @@ public class Character {
         return strScore;
     }
 
+    public void setStrScore(int strScore){
+        this.strScore = strScore;
+    }
+
     public long getDexScore() {
         return dexScore;
+    }
+
+    public void setDexScore(int dexScore){
+        this.dexScore = dexScore;
     }
 
     public long getConScore() {
         return conScore;
     }
 
+    public void setConScore(int conScore){
+        this.conScore = conScore;
+    }
+
     public long getIntScore() {
         return intScore;
+    }
+
+    public void setIntScore(int intScore){
+        this.intScore = intScore;
     }
 
     public long getWisScore() {
         return wisScore;
     }
 
+    public void setWisScore(int wisScore){
+        this.wisScore = wisScore;
+    }
+
     public long getChaScore() {
         return chaScore;
+    }
+
+    public void setChaScore(int chaScore){
+        this.chaScore = chaScore;
     }
 
     public long getStrMod() {
         return strMod;
     }
 
+    public void setStrMod(int strMod){
+        this.strMod = strMod;
+    }
+
     public long getDexMod() {
         return dexMod;
+    }
+
+    public void setDexMod(int dexMod){
+        this.dexMod = dexMod;
     }
 
     public long getConMod() {
         return conMod;
     }
 
+    public void setConMod(int conMod){
+        this.conMod = conMod;
+    }
+
     public long getIntMod() {
         return intMod;
+    }
+
+    public void setIntMod(int intMod){
+        this.intMod = intMod;
     }
 
     public long getWisMod() {
         return wisMod;
     }
 
+    public void setWisMod(int wisMod){
+        this.wisMod = wisMod;
+    }
+
     public long getChaMod() {
         return chaMod;
+    }
+
+    public void setChaMod(int chaMod){
+        this.chaMod = chaMod;
     }
 
     public long getArmorClass(){

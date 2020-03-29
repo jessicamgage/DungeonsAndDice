@@ -98,6 +98,23 @@ class TestCharacter {
         assertEquals(millie.getArmorClass(), (10 + millie.getDexMod() + millie.getWisMod()));
         assertTrue(millie.getHitPoints() == (8 + millie.getConMod()));
 
+        Character squishyWizard = new Character();
+        CharacterClass wizard = new CharacterClass();
+        wizard.Load("wizard");
+
+        squishyWizard.setCharacterStats("tiefling", "wizard", 1);
+
+        squishyWizard.setDexScore(7);
+        squishyWizard.setConScore(5);
+        squishyWizard.setDexMod(-2);
+        squishyWizard.setConMod(-3);
+
+        squishyWizard.setArmorClass(10 + squishyWizard.getDexMod());
+        squishyWizard.setHitPoints(wizard.getHitDie() + squishyWizard.getConMod());
+
+        assertEquals(squishyWizard.getDexScore(), 7);
+        assertEquals(squishyWizard.getArmorClass(), 8);
+        assertEquals(squishyWizard.getHitPoints(), 3);
     }
 
     @BeforeEach
