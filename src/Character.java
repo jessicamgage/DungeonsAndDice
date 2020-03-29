@@ -20,11 +20,11 @@ public class Character {
     private int wisMod;
     private int chaMod;
 
-    private int armorClass;
-    private int hitPoints;
-    private int takenDamage;
-    private int dealtDamage;
-    private int restoredHitPoints;
+    private long armorClass;
+    private long hitPoints;
+    private long takenDamage;
+    private long dealtDamage;
+    private long restoredHitPoints;
 
     private int deathSavesPassed;
     private int deathSavesFailed;
@@ -177,67 +177,63 @@ public class Character {
         return strScore;
     }
 
-    public int getDexScore() {
+    public long getDexScore() {
         return dexScore;
     }
 
-    public int getConScore() {
+    public long getConScore() {
         return conScore;
     }
 
-    public int getIntScore() {
+    public long getIntScore() {
         return intScore;
     }
 
-    public int getWisScore() {
+    public long getWisScore() {
         return wisScore;
     }
 
-    public int getChaScore() {
+    public long getChaScore() {
         return chaScore;
     }
 
-    public void setChaScore(int chaScore) {
-        this.chaScore = chaScore;
-    }
-
-    public int getStrMod() {
+    public long getStrMod() {
         return strMod;
     }
 
-    public int getDexMod() {
+    public long getDexMod() {
         return dexMod;
     }
 
-    public int getConMod() {
+    public long getConMod() {
         return conMod;
     }
 
-    public int getIntMod() {
+    public long getIntMod() {
         return intMod;
     }
 
-    public int getWisMod() {
+    public long getWisMod() {
         return wisMod;
     }
 
-    public int getChaMod() {
+    public long getChaMod() {
         return chaMod;
     }
 
-    public int getArmorClass(){
+    public long getArmorClass(){
         return armorClass;
     }
 
-    public void setArmorClass(int armorClass) {
+    public void setArmorClass(long armorClass) {
         this.armorClass = armorClass;
     }
 
-    public int getHitPoints() {
+    public long getHitPoints() {
         return hitPoints;
     }
 
-    public void setHitPoints(int hitPoints){
+    public void setHitPoints(long hitPoints){
         this.hitPoints = hitPoints;
     }
 
@@ -294,9 +290,11 @@ public class Character {
         }else{
             throw new Exception();
         }
+
+        setHitPoints(charClass.getHitDie() + getConMod());
     }
 
-    public int getTakenDamage(){
+    public long getTakenDamage(){
         return takenDamage;
     }
 
@@ -304,7 +302,7 @@ public class Character {
         this.hitPoints -= takenDamage;
     }
 
-    public int getDealtDamage(){
+    public long getDealtDamage(){
         return dealtDamage;
     }
 
@@ -312,7 +310,7 @@ public class Character {
         this.hitPoints -= dealtDamage;
     }
 
-    public int getRestoredHitPoints(){
+    public long getRestoredHitPoints(){
         return restoredHitPoints;
     }
 
