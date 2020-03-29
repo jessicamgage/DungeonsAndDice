@@ -229,6 +229,20 @@ public class Character {
         this.armorClass = armorClass;
     }
 
+    public long rollHitPoints(String charClassType) throws Exception{
+        CharacterClass charClass = new CharacterClass();
+        this.charClass = charClass;
+        charClass.Load(charClassType);
+
+        Integer hitDice = (int)charClass.getHitDie();
+
+        String HPDice = ("d" + hitDice.toString());
+
+        this.hitPoints = new Dice(HPDice).roll();
+
+        return hitPoints;
+    }
+
     public long getHitPoints() {
         return hitPoints;
     }
@@ -242,12 +256,7 @@ public class Character {
         this.race = race;
         race.Load(raceType);
 
-        this.strScore = race.getStrScore().roll();
-        this.dexScore = race.getDexScore().roll();
-        this.conScore = race.getConScore().roll();
-        this.intScore = race.getIntScore().roll();
-        this.wisScore = race.getWisScore().roll();
-        this.chaScore = race.getChaScore().roll();
+        rollStats();
 
         AbilityScoreModifier modifier = new AbilityScoreModifier();
         this.modifier = modifier;
@@ -291,7 +300,7 @@ public class Character {
             throw new Exception();
         }
 
-        setHitPoints(charClass.getHitDie() + getConMod());
+        setHitPoints(rollHitPoints(charClassType) + getConMod());
     }
 
     public long getTakenDamage(){

@@ -87,7 +87,6 @@ class TestCharacter {
         mister.setCharacterStats("human", "fighter");
 
         assertEquals(mister.getArmorClass(), (10 + mister.getDexMod()));
-        assertEquals(mister.getHitPoints(), (10 + mister.getConMod()));
 
         Character millie = new Character();
         CharacterClass monk = new CharacterClass();
@@ -96,7 +95,6 @@ class TestCharacter {
         millie.setCharacterStats("elf", "monk");
 
         assertEquals(millie.getArmorClass(), (10 + millie.getDexMod() + millie.getWisMod()));
-        assertEquals(millie.getHitPoints(), (8 + millie.getConMod()));
 
     }
 
