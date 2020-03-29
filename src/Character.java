@@ -132,9 +132,8 @@ public class Character {
 
     public void buyItem(Item item, Character character) throws NotEnoughMoneyException{
         try{
-            Item itemType = new Item();
 
-            if(itemType.getCost() < goldHeld){
+            if(item.getCost() < goldHeld){
                 spendMoneyOnItem(item, character);
                 addToInventory(item, character);
             }else{
