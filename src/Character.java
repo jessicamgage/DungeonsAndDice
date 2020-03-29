@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class Character {
     private String name;
     private Race race;
+    private CharacterClass charClass;
+
     private int strScore;
     private int dexScore;
     private int conScore;
@@ -215,8 +217,8 @@ public class Character {
         return armorClass;
     }
 
-    public void setArmorClass(int hitPoints) {
-        this.hitPoints = hitPoints;
+    public void setArmorClass(int armorClass) {
+        this.armorClass = armorClass;
     }
 
     public int getHitPoints() {
@@ -225,6 +227,39 @@ public class Character {
 
     public void setHitPoints(int hitPoints){
         this.hitPoints = hitPoints;
+    }
+
+    public void setCharacterStats(Race race, CharacterClass charClass) throws DiceFormatException, RaceNotFoundException {
+        this.race = race;
+        race.Load(race.toString());
+
+        this.strScore = race.getStrScore().roll();
+        this.dexScore = race.getDexScore().roll();
+        this.conScore = race.getConScore().roll();
+        this.intScore = race.getIntScore().roll();
+        this.wisScore = race.getWisScore().roll();
+        this.chaScore = race.getChaScore().roll();
+
+        this.charClass = charClass;
+        charClass.Load(charClass.toString());
+
+        String raceType = race.toString();
+        String charClassType = charClass.toString();
+
+        if(charClassType.equalsIgnoreCase("barbarian")){
+            setArmorClass(10 + conScore + dexScore);
+        }else if(charClassType.equalsIgnoreCase("bard")){
+            setArmorClass(10 + dexScore);
+        }else if(charClassType.equalsIgnoreCase("cleric")){
+            setArmorClass(10 + dexScore);
+        }else if(charClassType.equalsIgnoreCase("druid")){
+            setArmorClass(10 + dexScore);
+        }
+        else if(charClassType.equalsIgnoreCase("fighter")){
+            setArmorClass(10 + dexScore);
+        }else if(charClassType.equalsIgnoreCase("monk")){
+            setArmorClass(10 + dexScore + wisScore);
+        }
     }
 
     public int getTakenDamage(){

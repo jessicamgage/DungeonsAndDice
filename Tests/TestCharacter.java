@@ -71,8 +71,8 @@ class TestCharacter {
         playableCharacter.buyItem(greatsword);
         playableCharacter.addToInventory(greatsword);
 
-        assertTrue(playableCharacter.itemHeld(greatsword)); //passed
-        assertFalse(shopKeeper.itemHeld(greatsword)); //passed
+        assertTrue(playableCharacter.itemHeld(greatsword));
+        assertFalse(shopKeeper.itemHeld(greatsword));
 
         assertEquals(shopKeeper.getGoldHeld(), 60.10);
         assertEquals(playableCharacter.getGoldHeld(), 10.50);
