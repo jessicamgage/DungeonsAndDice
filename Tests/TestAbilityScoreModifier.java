@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestAbilityScoreModifier {
     @Test
     public void verifyModScore(){
-        SetAbilityModifiers mod = new SetAbilityModifiers();
+        AbilityScoreModifier mod = new AbilityScoreModifier();
         mod.setAbilityScoreModifier(15);
 
         assertEquals(mod.getAbilityScoreModifier(), 2);

@@ -1,65 +1,11 @@
-public class SetAbilityModifiers {
-    private int strScore;
-    private int dexScore;
-    private int conScore;
-    private int intScore;
-    private int wisScore;
-    private int chaScore;
+public class AbilityScoreModifier {
     private int abilityScoreModifier;
-
-    public int getStrScore() {
-        return strScore;
-    }
-
-    public void setStrScore(int strScore) {
-        this.strScore = strScore;
-    }
-
-    public int getDexScore() {
-        return dexScore;
-    }
-
-    public void setDexScore(int dexScore) {
-        this.dexScore = dexScore;
-    }
-
-    public int getConScore() {
-        return conScore;
-    }
-
-    public void setConScore(int conScore) {
-        this.conScore = conScore;
-    }
-
-    public int getIntScore() {
-        return intScore;
-    }
-
-    public void setIntScore(int intScore) {
-        this.intScore = intScore;
-    }
-
-    public int getWisScore() {
-        return wisScore;
-    }
-
-    public void setWisScore(int wisScore) {
-        this.wisScore = wisScore;
-    }
-
-    public int getChaScore() {
-        return chaScore;
-    }
-
-    public void setChaScore(int chaScore) {
-        this.chaScore = chaScore;
-    }
 
     public int getAbilityScoreModifier(){
         return abilityScoreModifier;
     }
 
-    public void setAbilityScoreModifier(int score){
+    public int setAbilityScoreModifier(int score){
         int modifier = 0;
 
         switch(score){
@@ -123,5 +69,6 @@ public class SetAbilityModifiers {
         }
 
         this.abilityScoreModifier = modifier;
+        return modifier;
     }
 }

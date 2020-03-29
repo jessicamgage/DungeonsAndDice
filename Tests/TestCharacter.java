@@ -78,6 +78,18 @@ class TestCharacter {
         assertEquals(playableCharacter.getGoldHeld(), 10.50);
     }
 
+    @Test
+    public void verifyCharacterStatGeneration() throws Exception{
+        Character mister = new Character();
+        CharacterClass fighter = new CharacterClass();
+        fighter.Load("fighter");
+        AbilityScoreModifier score = new AbilityScoreModifier();
+
+        mister.setCharacterStats("human", "fighter", score);
+
+        assertEquals(mister.getArmorClass(), (10 + mister.getDexMod()));
+    }
+
     @BeforeEach
     void setUp() throws DiceFormatException {
         this.human = new Race("human", new Dice("3d6+1"), new Dice("3d6+1"),

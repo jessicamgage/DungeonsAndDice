@@ -4,6 +4,7 @@ public class Character {
     private String name;
     private Race race;
     private CharacterClass charClass;
+    private AbilityScoreModifier modifier;
 
     private int strScore;
     private int dexScore;
@@ -11,6 +12,13 @@ public class Character {
     private int intScore;
     private int wisScore;
     private int chaScore;
+
+    private int strMod;
+    private int dexMod;
+    private int conMod;
+    private int intMod;
+    private int wisMod;
+    private int chaMod;
 
     private int armorClass;
     private int hitPoints;
@@ -169,40 +177,20 @@ public class Character {
         return strScore;
     }
 
-    public void setStrScore(int strScore) {
-        this.strScore = strScore;
-    }
-
     public int getDexScore() {
         return dexScore;
-    }
-
-    public void setDexScore(int dexScore) {
-        this.dexScore = dexScore;
     }
 
     public int getConScore() {
         return conScore;
     }
 
-    public void setConScore(int conScore) {
-        this.conScore = conScore;
-    }
-
     public int getIntScore() {
         return intScore;
     }
 
-    public void setIntScore(int intScore) {
-        this.intScore = intScore;
-    }
-
     public int getWisScore() {
         return wisScore;
-    }
-
-    public void setWisScore(int wisScore) {
-        this.wisScore = wisScore;
     }
 
     public int getChaScore() {
@@ -211,6 +199,30 @@ public class Character {
 
     public void setChaScore(int chaScore) {
         this.chaScore = chaScore;
+    }
+
+    public int getStrMod() {
+        return strMod;
+    }
+
+    public int getDexMod() {
+        return dexMod;
+    }
+
+    public int getConMod() {
+        return conMod;
+    }
+
+    public int getIntMod() {
+        return intMod;
+    }
+
+    public int getWisMod() {
+        return wisMod;
+    }
+
+    public int getChaMod() {
+        return chaMod;
     }
 
     public int getArmorClass(){
@@ -229,9 +241,11 @@ public class Character {
         this.hitPoints = hitPoints;
     }
 
-    public void setCharacterStats(Race race, CharacterClass charClass) throws DiceFormatException, RaceNotFoundException {
+    public void setCharacterStats(String raceType, String charClassType, AbilityScoreModifier modifier) throws
+            Exception {
+        Race race = new Race();
         this.race = race;
-        race.Load(race.toString());
+        race.Load(raceType);
 
         this.strScore = race.getStrScore().roll();
         this.dexScore = race.getDexScore().roll();
@@ -240,25 +254,45 @@ public class Character {
         this.wisScore = race.getWisScore().roll();
         this.chaScore = race.getChaScore().roll();
 
-        this.charClass = charClass;
-        charClass.Load(charClass.toString());
+        this.modifier = modifier;
 
-        String raceType = race.toString();
-        String charClassType = charClass.toString();
+        strMod = modifier.setAbilityScoreModifier(strScore);
+        dexMod = modifier.setAbilityScoreModifier(dexScore);
+        conMod = modifier.setAbilityScoreModifier(conScore);
+        intMod = modifier.setAbilityScoreModifier(intScore);
+        wisMod = modifier.setAbilityScoreModifier(wisScore);
+        chaMod = modifier.setAbilityScoreModifier(chaScore);
+
+        CharacterClass charClass = new CharacterClass();
+        this.charClass = charClass;
+        charClass.Load(charClassType);
 
         if(charClassType.equalsIgnoreCase("barbarian")){
-            setArmorClass(10 + conScore + dexScore);
+            setArmorClass(10 + conMod + dexMod);
         }else if(charClassType.equalsIgnoreCase("bard")){
-            setArmorClass(10 + dexScore);
+            setArmorClass(10 + dexMod);
         }else if(charClassType.equalsIgnoreCase("cleric")){
-            setArmorClass(10 + dexScore);
+            setArmorClass(10 + dexMod);
         }else if(charClassType.equalsIgnoreCase("druid")){
-            setArmorClass(10 + dexScore);
-        }
-        else if(charClassType.equalsIgnoreCase("fighter")){
-            setArmorClass(10 + dexScore);
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("fighter")){
+            setArmorClass(10 + dexMod);
         }else if(charClassType.equalsIgnoreCase("monk")){
-            setArmorClass(10 + dexScore + wisScore);
+            setArmorClass(10 + dexMod + wisMod);
+        }else if(charClassType.equalsIgnoreCase("paladin")){
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("ranger")){
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("rogue")){
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("sorcerer")){
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("warlock")){
+            setArmorClass(10 + dexMod);
+        }else if(charClassType.equalsIgnoreCase("wizard")){
+            setArmorClass(10 + dexMod);
+        }else{
+            throw new Exception();
         }
     }
 
