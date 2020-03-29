@@ -102,6 +102,24 @@ public class SetAbilityModifiers {
             case 21:
                 modifier = 5;
                 break;
+            case 22:
+            case 23:
+                modifier = 6;
+                break;
+            case 24:
+            case 25:
+                modifier = 7;
+                break;
+            case 26:
+            case 27:
+                modifier = 8;
+                break;
+            case 28:
+            case 29:
+                modifier = 9;
+                break;
+            case 30:
+                modifier = 10;
         }
 
         this.abilityScoreModifier = modifier;
