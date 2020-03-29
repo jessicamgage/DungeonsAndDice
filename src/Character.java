@@ -22,6 +22,7 @@ public class Character {
 
     private long armorClass;
     private long hitPoints;
+    private long level;
     private long takenDamage;
     private long dealtDamage;
     private long restoredHitPoints;
@@ -229,7 +230,15 @@ public class Character {
         this.armorClass = armorClass;
     }
 
-    public long rollHitPoints(String charClassType) throws Exception{
+    public long getLevel() {
+        return level;
+    }
+
+    public void setLevel(long level) {
+        this.level = level;
+    }
+
+    public long rollHitPoints(String charClassType, int level) throws Exception{
         CharacterClass charClass = new CharacterClass();
         this.charClass = charClass;
         charClass.Load(charClassType);
@@ -238,7 +247,14 @@ public class Character {
 
         String HPDice = ("d" + hitDice.toString());
 
-        this.hitPoints = new Dice(HPDice).roll();
+        do{
+            if(level == 1){
+                this.hitPoints = charClass.getHitDie() + getConMod();
+            }else{
+                this.hitPoints = (new Dice(HPDice).roll()) + getConMod();
+            }
+            level--;
+        }while(level >= 1);
 
         return hitPoints;
     }
@@ -249,9 +265,10 @@ public class Character {
 
     public void setHitPoints(long hitPoints){
         this.hitPoints = hitPoints;
+
     }
 
-    public void setCharacterStats(String raceType, String charClassType) throws Exception {
+    public void setCharacterStats(String raceType, String charClassType, int level) throws Exception {
         Race race = new Race();
         this.race = race;
         race.Load(raceType);
@@ -300,7 +317,7 @@ public class Character {
             throw new Exception();
         }
 
-        setHitPoints(rollHitPoints(charClassType) + getConMod());
+        setHitPoints(rollHitPoints(charClassType, level));
     }
 
     public long getTakenDamage(){

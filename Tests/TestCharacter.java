@@ -84,17 +84,19 @@ class TestCharacter {
         CharacterClass fighter = new CharacterClass();
         fighter.Load("fighter");
 
-        mister.setCharacterStats("human", "fighter");
+        mister.setCharacterStats("human", "fighter", 1);
 
         assertEquals(mister.getArmorClass(), (10 + mister.getDexMod()));
+        assertTrue(mister.getHitPoints() == (10 + mister.getConMod()));
 
         Character millie = new Character();
         CharacterClass monk = new CharacterClass();
         monk.Load("monk");
 
-        millie.setCharacterStats("elf", "monk");
+        millie.setCharacterStats("elf", "monk", 1);
 
         assertEquals(millie.getArmorClass(), (10 + millie.getDexMod() + millie.getWisMod()));
+        assertTrue(millie.getHitPoints() == (8 + millie.getConMod()));
 
     }
 
