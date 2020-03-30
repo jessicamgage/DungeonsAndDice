@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestAdvantageDisadvantage {
     @Test
-    public void verifyAdvantage(){
+    public void verifyAdvantage() throws Exception{
         AdvantageDisadvantage advantage = new AdvantageDisadvantage();
         advantage.rollWithAdvantage();
 
@@ -12,10 +12,10 @@ public class TestAdvantageDisadvantage {
     }
 
     @Test
-    public void verifyDisadvantage(){
+    public void verifyDisadvantage() throws Exception{
         AdvantageDisadvantage disadvantage = new AdvantageDisadvantage();
         disadvantage.rollWithDisadvantage();
-        
+
         assertTrue(disadvantage.getNum1() <= disadvantage.getNum2());
     }
 }
