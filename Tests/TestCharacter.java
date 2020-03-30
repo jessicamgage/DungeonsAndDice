@@ -145,6 +145,12 @@ class TestCharacter {
         assertTrue(morgana.getHitPoints() > (bard.getHitDie() + morgana.getConMod()));
 
         //Ensuring that leveling up increases the amount of HP a character has.
+
+        morgana.levelUp(morgana, bard);
+
+        assertEquals(5, morgana.getLevel());
+        assertTrue(bard.getHitDie() < morgana.getHitPoints()
+                && morgana.getHitPoints() <= (bard.getHitDie()*5) + morgana.getConMod());
     }
 
     @BeforeEach

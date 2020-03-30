@@ -317,11 +317,9 @@ public class Character {
 
     public long rollHitPoints(String charClassType, int level) throws Exception{
         charClass.Load(charClassType);
-
         Integer hitDice = (int)charClass.getHitDie();
 
         String HPDice = ("d" + hitDice.toString());
-
         do{
             if(level == 1){
                 this.hitPoints = hitPoints + charClass.getHitDie() + getConMod();
@@ -392,7 +390,18 @@ public class Character {
             throw new Exception();
         }
 
+        setLevel(level);
+
         setHitPoints(rollHitPoints(charClassType, level));
+    }
+
+    public void levelUp(Character character, CharacterClass charClass) throws Exception{
+        level += 1;
+
+        int newHitPoints = new Dice("d" + charClass.getHitDie()).roll();
+        hitPoints += (newHitPoints + character.getConMod());
+
+        setHitPoints(hitPoints);
     }
 
     public long getTakenDamage(){
@@ -418,7 +427,6 @@ public class Character {
     public void setRestoredHitPoints(int restoredHitPoints){
         this.hitPoints += restoredHitPoints;
     }
-
 
     Character(){}
 
