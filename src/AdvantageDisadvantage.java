@@ -12,23 +12,16 @@ public class AdvantageDisadvantage {
         return num2;
     }
 
-    public int randomNumberGenerator(int bound){
-        Random rand = new Random();
-        int numberCreated = rand.nextInt(bound);
-
-        return numberCreated;
-    }
-
     public int rollWithDisadvantage() throws Exception{
-        int num1 = randomNumberGenerator(new Dice("1d20").roll());
-        int num2 = randomNumberGenerator(new Dice("1d20").roll());
+        int num1 = new Dice("1d20").roll();
+        int num2 = new Dice("1d20").roll();
 
         return Math.min(num1, num2);
     }
 
     public int rollWithAdvantage() throws Exception{
-        int num1 = randomNumberGenerator(new Dice("1d20").roll());
-        int num2 = randomNumberGenerator(new Dice("1d20").roll());
+        int num1 = new Dice("1d20").roll();
+        int num2 = new Dice("1d20").roll();
 
         return Math.max(num1, num2);
     }
