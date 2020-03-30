@@ -122,12 +122,29 @@ class TestCharacter {
         squishyWizard.setDexMod(-2);
         squishyWizard.setConMod(-3);
 
+        //Have to manually adjust the modifiers because while the stats themselves are overridden, the original
+        // modifier is still generated and set within setCharacterStats(). Test is only to ensure that AC and HP
+        //are directly a result of only the character's AC-determining stats and CON + hit die, respectively.
+
         squishyWizard.setArmorClass(10 + squishyWizard.getDexMod());
         squishyWizard.setHitPoints(wizard.getHitDie() + squishyWizard.getConMod());
 
         assertEquals(squishyWizard.getDexScore(), 7);
         assertEquals(squishyWizard.getArmorClass(), 8);
         assertEquals(squishyWizard.getHitPoints(), 3);
+    }
+
+    @Test
+    public void verifyLevelingUp() throws Exception{
+        Character morgana = new Character();
+        CharacterClass bard = new CharacterClass();
+        bard.Load("bard");
+
+        morgana.setCharacterStats("human", "bard", 4);
+
+        assertTrue(morgana.getHitPoints() > (bard.getHitDie() + morgana.getConMod()));
+
+        //Ensuring that leveling up increases the amount of HP a character has.
     }
 
     @BeforeEach

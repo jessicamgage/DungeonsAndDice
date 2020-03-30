@@ -316,8 +316,6 @@ public class Character {
     }
 
     public long rollHitPoints(String charClassType, int level) throws Exception{
-        CharacterClass charClass = new CharacterClass();
-        this.charClass = charClass;
         charClass.Load(charClassType);
 
         Integer hitDice = (int)charClass.getHitDie();
@@ -326,7 +324,7 @@ public class Character {
 
         do{
             if(level == 1){
-                this.hitPoints = charClass.getHitDie() + getConMod();
+                this.hitPoints = hitPoints + charClass.getHitDie() + getConMod();
             }else{
                 this.hitPoints = (new Dice(HPDice).roll()) + getConMod();
             }
