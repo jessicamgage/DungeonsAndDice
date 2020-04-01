@@ -209,6 +209,7 @@ public class Character {
 
     public void setStrScore(int strScore){
         this.strScore = strScore;
+        strMod = modifier.setAbilityScoreModifier(strScore);
     }
 
     public long getDexScore() {
@@ -217,6 +218,7 @@ public class Character {
 
     public void setDexScore(int dexScore){
         this.dexScore = dexScore;
+        dexMod = modifier.setAbilityScoreModifier(dexScore);
     }
 
     public long getConScore() {
@@ -225,6 +227,7 @@ public class Character {
 
     public void setConScore(int conScore){
         this.conScore = conScore;
+        conMod = modifier.setAbilityScoreModifier(conScore);
     }
 
     public long getIntScore() {
@@ -233,6 +236,7 @@ public class Character {
 
     public void setIntScore(int intScore){
         this.intScore = intScore;
+        intMod = modifier.setAbilityScoreModifier(intScore);
     }
 
     public long getWisScore() {
@@ -241,6 +245,7 @@ public class Character {
 
     public void setWisScore(int wisScore){
         this.wisScore = wisScore;
+        wisMod = modifier.setAbilityScoreModifier(wisScore);
     }
 
     public long getChaScore() {
@@ -249,6 +254,7 @@ public class Character {
 
     public void setChaScore(int chaScore){
         this.chaScore = chaScore;
+        chaMod = modifier.setAbilityScoreModifier(chaScore);
     }
 
     public long getStrMod() {

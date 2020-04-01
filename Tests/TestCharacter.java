@@ -119,8 +119,6 @@ class TestCharacter {
 
         squishyWizard.setDexScore(7);
         squishyWizard.setConScore(5);
-        squishyWizard.setDexMod(-2);
-        squishyWizard.setConMod(-3);
 
         //Have to manually adjust the modifiers because while the stats themselves are overridden, the original
         // modifier is still generated and set within setCharacterStats(). Test is only to ensure that AC and HP
@@ -150,7 +148,7 @@ class TestCharacter {
 
         assertEquals(5, morgana.getLevel());
         assertTrue(bard.getHitDie() < morgana.getHitPoints()
-                && morgana.getHitPoints() <= (bard.getHitDie()*5) + morgana.getConMod());
+                && morgana.getHitPoints() <= (bard.getHitDie()*5) + (morgana.getConMod()*5));
     }
 
     @BeforeEach
