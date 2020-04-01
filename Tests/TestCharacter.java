@@ -126,6 +126,21 @@ class TestCharacter {
     }
 
     @Test
+    public void verifyNonGoldMoney() throws Exception{
+        Character copperEarner = new Character();
+        copperEarner.setGoldHeld(10);
+
+        Item arrow = new Item();
+        arrow.Load("ammunition", "arrow");
+        arrow.setItemDirectory("ammunition");
+
+        copperEarner.addToInventory(arrow, copperEarner);
+        copperEarner.sellItemAsMerchant(arrow, copperEarner);
+
+        assertEquals(copperEarner.getGoldHeld(), 10.05);
+    }
+
+    @Test
     public void verifyCharacterStatGeneration() throws Exception{
         Character mister = new Character();
         CharacterClass fighter = new CharacterClass();
@@ -134,7 +149,7 @@ class TestCharacter {
         mister.setCharacterStats("human", "fighter", 1);
 
         assertEquals(mister.getArmorClass(), (10 + mister.getDexMod()));
-        assertTrue(mister.getHitPoints() == (10 + mister.getConMod()));
+        assertEquals(mister.getHitPoints(), (10 + mister.getConMod()));
 
         Character millie = new Character();
         CharacterClass monk = new CharacterClass();
@@ -143,7 +158,7 @@ class TestCharacter {
         millie.setCharacterStats("elf", "monk", 1);
 
         assertEquals(millie.getArmorClass(), (10 + millie.getDexMod() + millie.getWisMod()));
-        assertTrue(millie.getHitPoints() == (8 + millie.getConMod()));
+        assertEquals(millie.getHitPoints(), (8 + millie.getConMod()));
 
         Character squishyWizard = new Character();
         CharacterClass wizard = new CharacterClass();
@@ -153,10 +168,6 @@ class TestCharacter {
 
         squishyWizard.setDexScore(7);
         squishyWizard.setConScore(5);
-
-        //Have to manually adjust the modifiers because while the stats themselves are overridden, the original
-        // modifier is still generated and set within setCharacterStats(). Test is only to ensure that AC and HP
-        //are directly a result of only the character's AC-determining stats and CON + hit die, respectively.
 
         squishyWizard.setArmorClass(10 + squishyWizard.getDexMod());
         squishyWizard.setHitPoints(wizard.getHitDie() + squishyWizard.getConMod());

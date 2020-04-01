@@ -428,7 +428,6 @@ public class Character {
         }
 
         setLevel(level);
-
         setHitPoints(rollHitPoints(charClassType, level));
     }
 
