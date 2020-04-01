@@ -27,11 +27,53 @@ public class Character {
     private long dealtDamage;
     private long restoredHitPoints;
 
-    private int deathSavesPassed;
-    private int deathSavesFailed;
-
     private ArrayList<Item> inventory = new ArrayList<>();
     private double goldHeld;
+
+    private int deathSavesPassed;
+    private int deathSavesFailed;
+    private Boolean characterConscious = true;
+    private Boolean characterAlive = true;
+
+    public Boolean isCharacterConscious() {
+        return characterConscious;
+    }
+
+    public void setCharacterConscious(Boolean characterConscious) {
+        this.characterConscious = characterConscious;
+    }
+
+    public Boolean isCharacterAlive() {
+        return characterAlive;
+    }
+
+    public void setCharacterAlive(Boolean characterAlive) {
+        this.characterAlive = characterAlive;
+    }
+
+    public int getDeathSavesPassed() {
+        return deathSavesPassed;
+    }
+
+    public void setDeathSavesPassed(int deathSavesPassed) {
+        this.deathSavesPassed = deathSavesPassed;
+        if(deathSavesPassed >= 3){
+            characterConscious = false;
+            characterAlive = true;
+        }
+    }
+
+    public int getDeathSavesFailed() {
+        return deathSavesFailed;
+    }
+
+    public void setDeathSavesFailed(int deathSavesFailed) {
+        this.deathSavesFailed = deathSavesFailed;
+        if(deathSavesFailed >= 3){
+            characterConscious = false;
+            characterAlive = false;
+        }
+    }
 
     public double getGoldHeld() {
         return goldHeld;
@@ -111,7 +153,6 @@ public class Character {
 
         //This method is built separately from the spendMoneyOnItem method in case a character wants to use money
         //for something outside of shopping, such as renting a room at a tavern or paying off a bounty.
-        
 
         if(goldHeld > gold){
             character.setGoldHeld(goldHeld -= gold);
@@ -184,22 +225,6 @@ public class Character {
 
     public boolean itemHeld(Item item){
         return inventory.contains(item);
-    }
-
-    public int getDeathSavesPassed() {
-        return deathSavesPassed;
-    }
-
-    public void setDeathSavesPassed(int deathSavesPassed) {
-        this.deathSavesPassed = deathSavesPassed;
-    }
-
-    public int getDeathSavesFailed() {
-        return deathSavesFailed;
-    }
-
-    public void setDeathSavesFailed(int deathSavesFailed) {
-        this.deathSavesFailed = deathSavesFailed;
     }
 
     public String getName() {
@@ -460,21 +485,31 @@ public class Character {
         this.chaScore = this.race.getChaScore().roll();
     }
 
-    public void deathSavingThrows() throws DiceFormatException{
+    public void deathSavingThrows(Character character) throws DiceFormatException{
         Dice saveThrow = new Dice("1d20");
         int saveValue = saveThrow.roll();
 
-        do{
+        while(deathSavesPassed < 3 && deathSavesFailed < 3){
+
             if(saveValue == 20){
-                this.deathSavesPassed += 2;
+                character.setDeathSavesPassed(deathSavesPassed += 2);
             }else if(saveValue >= 10){
-                this.deathSavesPassed += 1;
+                character.setDeathSavesPassed(deathSavesPassed += 1);
             }else if(saveValue == 1){
-                this.deathSavesFailed += 2;
+                character.setDeathSavesFailed(deathSavesFailed += 2);
             }else{
-                this.deathSavesFailed += 1;
+                character.setDeathSavesFailed(deathSavesFailed += 1);
             }
-        }while(deathSavesFailed <= 3 ^ deathSavesPassed <= 3);
+
+            if(character.deathSavesPassed >= 3){
+                character.setCharacterConscious(false);
+                character.setCharacterAlive(true);
+            }else{
+                character.setCharacterConscious(false);
+                character.setCharacterAlive(false);
+            }
+
+        };
     }
 
     public void walk(int walkFeet){}

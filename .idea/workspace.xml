@@ -62,22 +62,22 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestCharacter.verifyUsingGoldOutsideShopping">
-    <configuration name="TestAdvantageDisadvantage.verifyDisadvantage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestAdvantageDisadvantage" />
-      <option name="METHOD_NAME" value="verifyDisadvantage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCharacter.verifyDeathSaves">
     <configuration name="TestCharacter.verifyCharacterStatGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCharacter" />
       <option name="METHOD_NAME" value="verifyCharacterStatGeneration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCharacter.verifyDeathSaves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
+      <option name="METHOD_NAME" value="verifyDeathSaves" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,17 +128,17 @@
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.TestCharacter.verifyCharacterStatGeneration" />
       <item itemvalue="JUnit.TestCharacter.verifyLevelingUp" />
-      <item itemvalue="JUnit.TestAdvantageDisadvantage.verifyDisadvantage" />
       <item itemvalue="JUnit.TestCharacter.verifyUsingGoldOutisdeShopping" />
       <item itemvalue="JUnit.TestCharacter.verifyUsingGoldOutsideShopping" />
+      <item itemvalue="JUnit.TestCharacter.verifyDeathSaves" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCharacter.verifyDeathSaves" />
         <item itemvalue="JUnit.TestCharacter.verifyUsingGoldOutsideShopping" />
         <item itemvalue="JUnit.TestCharacter.verifyUsingGoldOutisdeShopping" />
         <item itemvalue="JUnit.TestCharacter.verifyCharacterStatGeneration" />
         <item itemvalue="JUnit.TestCharacter.verifyLevelingUp" />
-        <item itemvalue="JUnit.TestAdvantageDisadvantage.verifyDisadvantage" />
       </list>
     </recent_temporary>
   </component>
@@ -192,11 +192,11 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1585015129350" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1585602157150">
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1585776379853">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1585602157150" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1585776379853" />
     <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585017150553">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -222,29 +222,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585776219337">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1585780122762">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585776219337" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585776219337">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1585780122762" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1585780122761">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585776219337" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585776219336">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1585780122761" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1585780122761">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585776219336" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585776219337">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1585780122761" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1585780122762">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585776219337" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1585780122762" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1584395564251">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -281,6 +281,10 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="114" y="60" key="new project wizard/0.23.1440.829@0.23.1440.829" timestamp="1584306532605" />
+    <state x="427" y="60" key="refactoring.ChangeSignatureDialog" timestamp="1585776961697">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="427" y="60" key="refactoring.ChangeSignatureDialog/0.23.1440.829@0.23.1440.829" timestamp="1585776961697" />
     <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1584914875045">
       <screen x="0" y="23" width="1440" height="829" />
     </state>

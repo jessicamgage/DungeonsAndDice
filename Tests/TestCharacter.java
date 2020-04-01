@@ -25,11 +25,30 @@ class TestCharacter {
     @Test
     public void verifyDeathSaves() throws DiceFormatException {
         Character bob = new Character();
-        bob.deathSavingThrows();
+        bob.deathSavingThrows(bob);
 
         assertTrue(bob.getDeathSavesFailed() <= 3 || bob.getDeathSavesPassed() <= 3);
         assertTrue(bob.getDeathSavesFailed() < 4);
         assertTrue(bob.getDeathSavesPassed() < 4);
+
+        Character ragingBarbarian = new Character();
+        ragingBarbarian.deathSavingThrows(ragingBarbarian);
+
+        ragingBarbarian.setDeathSavesPassed(3);
+        ragingBarbarian.setDeathSavesFailed(1);
+
+        assertEquals(ragingBarbarian.isCharacterAlive(), true);
+        assertEquals(ragingBarbarian.isCharacterConscious(), false);
+
+        Character murderhobo = new Character();
+
+        murderhobo.deathSavingThrows(murderhobo);
+
+        murderhobo.setDeathSavesFailed(3);
+        murderhobo.setDeathSavesPassed(1);
+
+        assertFalse(murderhobo.isCharacterConscious());
+        assertFalse(murderhobo.isCharacterAlive());
     }
 
     @Test
