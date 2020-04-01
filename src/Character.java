@@ -23,57 +23,14 @@ public class Character {
     private long armorClass;
     private long hitPoints;
     private long level;
-    private long takenDamage;
-    private long dealtDamage;
-    private long restoredHitPoints;
-
-    private ArrayList<Item> inventory = new ArrayList<>();
-    private double goldHeld;
 
     private int deathSavesPassed;
     private int deathSavesFailed;
     private Boolean characterConscious = true;
     private Boolean characterAlive = true;
 
-    public Boolean isCharacterConscious() {
-        return characterConscious;
-    }
-
-    public void setCharacterConscious(Boolean characterConscious) {
-        this.characterConscious = characterConscious;
-    }
-
-    public Boolean isCharacterAlive() {
-        return characterAlive;
-    }
-
-    public void setCharacterAlive(Boolean characterAlive) {
-        this.characterAlive = characterAlive;
-    }
-
-    public int getDeathSavesPassed() {
-        return deathSavesPassed;
-    }
-
-    public void setDeathSavesPassed(int deathSavesPassed) {
-        this.deathSavesPassed = deathSavesPassed;
-        if(deathSavesPassed >= 3){
-            characterConscious = false;
-            characterAlive = true;
-        }
-    }
-
-    public int getDeathSavesFailed() {
-        return deathSavesFailed;
-    }
-
-    public void setDeathSavesFailed(int deathSavesFailed) {
-        this.deathSavesFailed = deathSavesFailed;
-        if(deathSavesFailed >= 3){
-            characterConscious = null;
-            characterAlive = false;
-        }
-    }
+    private ArrayList<Item> inventory = new ArrayList<>();
+    private double goldHeld;
 
     public double getGoldHeld() {
         return goldHeld;
@@ -203,9 +160,7 @@ public class Character {
 
     public void sellItem(Item item, Character character){
         try{
-            Item itemType = new Item();
             removeFromInventory(item, character);
-
             earnMoneyForItem(item, character);
 
         }catch(Exception e){
@@ -449,30 +404,6 @@ public class Character {
 
     }
 
-    public long getTakenDamage(){
-        return takenDamage;
-    }
-
-    public void setTakenDamage(int takenDamage){
-        this.hitPoints -= takenDamage;
-    }
-
-    public long getDealtDamage(){
-        return dealtDamage;
-    }
-
-    public void setDealtDamage(int dealtDamage){
-        this.hitPoints -= dealtDamage;
-    }
-
-    public long getRestoredHitPoints(){
-        return restoredHitPoints;
-    }
-
-    public void setRestoredHitPoints(int restoredHitPoints){
-        this.hitPoints += restoredHitPoints;
-    }
-
     Character(){}
 
     public void rollStats(){
@@ -491,26 +422,64 @@ public class Character {
         while(deathSavesPassed < 3 && deathSavesFailed < 3){
 
             if(saveValue == 20){
-                character.setDeathSavesPassed(deathSavesPassed += 2);
+                setDeathSavesPassed(deathSavesPassed += 2);
             }else if(saveValue >= 10){
-                character.setDeathSavesPassed(deathSavesPassed += 1);
+                setDeathSavesPassed(deathSavesPassed += 1);
             }else if(saveValue == 1){
-                character.setDeathSavesFailed(deathSavesFailed += 2);
+                setDeathSavesFailed(deathSavesFailed += 2);
             }else{
-                character.setDeathSavesFailed(deathSavesFailed += 1);
+                setDeathSavesFailed(deathSavesFailed += 1);
             }
 
-            if(character.deathSavesPassed >= 3){
-                character.setCharacterConscious(false);
-                character.setCharacterAlive(true);
+            if(deathSavesPassed >= 3){
+                setCharacterConscious(false);
+                setCharacterAlive(true);
             }else{
-                character.setCharacterConscious(null);
-                character.setCharacterAlive(false);
+                setCharacterConscious(null);
+                setCharacterAlive(false);
             }
 
         };
     }
 
-    public void walk(int walkFeet){}
-    public void dash(){}
+    public Boolean isCharacterConscious() {
+        return characterConscious;
+    }
+
+    public void setCharacterConscious(Boolean characterConscious) {
+        this.characterConscious = characterConscious;
+    }
+
+    public Boolean isCharacterAlive() {
+        return characterAlive;
+    }
+
+    public void setCharacterAlive(Boolean characterAlive) {
+        this.characterAlive = characterAlive;
+    }
+
+    public int getDeathSavesPassed() {
+        return deathSavesPassed;
+    }
+
+    public void setDeathSavesPassed(int deathSavesPassed) {
+        this.deathSavesPassed = deathSavesPassed;
+        if(deathSavesPassed >= 3){
+            characterConscious = false;
+            characterAlive = true;
+        }
+    }
+
+    public int getDeathSavesFailed() {
+        return deathSavesFailed;
+    }
+
+    public void setDeathSavesFailed(int deathSavesFailed) {
+        this.deathSavesFailed = deathSavesFailed;
+        if(deathSavesFailed >= 3){
+            characterConscious = null;
+            characterAlive = false;
+        }
+    }
+
 }

@@ -132,7 +132,7 @@ class TestCharacter {
 
         Item arrow = new Item();
         arrow.Load("ammunition", "arrow");
-        arrow.setItemDirectory("ammunition");
+        arrow.setItemDirectory("Ammunition");
 
         copperEarner.addToInventory(arrow, copperEarner);
         copperEarner.sellItemAsMerchant(arrow, copperEarner);
