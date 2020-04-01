@@ -92,6 +92,21 @@ class TestCharacter {
     }
 
     @Test
+    public void verifyUsingGoldOutsideShopping() throws Exception{
+        Character rogue = new Character();
+        rogue.setGoldHeld(50);
+
+        assertThrows(NotEnoughMoneyException.class, () -> rogue.spendMoney(rogue, 60));
+
+        Character paladin = new Character();
+        paladin.setGoldHeld(70);
+
+        paladin.spendMoney(paladin, 50);
+        assertEquals(20, paladin.getGoldHeld());
+
+    }
+
+    @Test
     public void verifyCharacterStatGeneration() throws Exception{
         Character mister = new Character();
         CharacterClass fighter = new CharacterClass();

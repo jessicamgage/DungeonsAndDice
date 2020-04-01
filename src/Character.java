@@ -107,6 +107,21 @@ public class Character {
         return goldHeld;
     }
 
+    public double spendMoney(Character character, double gold) throws Exception {
+
+        //This method is built separately from the spendMoneyOnItem method in case a character wants to use money
+        //for something outside of shopping, such as renting a room at a tavern or paying off a bounty.
+        
+
+        if(goldHeld > gold){
+            character.setGoldHeld(goldHeld -= gold);
+        }else{
+            throw new NotEnoughMoneyException("Sorry, you don't have enough gold for that.");
+        }
+
+        return goldHeld;
+    }
+
     public ArrayList getInventory() {
         return this.inventory;
     }
@@ -338,15 +353,6 @@ public class Character {
         return hitPoints;
     }
 
-    public long getHitPoints() {
-        return hitPoints;
-    }
-
-    public void setHitPoints(long hitPoints){
-        this.hitPoints = hitPoints;
-
-    }
-
     public void setCharacterStats(String raceType, String charClassType, int level) throws Exception {
         Race race = new Race();
         this.race = race;
@@ -410,6 +416,15 @@ public class Character {
         setHitPoints(hitPoints);
     }
 
+    public long getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(long hitPoints){
+        this.hitPoints = hitPoints;
+
+    }
+
     public long getTakenDamage(){
         return takenDamage;
     }
@@ -422,7 +437,7 @@ public class Character {
         return dealtDamage;
     }
 
-    public void setDealtDamage(){
+    public void setDealtDamage(int dealtDamage){
         this.hitPoints -= dealtDamage;
     }
 
