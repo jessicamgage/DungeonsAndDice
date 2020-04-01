@@ -70,7 +70,7 @@ public class Character {
     public void setDeathSavesFailed(int deathSavesFailed) {
         this.deathSavesFailed = deathSavesFailed;
         if(deathSavesFailed >= 3){
-            characterConscious = false;
+            characterConscious = null;
             characterAlive = false;
         }
     }
@@ -505,7 +505,7 @@ public class Character {
                 character.setCharacterConscious(false);
                 character.setCharacterAlive(true);
             }else{
-                character.setCharacterConscious(false);
+                character.setCharacterConscious(null);
                 character.setCharacterAlive(false);
             }
 

@@ -47,7 +47,7 @@ class TestCharacter {
         murderhobo.setDeathSavesFailed(3);
         murderhobo.setDeathSavesPassed(1);
 
-        assertFalse(murderhobo.isCharacterConscious());
+        assertNull(murderhobo.isCharacterConscious());
         assertFalse(murderhobo.isCharacterAlive());
     }
 
