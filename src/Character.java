@@ -1,3 +1,7 @@
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Character {
@@ -5,6 +9,7 @@ public class Character {
     private Race race;
     private CharacterClass charClass;
     private AbilityScoreModifier modifier;
+    private Item heldItem;
 
     private int strScore;
     private int dexScore;
@@ -24,13 +29,13 @@ public class Character {
     private long hitPoints;
     private long level;
 
+    private ArrayList<Item> inventory = new ArrayList<>();
+    private double goldHeld;
+
     private int deathSavesPassed;
     private int deathSavesFailed;
     private Boolean characterConscious = true;
     private Boolean characterAlive = true;
-
-    private ArrayList<Item> inventory = new ArrayList<>();
-    private double goldHeld;
 
     public double getGoldHeld() {
         return goldHeld;
@@ -180,6 +185,34 @@ public class Character {
 
     public boolean itemHeld(Item item){
         return inventory.contains(item);
+    }
+
+    public Item getHeldItem(){
+        return heldItem;
+    }
+
+    public void setHeldItem(Item heldItem){
+        this.heldItem = heldItem;
+    }
+
+    public long useHeldWeapon(Item heldItem) throws Exception{
+        String itemType = heldItem.getItemType();
+        String itemDirectory = heldItem.getItemDirectory();
+        heldItem.Load(itemDirectory, itemType);
+
+        long dealtDamage = 0;
+
+        try{
+            Weapon heldWeapon = new Weapon();
+            heldWeapon.Load(itemType);
+
+            dealtDamage = heldWeapon.getDamageRange().roll();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return dealtDamage;
     }
 
     public String getName() {
@@ -422,21 +455,21 @@ public class Character {
         while(deathSavesPassed < 3 && deathSavesFailed < 3){
 
             if(saveValue == 20){
-                setDeathSavesPassed(deathSavesPassed += 2);
+                character.setDeathSavesPassed(deathSavesPassed += 2);
             }else if(saveValue >= 10){
-                setDeathSavesPassed(deathSavesPassed += 1);
+                character.setDeathSavesPassed(deathSavesPassed += 1);
             }else if(saveValue == 1){
-                setDeathSavesFailed(deathSavesFailed += 2);
+                character.setDeathSavesFailed(deathSavesFailed += 2);
             }else{
-                setDeathSavesFailed(deathSavesFailed += 1);
+                character.setDeathSavesFailed(deathSavesFailed += 1);
             }
 
-            if(deathSavesPassed >= 3){
-                setCharacterConscious(false);
-                setCharacterAlive(true);
+            if(character.deathSavesPassed >= 3){
+                character.setCharacterConscious(false);
+                character.setCharacterAlive(true);
             }else{
-                setCharacterConscious(null);
-                setCharacterAlive(false);
+                character.setCharacterConscious(null);
+                character.setCharacterAlive(false);
             }
 
         };

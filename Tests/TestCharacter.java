@@ -141,6 +141,18 @@ class TestCharacter {
     }
 
     @Test
+    public void verifyItemUsage() throws Exception{
+        Character itemHolder = new Character();
+        Item javelin = new Weapon();
+        javelin.setItemDirectory("weapons");
+        javelin.Load("weapons", "javelin");
+        itemHolder.setHeldItem(javelin);
+
+        assertEquals(itemHolder.getHeldItem(), javelin);
+        assertTrue(itemHolder.useHeldWeapon(javelin) > 0);
+    }
+
+    @Test
     public void verifyCharacterStatGeneration() throws Exception{
         Character mister = new Character();
         CharacterClass fighter = new CharacterClass();

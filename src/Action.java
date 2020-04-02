@@ -7,12 +7,22 @@ public class Action {
     private long dealtDamage;
     private long restoredHitPoints;
 
-//    public String attack(Character attackee) throws Exception{
-//        long attackRoll = new Dice("1d20").roll();
-//        if(attackRoll >= attackee.getArmorClass()){
-//            dealtDamage =
-//        }
-//    }
+    public String attack(Character attacker, Weapon weapon, Character attackee) throws Exception{
+        String actionString = "";
+
+        if(attacker.itemHeld(weapon)){
+            long attackRoll = new Dice("1d20").roll();
+
+            if(attackRoll >= attackee.getArmorClass()){
+                setDealtDamage(attackee, attacker.useHeldWeapon(weapon));
+            }else{
+                actionString = "The attack missed!";
+            }
+        }else{
+            actionString = "That weapon is not currently being held...";
+        }
+        return actionString;
+    }
 
     public long getTakenDamage(){
         return takenDamage;
@@ -24,7 +34,7 @@ public class Action {
         character.setHitPoints(newHP);
     }
 
-    public long getDealtDamage(){
+    public long getDealtDamage(Character attacker){
         return dealtDamage;
     }
 
@@ -45,7 +55,23 @@ public class Action {
     }
 
 
-    public void walk(int walkFeet){}
-    public void dash(){}
+    public void walk(int walkFeet){
+        move(walkFeet);
+    }
+
+    public void dash(){
+        long dashFeet = race.getWalkSpeed()*2;
+        move(dashFeet);
+    }
+
+    public void move(long feet){
+
+    }
+
+    public void dodge(){}
+    public void help(){}
+    public void makeSkillCheck(){}
+    public void die(){}
+    public void talk(){}
 
 }
