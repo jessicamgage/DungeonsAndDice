@@ -182,8 +182,15 @@ public class Character {
     }
 
     public void speak(Character character){} //make as a method called within all methods that require speech (?)
-    public void speakNonCommon(Character character){
+
+    public void speakNonCommon(Character character, String language){
         Race charRace = character.getRace();
+
+        if(charRace.isDefaultLanguage(language)){
+            speak(character);
+        }else{
+            System.out.println("This character does not speak that language.");
+        }
     }
 
     public double earnMoneyForItem(Item item, Character character){

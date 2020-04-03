@@ -5,7 +5,6 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Race {
     private String name;
@@ -92,6 +91,14 @@ public class Race {
         languageKnownByDefault = defaultLanguages.contains(language);
 
         return languageKnownByDefault;
+    }
+
+    public ArrayList getDefaultLanguages(ArrayList defaultLanguages){
+        return defaultLanguages;
+    }
+
+    public void setDefaultLanguages(){
+        this.defaultLanguages = defaultLanguages;
     }
 
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
