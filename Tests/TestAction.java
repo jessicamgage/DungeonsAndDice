@@ -51,8 +51,9 @@ public class TestAction {
         assertThrows(Exception.class, () -> stroll.walk(bobButAGnome, 30));
         assertEquals(dash.dash(bobButAGnome, 40), 40);
         assertEquals(stroll.walk(bobButAGnome, 5), 5);
+        assertEquals(bobButAGnome.move(100), 100);
 
-        assertThrows(Exception.class, () -> dash.dash(smedbacButHuman, 65));
+        assertThrows(Exception.class, () -> dash.dash(smedbacButHuman, 61));
         assertThrows(Exception.class, () -> stroll.walk(smedbacButHuman, 35));
         assertEquals(dash.dash(smedbacButHuman, 60), 60);
         assertEquals(stroll.walk(smedbacButHuman, 30), 30);
