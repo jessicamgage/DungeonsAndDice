@@ -34,17 +34,28 @@ public class TestAction {
     public void verifyWalkAndDash() throws Exception{
         Race gnome = new Race();
         Character bobButAGnome = new Character();
+
+        Race human = new Race();
+        Character smedbacButHuman = new Character();
+
         Action dash = new Action();
         Action stroll = new Action();
 
         bobButAGnome.setRace(gnome);
         gnome.Load("gnome");
 
+        smedbacButHuman.setRace(human);
+        human.Load("human");
+
         assertThrows(Exception.class, () -> dash.dash(bobButAGnome, 60));
         assertThrows(Exception.class, () -> stroll.walk(bobButAGnome, 30));
         assertEquals(dash.dash(bobButAGnome, 40), 40);
         assertEquals(stroll.walk(bobButAGnome, 5), 5);
 
-        //throwing exception, but not because of the distance being outside a gnome's running distance.
+        assertThrows(Exception.class, () -> dash.dash(smedbacButHuman, 65));
+        assertThrows(Exception.class, () -> stroll.walk(smedbacButHuman, 35));
+        assertEquals(dash.dash(smedbacButHuman, 60), 60);
+        assertEquals(stroll.walk(smedbacButHuman, 30), 30);
+
     }
 }

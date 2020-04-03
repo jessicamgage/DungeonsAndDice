@@ -60,7 +60,7 @@ public class Action extends Character{
     public long walk(Character character, int distanceWanted) throws Exception{
         this.race = character.getRace();
 
-        if(distanceWanted < (race.getWalkSpeed())){
+        if(distanceWanted < (race.getWalkSpeed() + 1)){
             character.move(distanceWanted);
         }else{
             throw new Exception("You cannot move that far with the walk action in one round. You can move up to " +
@@ -73,7 +73,7 @@ public class Action extends Character{
     public long dash(Character character, int distanceWanted) throws Exception{
         this.race = character.getRace();
 
-        if(distanceWanted < (race.getWalkSpeed()*2)){
+        if(distanceWanted < ((race.getWalkSpeed()*2)) + 1){
             character.move(distanceWanted);
         }else{
             throw new Exception("You cannot move that far with the dash action in one round. You can move up to " +
