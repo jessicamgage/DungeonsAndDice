@@ -215,6 +215,10 @@ public class Character {
         return dealtDamage;
     }
 
+    public void useHeldItem(Item heldItem){
+
+    }
+
     public String getName() {
         return name;
     }
@@ -446,6 +450,10 @@ public class Character {
         this.intScore = this.race.getIntScore().roll();
         this.wisScore = this.race.getWisScore().roll();
         this.chaScore = this.race.getChaScore().roll();
+    }
+
+    public long move(long feet){
+        return feet;
     }
 
     public void deathSavingThrows(Character character) throws DiceFormatException{

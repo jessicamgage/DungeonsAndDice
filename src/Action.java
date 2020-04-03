@@ -1,7 +1,9 @@
-public class Action {
+public class Action extends Character{
     private Race race;
     private CharacterClass characterClass;
     private Character character;
+    private Item item;
+    private Weapon weapon;
 
     private long takenDamage;
     private long dealtDamage;
@@ -55,20 +57,36 @@ public class Action {
     }
 
 
-    public void walk(int walkFeet){
-        move(walkFeet);
+    public long walk(Character character, int distanceWanted) throws Exception{
+        this.race = character.getRace();
+
+        if(distanceWanted < (race.getWalkSpeed())){
+            character.move(distanceWanted);
+        }else{
+            throw new Exception("You cannot move that far with the walk action in one round. You can move up to " +
+                    race.getWalkSpeed() + " feet.");
+        }
+
+        return (distanceWanted);
     }
 
-    public void dash(){
-        long dashFeet = race.getWalkSpeed()*2;
-        move(dashFeet);
+    public long dash(Character character, int distanceWanted) throws Exception{
+        this.race = character.getRace();
+
+        if(distanceWanted < (race.getWalkSpeed()*2)){
+            character.move(distanceWanted);
+        }else{
+            throw new Exception("You cannot move that far with the dash action in one round. You can move up to " +
+                    race.getWalkSpeed()*2 + " feet.");
+        }
+
+        return distanceWanted;
     }
 
-    public void move(long feet){
-
+    public void dodge(Character dodger, Character attacker){
+        //make so next attack is made with disadvantage, and DEX saves are made with advantage
     }
 
-    public void dodge(){}
     public void help(){}
     public void makeSkillCheck(){}
     public void die(){}
