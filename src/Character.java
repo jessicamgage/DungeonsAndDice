@@ -32,10 +32,146 @@ public class Character {
     private ArrayList<Item> inventory = new ArrayList<>();
     private double goldHeld;
 
+    private ArrayList<String> languagesKnown = new ArrayList<>();
+
     private int deathSavesPassed;
     private int deathSavesFailed;
     private Boolean characterConscious = true;
     private Boolean characterAlive = true;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Race getRace() {
+        return race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
+
+    public int getStrScore() {
+        return strScore;
+    }
+
+    public void setStrScore(int strScore){
+        this.strScore = strScore;
+        strMod = modifier.setAbilityScoreModifier(strScore);
+    }
+
+    public long getDexScore() {
+        return dexScore;
+    }
+
+    public void setDexScore(int dexScore){
+        this.dexScore = dexScore;
+        dexMod = modifier.setAbilityScoreModifier(dexScore);
+    }
+
+    public long getConScore() {
+        return conScore;
+    }
+
+    public void setConScore(int conScore){
+        this.conScore = conScore;
+        conMod = modifier.setAbilityScoreModifier(conScore);
+    }
+
+    public long getIntScore() {
+        return intScore;
+    }
+
+    public void setIntScore(int intScore){
+        this.intScore = intScore;
+        intMod = modifier.setAbilityScoreModifier(intScore);
+    }
+
+    public long getWisScore() {
+        return wisScore;
+    }
+
+    public void setWisScore(int wisScore){
+        this.wisScore = wisScore;
+        wisMod = modifier.setAbilityScoreModifier(wisScore);
+    }
+
+    public long getChaScore() {
+        return chaScore;
+    }
+
+    public void setChaScore(int chaScore){
+        this.chaScore = chaScore;
+        chaMod = modifier.setAbilityScoreModifier(chaScore);
+    }
+
+    public long getStrMod() {
+        return strMod;
+    }
+
+    public void setStrMod(int strMod){
+        this.strMod = strMod;
+    }
+
+    public long getDexMod() {
+        return dexMod;
+    }
+
+    public void setDexMod(int dexMod){
+        this.dexMod = dexMod;
+    }
+
+    public long getConMod() {
+        return conMod;
+    }
+
+    public void setConMod(int conMod){
+        this.conMod = conMod;
+    }
+
+    public long getIntMod() {
+        return intMod;
+    }
+
+    public void setIntMod(int intMod){
+        this.intMod = intMod;
+    }
+
+    public long getWisMod() {
+        return wisMod;
+    }
+
+    public void setWisMod(int wisMod){
+        this.wisMod = wisMod;
+    }
+
+    public long getChaMod() {
+        return chaMod;
+    }
+
+    public void setChaMod(int chaMod){
+        this.chaMod = chaMod;
+    }
+
+    public long getArmorClass(){
+        return armorClass;
+    }
+
+    public void setArmorClass(long armorClass) {
+        this.armorClass = armorClass;
+    }
+
+    public long getLevel() {
+        return level;
+    }
+
+    public void setLevel(long level) {
+        this.level = level;
+    }
 
     public double getGoldHeld() {
         return goldHeld;
@@ -43,6 +179,11 @@ public class Character {
 
     public void setGoldHeld(double goldHeld) {
         this.goldHeld = goldHeld;
+    }
+
+    public void speak(Character character){} //make as a method called within all methods that require speech (?)
+    public void speakNonCommon(Character character){
+        Race charRace = character.getRace();
     }
 
     public double earnMoneyForItem(Item item, Character character){
@@ -219,140 +360,6 @@ public class Character {
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Race getRace() {
-        return race;
-    }
-
-    public void setRace(Race race) {
-        this.race = race;
-    }
-
-    public int getStrScore() {
-        return strScore;
-    }
-
-    public void setStrScore(int strScore){
-        this.strScore = strScore;
-        strMod = modifier.setAbilityScoreModifier(strScore);
-    }
-
-    public long getDexScore() {
-        return dexScore;
-    }
-
-    public void setDexScore(int dexScore){
-        this.dexScore = dexScore;
-        dexMod = modifier.setAbilityScoreModifier(dexScore);
-    }
-
-    public long getConScore() {
-        return conScore;
-    }
-
-    public void setConScore(int conScore){
-        this.conScore = conScore;
-        conMod = modifier.setAbilityScoreModifier(conScore);
-    }
-
-    public long getIntScore() {
-        return intScore;
-    }
-
-    public void setIntScore(int intScore){
-        this.intScore = intScore;
-        intMod = modifier.setAbilityScoreModifier(intScore);
-    }
-
-    public long getWisScore() {
-        return wisScore;
-    }
-
-    public void setWisScore(int wisScore){
-        this.wisScore = wisScore;
-        wisMod = modifier.setAbilityScoreModifier(wisScore);
-    }
-
-    public long getChaScore() {
-        return chaScore;
-    }
-
-    public void setChaScore(int chaScore){
-        this.chaScore = chaScore;
-        chaMod = modifier.setAbilityScoreModifier(chaScore);
-    }
-
-    public long getStrMod() {
-        return strMod;
-    }
-
-    public void setStrMod(int strMod){
-        this.strMod = strMod;
-    }
-
-    public long getDexMod() {
-        return dexMod;
-    }
-
-    public void setDexMod(int dexMod){
-        this.dexMod = dexMod;
-    }
-
-    public long getConMod() {
-        return conMod;
-    }
-
-    public void setConMod(int conMod){
-        this.conMod = conMod;
-    }
-
-    public long getIntMod() {
-        return intMod;
-    }
-
-    public void setIntMod(int intMod){
-        this.intMod = intMod;
-    }
-
-    public long getWisMod() {
-        return wisMod;
-    }
-
-    public void setWisMod(int wisMod){
-        this.wisMod = wisMod;
-    }
-
-    public long getChaMod() {
-        return chaMod;
-    }
-
-    public void setChaMod(int chaMod){
-        this.chaMod = chaMod;
-    }
-
-    public long getArmorClass(){
-        return armorClass;
-    }
-
-    public void setArmorClass(long armorClass) {
-        this.armorClass = armorClass;
-    }
-
-    public long getLevel() {
-        return level;
-    }
-
-    public void setLevel(long level) {
-        this.level = level;
-    }
-
     public long rollHitPoints(String charClassType, int level) throws Exception{
         charClass.Load(charClassType);
         Integer hitDice = (int)charClass.getHitDie();
@@ -523,4 +530,11 @@ public class Character {
         }
     }
 
+    public void die(Character character){
+        character.setCharacterAlive(false);
+    }
+
+    public void contractIllness(){}
+    public void help(){}
+    public void makeSkillCheck(){}
 }

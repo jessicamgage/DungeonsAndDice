@@ -86,10 +86,4 @@ public class Action extends Character{
     public void dodge(Character dodger, Character attacker){
         //make so next attack is made with disadvantage, and DEX saves are made with advantage
     }
-
-    public void help(){}
-    public void makeSkillCheck(){}
-    public void die(){}
-    public void talk(){}
-
 }

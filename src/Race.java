@@ -4,6 +4,8 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Race {
     private String name;
@@ -15,6 +17,8 @@ public class Race {
     private Dice chaScore;
 
     private long walkSpeed;
+    private ArrayList<String> defaultLanguages = new ArrayList<>();
+    private boolean languageKnownByDefault;
 
     public long getWalkSpeed() {
         return walkSpeed;
@@ -84,6 +88,12 @@ public class Race {
         this.chaScore = chaScore;
     }
 
+    public boolean isDefaultLanguage(String language){
+        languageKnownByDefault = defaultLanguages.contains(language);
+
+        return languageKnownByDefault;
+    }
+
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
             throws DiceFormatException {
         this.name = name;
@@ -131,6 +141,12 @@ public class Race {
 
             this.name = (String) json.get("name");
             this.walkSpeed = (long) json.get("speed");
+
+            JSONArray languages = (JSONArray) json.get("languages");
+            languages.forEach(language ->{
+                String knownLanguage = (String) ((JSONObject) language).get("name");
+                defaultLanguages.add(knownLanguage);
+            });
 
             JSONArray bonuses = (JSONArray) json.get("ability_bonuses");
             bonuses.forEach(bonus -> {
