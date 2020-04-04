@@ -103,5 +103,19 @@ public class TestRace {
         dwarf.Load("dwarf");
 
         assertTrue(dwarf.isDefaultLanguage("Dwarvish"));
+        assertFalse(dwarf.isDefaultLanguage("Elvish"));
+        assertFalse(dwarf.isLearnableLanguage("Sylvan"));
+
+        assertEquals(dwarf.getHowManyChosenLanguages(), 0);
+
+        Race human = new Race();
+        human.Load("human");
+
+        assertTrue(human.isDefaultLanguage("Common"));
+        assertTrue(human.isLearnableLanguage("Dwarvish"));
+        assertTrue(human.isLearnableLanguage("Elvish"));
+        assertFalse(human.isLearnableLanguage("Gibberish"));
+
+        assertEquals(human.getHowManyChosenLanguages(), 1);
     }
 }

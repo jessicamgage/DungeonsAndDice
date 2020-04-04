@@ -5,6 +5,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Race {
     private String name;
@@ -17,7 +18,10 @@ public class Race {
 
     private long walkSpeed;
     private ArrayList<String> defaultLanguages = new ArrayList<>();
-    private boolean languageKnownByDefault;
+    private ArrayList<String> possibleLanguages = new ArrayList<>();
+    private Boolean languageKnownByDefault;
+    private Boolean learnableLanguage;
+    private long howManyChosenLanguages;
 
     public long getWalkSpeed() {
         return walkSpeed;
@@ -87,7 +91,7 @@ public class Race {
         this.chaScore = chaScore;
     }
 
-    public boolean isDefaultLanguage(String language){
+    public Boolean isDefaultLanguage(String language){
         languageKnownByDefault = defaultLanguages.contains(language);
 
         return languageKnownByDefault;
@@ -99,6 +103,28 @@ public class Race {
 
     public void setDefaultLanguages(){
         this.defaultLanguages = defaultLanguages;
+    }
+
+    public Boolean isLearnableLanguage(String language){
+        learnableLanguage = possibleLanguages.contains(language);
+
+        return learnableLanguage;
+    }
+
+    public ArrayList<String> getPossibleLanguages() {
+        return possibleLanguages;
+    }
+
+    public void setPossibleLanguages(ArrayList<String> possibleLanguages) {
+        this.possibleLanguages = possibleLanguages;
+    }
+
+    public long getHowManyChosenLanguages() {
+        return howManyChosenLanguages;
+    }
+
+    public void setHowManyChosenLanguages(long howManyChosenLanguages) {
+        this.howManyChosenLanguages = howManyChosenLanguages;
     }
 
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
@@ -154,6 +180,28 @@ public class Race {
                 String knownLanguage = (String) ((JSONObject) language).get("name");
                 defaultLanguages.add(knownLanguage);
             });
+
+            try{
+                JSONObject languageOptions = (JSONObject) json.get("language_options");
+
+                long howManyLanguages = (long) languageOptions.get("choose");
+                setHowManyChosenLanguages(howManyLanguages);
+
+                JSONArray chooseFrom = (JSONArray) languageOptions.get("from");
+
+                chooseFrom.forEach(possibleLanguage -> {
+                    String language = (String) ((JSONObject) possibleLanguage).get("name");
+                    possibleLanguages.add(language);
+
+                    Random languageRandomizer = new Random();
+                    int chosenLanguageIndex = languageRandomizer.nextInt(possibleLanguages.size());
+
+                    defaultLanguages.add(possibleLanguages.get(chosenLanguageIndex));
+                });
+
+            }catch (NullPointerException e){
+
+            }
 
             JSONArray bonuses = (JSONArray) json.get("ability_bonuses");
             bonuses.forEach(bonus -> {
