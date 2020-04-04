@@ -117,5 +117,12 @@ public class TestRace {
         assertFalse(human.isLearnableLanguage("Gibberish"));
 
         assertEquals(human.getHowManyChosenLanguages(), 1);
+
+        Race kobold = new Race();
+        kobold.Load("kobold");
+
+        assertTrue(kobold.isDefaultLanguage("Common"));
+        assertTrue(kobold.isDefaultLanguage("Draconic"));
+        assertFalse(kobold.isDefaultLanguage("Elvish"));
     }
 }
