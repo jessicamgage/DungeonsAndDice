@@ -5,22 +5,22 @@ public class TestEnvironment {
     @Test
     public void verifyDarkness(){
         Environment murkyCave = new Environment();
-        murkyCave.setDim(true);
+        murkyCave.setEnvironmentallyDim(true);
 
-        assertTrue(murkyCave.isDim());
-        assertFalse(murkyCave.isDark());
+        assertTrue(murkyCave.isEnvironmentallyDim());
+        assertFalse(murkyCave.isEnvironmentallyDark());
 
         Environment underdark = new Environment();
-        underdark.setDark(true);
+        underdark.setEnvironmentallyDark(true);
 
-        assertFalse(underdark.isDim());
-        assertTrue(underdark.isDark());
+        assertFalse(underdark.isEnvironmentallyDim());
+        assertTrue(underdark.isEnvironmentallyDark());
     }
 
     @Test
     public void verifyDarkvision() throws Exception{
         Environment dimCave = new Environment();
-        dimCave.setDark(true);
+        dimCave.setEnvironmentallyDim(true);
 
         Character tieflingMan = new Character();
         Race tiefling = new Race();
@@ -34,6 +34,8 @@ public class TestEnvironment {
         human.Load("human");
         humanMan.setRace(human);
 
+        assertTrue(dimCave.isEnvironmentallyDim());
+
         dimCave.dimLight(tieflingMan, tiefling);
         assertFalse(dimCave.isDim(tieflingMan));
 
@@ -41,9 +43,10 @@ public class TestEnvironment {
         assertTrue(dimCave.isDim(humanMan));
 
         Environment darkCave = new Environment();
-        darkCave.setDark(true);
+        darkCave.setEnvironmentallyDark(true);
 
-        assertFalse(darkCave.isDim());
+        assertFalse(darkCave.isEnvironmentallyDim());
+        assertTrue(darkCave.isEnvironmentallyDark());
 
         darkCave.darkLight(tieflingMan, tiefling);
         assertTrue(darkCave.isDim(tieflingMan));

@@ -3,63 +3,76 @@ import java.util.Random;
 public class Environment {
     private boolean isDim; //build so that all creatures can see in dim light, but attacks more than 10 feet away w/ DA
     private boolean isDark; //build so that creatures who do not have darkvision need a light to do anything but move (difficult terrain)
+    private boolean isEnvironmentallyDim;
+    private boolean isEnvironmentallyDark;
     private String terrain;
     private boolean isDifficultTerrain;
-
-    public boolean isDim(){
-        return isDim;
-    }
 
     public boolean isDim(Character character) {
         return this.isDim;
     }
 
-    public void setDim(boolean dim) {
-        isDim = dim;
+    public void setDim(Character character, boolean dim) {
+        this.isDim = dim;
     }
 
-    public boolean isDark(){
-        return isDark;
+    public boolean isEnvironmentallyDim() {
+        return isEnvironmentallyDim;
+    }
+
+    public void setEnvironmentallyDim(boolean dim){
+        isEnvironmentallyDim = dim;
     }
 
     public boolean isDark(Character character) {
         return this.isDark;
     }
 
-    public void setDark(boolean dark) {
-        isDark = dark;
+    public void setDark(Character character, boolean dark) {
+        this.isDark = dark;
+    }
+
+    public boolean isEnvironmentallyDark() {
+        return isEnvironmentallyDark;
+    }
+
+    public void setEnvironmentallyDark(boolean dark){
+        isEnvironmentallyDark = dark;
     }
 
     public void dimLight(Character character, Race race){
-        setDim(true);
+        setEnvironmentallyDim(true);
         character.setRace(race);
 
         boolean canSee = race.hasRacialAbility("Darkvision");
 
         if(!canSee){
+            this.setDim(character, true);
             //build so ranged attacks made w/ DA
         }else{
-            this.setDim(false);
+            this.setDim(character, false);
         }
     }
 
     public void darkLight(Character character, Race race){
-        setDim(false);
-        setDark(true);
+        setEnvironmentallyDim(false);
+        setEnvironmentallyDark(true);
         character.setRace(race);
 
         boolean canSee = race.hasRacialAbility("Darkvision");
 
         if(canSee){
-            this.setDark(false);
-            this.setDim(true);
+            setDark(character, false);
+            setDim(character,true);
         }else{
+            this.setDark(character, true);
+            this.setDim(character, false);
             this.setDifficultTerrain(true);
         }
     }
 
-    public void magicalDarkness(){
-        setDark(true);
+    public void magicalDarkness(Character character, boolean dark){
+        setDark(character, true); //construct parameter so warlocks can see with Devil Sight
     }
 
     public String getTerrain(){
@@ -70,7 +83,7 @@ public class Environment {
         this.terrain = terrain;
 
         if(terrain.equalsIgnoreCase("cave")){
-            setDark(true);
+            setEnvironmentallyDark(true);
         }
     }
 
