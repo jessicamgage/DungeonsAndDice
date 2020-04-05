@@ -22,6 +22,7 @@ public class Race {
     private Boolean languageKnownByDefault;
     private Boolean learnableLanguage;
     private long howManyChosenLanguages;
+    private String knownExoticLanguage;
 
     public long getWalkSpeed() {
         return walkSpeed;
@@ -117,6 +118,14 @@ public class Race {
 
     public void setPossibleLanguages(ArrayList<String> possibleLanguages) {
         this.possibleLanguages = possibleLanguages;
+    }
+
+    public String getKnownExoticLanguage(){
+        return knownExoticLanguage;
+    }
+
+    public void setKnownExoticLanguage(String exoticLanguage){
+        this.defaultLanguages.add(exoticLanguage);
     }
 
     public long getHowManyChosenLanguages() {

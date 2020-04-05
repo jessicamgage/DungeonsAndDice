@@ -208,6 +208,21 @@ class TestCharacter {
                 && morgana.getHitPoints() <= (bard.getHitDie()*5) + (morgana.getConMod()*5));
     }
 
+    @Test
+    public void verifySpeakingNonCommon() throws Exception{
+        Character polyglot = new Character();
+        Race human = new Race();
+        polyglot.setRace(human);
+
+        human.Load("human");
+        human.setKnownExoticLanguage("Abyssal");
+
+        assertEquals(polyglot.speak("Hello!"), "Hello!");
+        assertEquals(polyglot.speakNonCommon(polyglot, "Abyssal", "Hello!"), "Hello!");
+
+        assertNotEquals(polyglot.speakNonCommon(polyglot, "French", "Hello!"), "Hello!");
+    }
+
     @BeforeEach
     void setUp() throws DiceFormatException {
         this.human = new Race("human", new Dice("3d6+1"), new Dice("3d6+1"),
