@@ -1,7 +1,10 @@
+import java.util.Random;
+
 public class Environment {
-    private boolean isDim;
-    private boolean isDark;
+    private boolean isDim; //build so that all creatures can see in dim light, but attacks more than 10 feet away w/ DA
+    private boolean isDark; //build so that creatures who do not have darkvision need a light to do anything but move (difficult terrain)
     private String terrain;
+    private boolean isDifficultTerrain;
 
     public boolean isDim() {
         return isDim;
@@ -19,8 +22,33 @@ public class Environment {
         isDark = dark;
     }
 
-    public boolean darkvisionRequired(Race race){
-        return true; //fix
+    public void dimLight(Character character, Race race){
+        setDim(true);
+        character.setRace(race);
+
+        boolean canSee = race.hasRacialAbility("Darkvision");
+
+        if(!canSee){
+            //build so ranged attacks made w/ DA
+        }
+    }
+
+    public void darkLight(Character character, Race race){
+        setDark(true);
+        character.setRace(race);
+
+        boolean canSee = race.hasRacialAbility("Darkvision");
+
+        if(canSee){
+            setDark(false);
+            setDim(true);
+        }else{
+            setDifficultTerrain(true);
+        }
+    }
+
+    public void magicalDarkness(){
+        setDark(true);
     }
 
     public String getTerrain(){
@@ -33,5 +61,13 @@ public class Environment {
         if(terrain.equalsIgnoreCase("cave")){
             setDark(true);
         }
+    }
+
+    public boolean isDifficultTerrain() {
+        return isDifficultTerrain;
+    }
+
+    public void setDifficultTerrain(boolean difficultTerrain) {
+        isDifficultTerrain = difficultTerrain;
     }
 }

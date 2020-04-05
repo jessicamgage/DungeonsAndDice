@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestRace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestRace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Environment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +59,22 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRace.verifyRacialTraits">
-    <configuration name="TestAction.verifyWalkAndDash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestAction" />
-      <option name="METHOD_NAME" value="verifyWalkAndDash" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestEnvironment.verifyDarkness">
     <configuration name="TestCharacter.verifySpeakingNonCommon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCharacter" />
       <option name="METHOD_NAME" value="verifySpeakingNonCommon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEnvironment.verifyDarkness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEnvironment" />
+      <option name="METHOD_NAME" value="verifyDarkness" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,19 +123,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.TestAction.verifyWalkAndDash" />
       <item itemvalue="JUnit.TestRace.verifyRace" />
       <item itemvalue="JUnit.TestRace.verifyLanguages" />
       <item itemvalue="JUnit.TestCharacter.verifySpeakingNonCommon" />
       <item itemvalue="JUnit.TestRace.verifyRacialTraits" />
+      <item itemvalue="JUnit.TestEnvironment.verifyDarkness" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestEnvironment.verifyDarkness" />
         <item itemvalue="JUnit.TestRace.verifyRacialTraits" />
         <item itemvalue="JUnit.TestCharacter.verifySpeakingNonCommon" />
         <item itemvalue="JUnit.TestRace.verifyLanguages" />
         <item itemvalue="JUnit.TestRace.verifyRace" />
-        <item itemvalue="JUnit.TestAction.verifyWalkAndDash" />
       </list>
     </recent_temporary>
   </component>
@@ -194,11 +189,11 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1585942523253" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1586065471041">
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1586066243842">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1586065471041" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1586066243842" />
     <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585017150553">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -224,29 +219,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586065987165">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586067000686">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586065987165" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586065987165">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586067000686" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586067000685">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586065987165" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586065987164">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586067000685" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586067000685">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586065987164" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586065987165">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586067000685" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586067000686">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586065987165" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586067000686" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1585782939626">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
