@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Environment {
@@ -7,6 +8,9 @@ public class Environment {
     private boolean isEnvironmentallyDark;
 
     private String terrain;
+    private ArrayList<String> terrains = new ArrayList<>();
+    private String chosenTerrain;
+
     private boolean isDifficultTerrain;
     private boolean isInclinedTerrain;
     private boolean isUnderwater;
@@ -95,6 +99,36 @@ public class Environment {
             setEnvironmentallyDim(false);
             setEnvironmentallyDark(false);
         }
+    }
+
+    public ArrayList<String> getTerrains() {
+        return terrains;
+    }
+
+    public void setTerrains(ArrayList<String> terrains) {
+        terrains.add("dark cave");
+        terrains.add("dim cave");
+        terrains.add("mountain");
+        terrains.add("seaside");
+        terrains.add("plains");
+        this.terrains = terrains;
+    }
+
+    public String getChosenTerrain(){
+        return chosenTerrain;
+    }
+
+    public void setChosenTerrain(String chosenTerrain){
+        this.chosenTerrain = chosenTerrain;
+        this.terrain = chosenTerrain;
+    }
+
+    public String terrainRandomizer(){
+        setTerrains(terrains);
+        Random terrainGenerator = new Random();
+        int chosenTerrain = terrainGenerator.nextInt(terrains.size());
+
+        return terrains.get(chosenTerrain);
     }
 
     public boolean isDifficultTerrain() {

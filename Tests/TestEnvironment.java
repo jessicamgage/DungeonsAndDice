@@ -65,4 +65,18 @@ public class TestEnvironment {
         darknessAOE.magicalDarkness(tieflingWithoutDevilSight);
         darknessAOE.isDark(tieflingWithoutDevilSight);
     }
+
+    @Test
+    public void verifyTerrainGeneration(){
+        Environment mountain = new Environment();
+        mountain.setChosenTerrain("mountain");
+
+        assertEquals(mountain.getChosenTerrain(), "mountain");
+        assertEquals(mountain.getTerrain(), "mountain");
+
+        Environment randomlyGeneratedArea = new Environment();
+        String chosenArea = mountain.terrainRandomizer();
+
+        assertNotEquals(null, chosenArea);
+    }
 }
