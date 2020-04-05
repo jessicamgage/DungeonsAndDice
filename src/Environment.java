@@ -71,7 +71,7 @@ public class Environment {
         }
     }
 
-    public void magicalDarkness(Character character, boolean dark){
+    public void magicalDarkness(Character character){
         setDark(character, true); //construct parameter so warlocks can see with Devil Sight
     }
 

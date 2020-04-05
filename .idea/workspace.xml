@@ -60,7 +60,7 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestEnvironment.verifyDarkvision">
+  <component name="RunManager" selected="JUnit.TestEnvironment.verifyMagicalDarkness">
     <configuration name="TestCharacter.verifySpeakingNonCommon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,11 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRace.verifyLanguages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestEnvironment.verifyMagicalDarkness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRace" />
-      <option name="METHOD_NAME" value="verifyLanguages" />
+      <option name="MAIN_CLASS_NAME" value="TestEnvironment" />
+      <option name="METHOD_NAME" value="verifyMagicalDarkness" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,19 +124,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.TestRace.verifyLanguages" />
       <item itemvalue="JUnit.TestCharacter.verifySpeakingNonCommon" />
       <item itemvalue="JUnit.TestRace.verifyRacialTraits" />
       <item itemvalue="JUnit.TestEnvironment.verifyDarkness" />
       <item itemvalue="JUnit.TestEnvironment.verifyDarkvision" />
+      <item itemvalue="JUnit.TestEnvironment.verifyMagicalDarkness" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestEnvironment.verifyMagicalDarkness" />
         <item itemvalue="JUnit.TestEnvironment.verifyDarkvision" />
         <item itemvalue="JUnit.TestEnvironment.verifyDarkness" />
         <item itemvalue="JUnit.TestRace.verifyRacialTraits" />
         <item itemvalue="JUnit.TestCharacter.verifySpeakingNonCommon" />
-        <item itemvalue="JUnit.TestRace.verifyLanguages" />
       </list>
     </recent_temporary>
   </component>
@@ -220,29 +220,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586117210751">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586117432961">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586117210751" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586117210750">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586117432961" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586117432961">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586117210750" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586117210750">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586117432961" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586117432960">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586117210750" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586117210750">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586117432960" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586117432961">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586117210750" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586117432961" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1585782939626">
       <screen x="0" y="23" width="1440" height="829" />
     </state>

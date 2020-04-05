@@ -56,4 +56,13 @@ public class TestEnvironment {
         assertFalse(darkCave.isDim(humanMan));
         assertTrue(darkCave.isDark(humanMan));
     }
+
+    @Test
+    public void verifyMagicalDarkness(){
+        Environment darknessAOE = new Environment();
+        Character tieflingWithoutDevilSight = new Character();
+
+        darknessAOE.magicalDarkness(tieflingWithoutDevilSight);
+        darknessAOE.isDark(tieflingWithoutDevilSight);
+    }
 }
