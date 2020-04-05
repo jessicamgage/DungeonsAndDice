@@ -30,20 +30,23 @@ public class Environment {
 
         if(!canSee){
             //build so ranged attacks made w/ DA
+        }else{
+            this.setDim(false);
         }
     }
 
     public void darkLight(Character character, Race race){
+        setDim(false);
         setDark(true);
         character.setRace(race);
 
         boolean canSee = race.hasRacialAbility("Darkvision");
 
         if(canSee){
-            setDark(false);
-            setDim(true);
+            this.setDark(false);
+            this.setDim(true);
         }else{
-            setDifficultTerrain(true);
+            this.setDifficultTerrain(true);
         }
     }
 
