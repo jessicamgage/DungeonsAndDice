@@ -221,6 +221,10 @@ class TestCharacter {
         assertEquals(polyglot.speakNonCommon(polyglot, "Abyssal", "Hello!"), "Hello!");
 
         assertNotEquals(polyglot.speakNonCommon(polyglot, "French", "Hello!"), "Hello!");
+
+        Character shapelessHorror = new Character();
+        assertEquals(shapelessHorror.speak("I do not need a set race to speak Common."),
+                "I do not need a set race to speak Common.");
     }
 
     @BeforeEach

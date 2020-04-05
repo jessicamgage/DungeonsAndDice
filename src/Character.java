@@ -369,6 +369,9 @@ public class Character {
     }
 
     public void useHeldItem(Item heldItem){
+        String itemType = heldItem.getItemType();
+        String itemDirectory = heldItem.getItemDirectory();
+        heldItem.Load(itemDirectory, itemType);
 
     }
 
@@ -497,6 +500,7 @@ public class Character {
             }else{
                 character.setCharacterConscious(null);
                 character.setCharacterAlive(false);
+                die();
             }
 
         };
@@ -539,11 +543,12 @@ public class Character {
         if(deathSavesFailed >= 3){
             characterConscious = null;
             characterAlive = false;
+            die();
         }
     }
 
-    public void die(Character character){
-        character.setCharacterAlive(false);
+    public void die(){
+        setCharacterAlive(false);
     }
 
     public void contractIllness(){}

@@ -125,4 +125,17 @@ public class TestRace {
         assertTrue(kobold.isDefaultLanguage("Draconic"));
         assertFalse(kobold.isDefaultLanguage("Elvish"));
     }
+
+    @Test
+    public void verifyRacialTraits() throws Exception{
+        Race tiefling = new Race();
+        tiefling.Load("tiefling");
+
+        assertTrue(tiefling.hasRacialAbility("Darkvision"));
+
+        Race human = new Race();
+        human.Load("human");
+
+        assertFalse(human.hasRacialAbility("Darkvision"));
+    }
 }

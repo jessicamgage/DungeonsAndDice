@@ -24,6 +24,9 @@ public class Race {
     private long howManyChosenLanguages;
     private String knownExoticLanguage;
 
+    private String racialAbility;
+    private ArrayList<String> racialAbilities = new ArrayList<>();
+
     public long getWalkSpeed() {
         return walkSpeed;
     }
@@ -136,6 +139,18 @@ public class Race {
         this.howManyChosenLanguages = howManyChosenLanguages;
     }
 
+    public String getRacialAbility() {
+        return racialAbility;
+    }
+
+    public void setRacialAbility(String racialAbility) {
+        this.racialAbility = racialAbility;
+    }
+
+    public boolean hasRacialAbility(String ability){
+        return racialAbilities.contains(ability);
+    }
+
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)
             throws DiceFormatException {
         this.name = name;
@@ -219,6 +234,16 @@ public class Race {
 
                 this.UpdateAbilityModifier(ability, (int)modifier);
             });
+
+            try{
+                JSONArray traits = (JSONArray) json.get("traits");
+                traits.forEach(trait -> {
+                    racialAbility = (String) ((JSONObject) trait).get("name");
+                    racialAbilities.add(racialAbility);
+                });
+            }catch (NullPointerException e){
+                System.out.println("This character does not have racial traits.");
+            }
 
         }catch(FileNotFoundException e){
             e.printStackTrace();
