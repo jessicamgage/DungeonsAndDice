@@ -5,8 +5,11 @@ public class Environment {
     private boolean isDark; //build so that creatures who do not have darkvision need a light to do anything but move (difficult terrain)
     private boolean isEnvironmentallyDim;
     private boolean isEnvironmentallyDark;
+
     private String terrain;
     private boolean isDifficultTerrain;
+    private boolean isInclinedTerrain;
+    private boolean isUnderwater;
 
     public boolean isDim(Character character) {
         return this.isDim;
@@ -82,8 +85,15 @@ public class Environment {
     public void setTerrain(String terrain){
         this.terrain = terrain;
 
-        if(terrain.equalsIgnoreCase("cave")){
+        if(terrain.equalsIgnoreCase("dark cave")){
             setEnvironmentallyDark(true);
+            setEnvironmentallyDim(false);
+        }else if(terrain.equalsIgnoreCase("dim cave")){
+            setEnvironmentallyDark(false);
+            setEnvironmentallyDim(true);
+        }else{
+            setEnvironmentallyDim(false);
+            setEnvironmentallyDark(false);
         }
     }
 
@@ -93,5 +103,21 @@ public class Environment {
 
     public void setDifficultTerrain(boolean difficultTerrain) {
         isDifficultTerrain = difficultTerrain;
+    }
+
+    public boolean isInclinedTerrain(){
+        return isInclinedTerrain; //build so an acrobatics/athletics check must be made
+    }
+
+    public void setInclinedTerrain(boolean inclinedTerrain){
+        this.isInclinedTerrain = inclinedTerrain;
+    }
+
+    public boolean isUnderwater(){
+        return isUnderwater;
+    }
+
+    public void setUnderwater(boolean underwater){
+        this.isUnderwater = underwater;
     }
 }
