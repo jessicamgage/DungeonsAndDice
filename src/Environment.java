@@ -6,16 +6,24 @@ public class Environment {
     private String terrain;
     private boolean isDifficultTerrain;
 
-    public boolean isDim() {
+    public boolean isDim(){
         return isDim;
+    }
+
+    public boolean isDim(Character character) {
+        return this.isDim;
     }
 
     public void setDim(boolean dim) {
         isDim = dim;
     }
 
-    public boolean isDark() {
+    public boolean isDark(){
         return isDark;
+    }
+
+    public boolean isDark(Character character) {
+        return this.isDark;
     }
 
     public void setDark(boolean dark) {

@@ -1,9 +1,5 @@
 import org.junit.jupiter.api.Test;
-
-import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class TestEnvironment {
     @Test
@@ -38,11 +34,11 @@ public class TestEnvironment {
         human.Load("human");
         humanMan.setRace(human);
 
-        dimCave.dimLight(tieflingMan, tiefling); //find a way to build method so that dimness is a result of race and
-        assertFalse(dimCave.isDim()); //does not have to be reset with every character passed
+        dimCave.dimLight(tieflingMan, tiefling);
+        assertFalse(dimCave.isDim(tieflingMan));
 
         dimCave.dimLight(humanMan, human);
-        assertTrue(dimCave.isDim());
+        assertTrue(dimCave.isDim(humanMan));
 
         Environment darkCave = new Environment();
         darkCave.setDark(true);
@@ -50,11 +46,11 @@ public class TestEnvironment {
         assertFalse(darkCave.isDim());
 
         darkCave.darkLight(tieflingMan, tiefling);
-        assertTrue(darkCave.isDim());
-        assertFalse(darkCave.isDark());
+        assertTrue(darkCave.isDim(tieflingMan));
+        assertFalse(darkCave.isDark(tieflingMan));
 
         darkCave.darkLight(humanMan, human);
-        assertFalse(darkCave.isDim());
-        assertTrue(darkCave.isDark());
+        assertFalse(darkCave.isDim(humanMan));
+        assertTrue(darkCave.isDark(humanMan));
     }
 }
