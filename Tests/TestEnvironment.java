@@ -69,9 +69,8 @@ public class TestEnvironment {
     @Test
     public void verifyTerrainGeneration(){
         Environment mountain = new Environment();
-        mountain.setChosenTerrain("mountain");
+        mountain.setTerrain("mountain");
 
-        assertEquals(mountain.getChosenTerrain(), "mountain");
         assertEquals(mountain.getTerrain(), "mountain");
 
         Environment randomlyGeneratedArea = new Environment();
