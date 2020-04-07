@@ -1,7 +1,4 @@
 import org.junit.jupiter.api.Test;
-
-import java.util.GregorianCalendar;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -15,5 +12,20 @@ public class TestNPCGenerator {
         assertTrue(generator.properFileNameFormat(generator.getRaceFile()));
         assertFalse(generator.properNameFormat(generator.getRaceString()));
 
+    }
+
+    @Test
+    public void verifyRaceGeneration() throws Exception{
+        NPCGenerator koboldGen = new NPCGenerator();
+        Race kobold = new Race();
+
+        koboldGen.setRaceString("kobold");
+        koboldGen.setRaceFile("kobold.json");
+
+        koboldGen.Load(kobold);
+
+        assertEquals(koboldGen.getRaceString(), "kobold");
+        assertEquals(koboldGen.getRaceFile(), "kobold.json");
+        assertTrue(kobold.hasRacialAbility("Darkvision"));
     }
 }

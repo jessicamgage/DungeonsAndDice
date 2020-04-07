@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -22,21 +23,26 @@ public class NPCGenerator {
         ArrayList<String> raceFixedFont = new ArrayList<>();
 
         for(String race: raceTypes){
-            setRaceFile(race);
             race = race.replaceAll("(.json)", "");
 
             raceFixedFont.add(race);
         }
 
-        Random raceRandomizer = new Random();
-        int raceChoice = raceRandomizer.nextInt(raceFixedFont.size());
+        try {
+            setRaceString(raceString);
+            setRaceFile(raceFile);
+        }catch (Exception e){
+            Object[] finalizedList = raceFixedFont.toArray();
 
-        Object[] finalizedList = raceFixedFont.toArray();
+            Random raceRandomizer = new Random();
+            int raceChoice = raceRandomizer.nextInt(raceFixedFont.size());
 
-        setRaceString(finalizedList[raceChoice].toString());
-        setRaceFile(raceTypes[raceChoice]);
+            setRaceString(finalizedList[raceChoice].toString());
+            setRaceFile(raceTypes[raceChoice]);
 
-        return (String) finalizedList[raceChoice];
+        }
+
+        return raceString;
     }
 
     public boolean properFileNameFormat(String raceFile){
@@ -60,11 +66,26 @@ public class NPCGenerator {
     }
 
     public void setRaceString(String raceString) {
+        if(raceString == null){
+            throw new NullPointerException();
+        }
+
         this.raceString = raceString;
+    }
+
+    public void generate(){
+        //creates instance of an NPC. use Load method to pull all parameters, use getters to pull information about
+        //the npc to print out (i.e. "A " + npc.getRace() " approaches you. They appear to be a " + npc.getClass()"
+    }
+
+    public void Load(Race race) throws Exception{
+        raceRandomizer();
+        race.Load(raceString);
     }
 
     public void Load(Race race, CharacterClass characterClass, Character character, Weapon weapon) throws Exception{
         character.setRace(race);
+        race.Load(getRaceFile());
 
     }
 }
