@@ -139,6 +139,14 @@ public class Race {
         this.howManyChosenLanguages = howManyChosenLanguages;
     }
 
+    public Boolean hasRacialAbilities(ArrayList abilities){
+        return racialAbilities.equals(racialAbilities);
+    }
+
+    public ArrayList getRacialAbilities(){
+        return racialAbilities;
+    }
+
     public String getRacialAbility() {
         return racialAbility;
     }
@@ -147,8 +155,13 @@ public class Race {
         this.racialAbility = racialAbility;
     }
 
-    public boolean hasRacialAbility(String ability){
-        return racialAbilities.contains(ability);
+    public Boolean hasRacialAbility(String ability){
+        if(getRacialAbilities().isEmpty()){
+            System.out.println("Humans do not have racial abilities.");
+            return true;
+        }else{
+            return racialAbilities.contains(ability);
+        }
     }
 
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)

@@ -19,7 +19,7 @@ public class TestNPCGenerator {
         NPCGenerator generator = new NPCGenerator();
 
         Race unknownNPC = new Race();
-        generator.Load(unknownNPC);
+        generator.GenerateRace(unknownNPC);
 
         assertTrue(unknownNPC.hasRacialAbility(unknownNPC.getRacialAbility()));
     }
@@ -32,10 +32,29 @@ public class TestNPCGenerator {
         koboldGen.setRaceString("kobold");
         koboldGen.setRaceFile("kobold.json");
 
-        koboldGen.Load(kobold);
+        koboldGen.GenerateRace(kobold);
 
         assertEquals(koboldGen.getRaceString(), "kobold");
         assertEquals(koboldGen.getRaceFile(), "kobold.json");
         assertTrue(kobold.hasRacialAbility("Darkvision"));
+    }
+
+    @Test
+    public void verifyClassAndRaceGeneration() throws Exception{
+        NPCGenerator raceOfClass = new NPCGenerator();
+
+        Race raceOfNPC = new Race();
+        CharacterClass classOfNPC = new CharacterClass();
+
+        raceOfClass.GenerateRaceAndClass(raceOfNPC, classOfNPC);
+
+        assertNotNull(raceOfClass.getClassString());
+        assertNotNull(raceOfClass.getClassFile());
+        assertNotNull(raceOfClass.getRaceFile());
+        assertNotNull(raceOfClass.getRaceString());
+
+        assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities()));
+        assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility()));
+        assertNotNull(classOfNPC.getHitDie());
     }
 }
