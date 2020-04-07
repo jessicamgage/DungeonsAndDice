@@ -158,7 +158,7 @@ public class Race {
     public Boolean hasRacialAbility(String ability){
         if(getRacialAbilities().isEmpty()){
             System.out.println("Humans do not have racial abilities.");
-            return true;
+            return null;
         }else{
             return racialAbilities.contains(ability);
         }

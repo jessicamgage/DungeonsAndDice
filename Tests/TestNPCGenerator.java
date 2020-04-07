@@ -53,8 +53,22 @@ public class TestNPCGenerator {
         assertNotNull(raceOfClass.getRaceFile());
         assertNotNull(raceOfClass.getRaceString());
 
-        assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities()));
+        assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities())); //humans cause this to assert to false
         assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility()));
         assertNotNull(classOfNPC.getHitDie());
+    }
+
+    @Test
+    public void testingHumans() throws Exception{ //humans are being tested separately because they lack racial abilities.
+        NPCGenerator humanNPC = new NPCGenerator();
+
+        Race human = new Race();
+
+        humanNPC.setRaceFile("human.json");
+        humanNPC.setRaceString("human");
+
+        humanNPC.GenerateRace(human);
+
+        assertNull(human.hasRacialAbility("Darkvision"));
     }
 }
