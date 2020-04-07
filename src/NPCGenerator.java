@@ -22,7 +22,7 @@ public class NPCGenerator {
 
     private int level;
     private boolean NPCHostile;
-    
+
     public String raceRandomizer() throws Exception{
         File raceDirectory = new File("data/races");
         String raceTypes[] = raceDirectory.list();
@@ -272,5 +272,38 @@ public class NPCGenerator {
 
     public void setArmorClass(long armorClass){
         this.armorClass = armorClass;
+    }
+
+    public String monsterRandomizer(int PCLevel) throws Exception{
+        File monsterDirectory = new File("data/monsters");
+        String monsterTypes[] = monsterDirectory.list();
+
+        ArrayList<String> monsterFixedFont = new ArrayList<>();
+
+        for(String monster: monsterTypes){
+            monster = monster.replaceAll("(.json)", "");
+
+            monsterFixedFont.add(monster);
+        }
+
+        try {
+            setRaceString(raceString);
+            setRaceFile(raceFile);
+        }catch (Exception e){
+            Object[] finalizedList = monsterFixedFont.toArray();
+
+            Random monsterRandomizer = new Random();
+            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
+
+            setRaceString(finalizedList[monsterChoice].toString());
+            setRaceFile(monsterTypes[monsterChoice]);
+
+        }
+        return raceString;
+    }
+
+    public void generateMonsterNPC() throws Exception{
+        monsterRandomizer(1);
+
     }
 }

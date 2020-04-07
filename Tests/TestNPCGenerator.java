@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class TestNPCGenerator {
     @Test
     public void verifyRaceGenerator() throws Exception{
@@ -104,5 +103,10 @@ public class TestNPCGenerator {
 
         assertTrue(NPC.getHitPoints() > 0);
         assertTrue(NPC.getArmorClass() > 0);
+    }
+
+    @Test
+    public void verifyMonsterNPCGenerator() throws Exception{
+
     }
 }

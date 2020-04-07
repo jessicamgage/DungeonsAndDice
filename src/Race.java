@@ -177,7 +177,7 @@ public class Race {
 
     Race(){}
 
-    private void UpdateAbilityModifier(String ability, int modifier){
+    private void updateAbilityModifier(String ability, int modifier){
         if(ability.equalsIgnoreCase("STR")){
             this.strScore.setModifier(modifier);
         }else if(ability.equalsIgnoreCase("DEX")){
@@ -245,7 +245,7 @@ public class Race {
                 String ability = (String) ((JSONObject) bonus).get("name");
                 long modifier = (long) ((JSONObject) bonus).get("bonus");
 
-                this.UpdateAbilityModifier(ability, (int)modifier);
+                this.updateAbilityModifier(ability, (int)modifier);
             });
 
             try{

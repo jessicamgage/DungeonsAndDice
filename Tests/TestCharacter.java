@@ -180,6 +180,8 @@ class TestCharacter {
 
         squishyWizard.setDexScore(7);
         squishyWizard.setConScore(5);
+        squishyWizard.setDexMod(-2);
+        squishyWizard.setConMod(-3);
 
         squishyWizard.setArmorClass(10 + squishyWizard.getDexMod());
         squishyWizard.setHitPoints(wizard.getHitDie() + squishyWizard.getConMod());
