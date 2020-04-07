@@ -15,7 +15,17 @@ public class TestNPCGenerator {
     }
 
     @Test
-    public void verifyRaceGeneration() throws Exception{
+    public void testRandomRaceAbility() throws Exception{
+        NPCGenerator generator = new NPCGenerator();
+
+        Race unknownNPC = new Race();
+        generator.Load(unknownNPC);
+
+        assertTrue(unknownNPC.hasRacialAbility(unknownNPC.getRacialAbility()));
+    }
+
+    @Test
+    public void verifyPredeterminedRaceGeneration() throws Exception{
         NPCGenerator koboldGen = new NPCGenerator();
         Race kobold = new Race();
 
