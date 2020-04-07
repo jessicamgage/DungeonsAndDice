@@ -19,7 +19,7 @@ public class TestNPCGenerator {
         NPCGenerator generator = new NPCGenerator();
 
         Race unknownNPC = new Race();
-        generator.GenerateRace(unknownNPC);
+        generator.generateRace(unknownNPC);
 
         assertTrue(unknownNPC.hasRacialAbility(unknownNPC.getRacialAbility()));
     }
@@ -32,7 +32,7 @@ public class TestNPCGenerator {
         koboldGen.setRaceString("kobold");
         koboldGen.setRaceFile("kobold.json");
 
-        koboldGen.GenerateRace(kobold);
+        koboldGen.generateRace(kobold);
 
         assertEquals(koboldGen.getRaceString(), "kobold");
         assertEquals(koboldGen.getRaceFile(), "kobold.json");
@@ -46,16 +46,19 @@ public class TestNPCGenerator {
         Race raceOfNPC = new Race();
         CharacterClass classOfNPC = new CharacterClass();
 
-        raceOfClass.GenerateRaceAndClass(raceOfNPC, classOfNPC);
+        raceOfClass.generateRaceAndClass(raceOfNPC, classOfNPC);
 
         assertNotNull(raceOfClass.getClassString());
         assertNotNull(raceOfClass.getClassFile());
         assertNotNull(raceOfClass.getRaceFile());
         assertNotNull(raceOfClass.getRaceString());
 
-        assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities())); //humans cause this to assert to false
-        assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility()));
+        assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities()));
+        assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility())); //humans cause this to assert to false
+        //every other NPC passed will pass the test
+
         assertNotNull(classOfNPC.getHitDie());
+        assertNotNull(classOfNPC.getNumberOfProficiencies());
     }
 
     @Test
@@ -67,8 +70,23 @@ public class TestNPCGenerator {
         humanNPC.setRaceFile("human.json");
         humanNPC.setRaceString("human");
 
-        humanNPC.GenerateRace(human);
+        humanNPC.generateRace(human);
 
-        assertNull(human.hasRacialAbility("Darkvision"));
+        assertFalse(human.hasRacialAbility("Darkvision"));
+    }
+
+    @Test
+    public void verifyWeaponGeneration() throws Exception{
+        NPCGenerator weaponGen = new NPCGenerator();
+        Weapon chosenWeapon = new Weapon();
+
+        weaponGen.generateWeapon(chosenWeapon);
+
+        assertNotNull(weaponGen.getWeaponString());
+        assertNotNull(weaponGen.getWeaponFile());
+
+        assertSame(chosenWeapon.getDamageRange(), chosenWeapon.getDamageRange());
+        assertTrue(chosenWeapon.getCost() > 0);
+        assertNotNull(chosenWeapon.getDamageType());
     }
 }

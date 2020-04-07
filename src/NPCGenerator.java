@@ -12,8 +12,6 @@ public class NPCGenerator {
     private String classString;
 
     private Character character;
-    private String charFile;
-    private String charString;
 
     private Weapon weapon;
     private String weaponFile;
@@ -89,7 +87,7 @@ public class NPCGenerator {
         this.raceString = raceString;
     }
 
-    public void GenerateRace(Race race) throws Exception{
+    public void generateRace(Race race) throws Exception{
         raceRandomizer();
         race.Load(raceString);
     }
@@ -149,12 +147,77 @@ public class NPCGenerator {
         this.classString = classString;
     }
 
-    public void GenerateRaceAndClass(Race race, CharacterClass characterClass) throws Exception{
+    public void generateRaceAndClass(Race race, CharacterClass characterClass) throws Exception{
         raceRandomizer();
         race.Load(raceString);
 
         classRandomizer();
         characterClass.Load(classString);
+    }
+
+    //Character is not generated because all of its methods are dependent on instances of class. Therefore a Character
+    //randomizer is unnecessary and all of its needed methods are within the NPCGenerator.
+
+    public String weaponRandomizer() throws Exception{
+        File weaponDirectory = new File("data/items/weapons");
+        String weaponTypes[] = weaponDirectory.list();
+
+        ArrayList<String> weaponFixedFont = new ArrayList<>();
+
+        for(String weapon: weaponTypes){
+            weapon = weapon.replaceAll("(.json)", "");
+
+            weaponFixedFont.add(weapon);
+        }
+
+        try {
+            setWeaponString(weaponString);
+            setWeaponFile(weaponFile);
+        }catch (Exception e){
+            Object[] finalizedList = weaponFixedFont.toArray();
+
+            Random weaponRandomizer = new Random();
+            int weaponChoice = weaponRandomizer.nextInt(weaponFixedFont.size());
+
+            setWeaponString(finalizedList[weaponChoice].toString());
+            setWeaponFile(weaponTypes[weaponChoice]);
+
+        }
+
+        return weaponString;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public String getWeaponFile() {
+        return weaponFile;
+    }
+
+    public void setWeaponFile(String weaponFile) {
+        this.weaponFile = weaponFile;
+    }
+
+    public String getWeaponString() {
+        return weaponString;
+    }
+
+    public void setWeaponString(String weaponString) {
+        if(weaponString == null){
+            throw new NullPointerException();
+        }else{
+            this.weaponString = weaponString;
+        }
+    }
+
+    public void generateWeapon(Weapon weapon) throws Exception{
+        weaponRandomizer();
+        weapon.Load(weaponString);
     }
 
     //GenerateNPC(){
