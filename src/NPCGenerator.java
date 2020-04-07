@@ -17,11 +17,12 @@ public class NPCGenerator {
     private String weaponFile;
     private String weaponString;
 
+    private long hitPoints;
+    private long armorClass;
+
     private int level;
-
-//create race, charclass, weapon, level randomizer based of pc level for npcs that are to be fought
-    //create overloaded method without an instance of a level generator for non fought npcs
-
+    private boolean NPCHostile;
+    
     public String raceRandomizer() throws Exception{
         File raceDirectory = new File("data/races");
         String raceTypes[] = raceDirectory.list();
@@ -220,20 +221,56 @@ public class NPCGenerator {
         weapon.Load(weaponString);
     }
 
-    //GenerateNPC(){
-    // Race randomizedRace = new Race();
-    // randomizedRace.Load(raceRandomizer());
+    public int randomizeLevel(){
+        NPCHostile = false;
 
-    // CharacterClass randomizedClass = new CharacterClass();
-    // randomizedClass.Load(classRandomizer());
+        Random levelRand = new Random();
+        level = levelRand.nextInt(21);
 
-    // Character randomizedChar = new Character();
-    // randomizedChar.Load(charRandomizer());
+        return level;
+    }
 
-    // Weapon randomizedWeapon = new Weapon();
-    // randomizedWeapon.Load(weaponRandomizer());
+    public int randomizeLevel(int PCLevel){
+        NPCHostile = true;
 
-    //
-    // }
+        Random levelRand = new Random();
+        level = levelRand.nextInt(PCLevel);
 
+        //build separate method to generate # and level of NPC's in EncounterBuilder
+        //build EncounterBuilder to generate a total number of NPC's whose challenge rating, which can be pulled
+        //from an enemy repository similar to race/class
+
+        return level;
+    }
+
+    public void generateNPC() throws Exception{
+        Race randomizedRace = new Race();
+        randomizedRace.Load(raceRandomizer());
+
+        CharacterClass randomizedClass = new CharacterClass();
+        randomizedClass.Load(classRandomizer());
+
+        Weapon randomizedWeapon = new Weapon();
+        randomizedWeapon.Load(weaponRandomizer());
+
+        Character randomizedCharacter = new Character();
+        randomizedCharacter.setCharacterStats(getRaceString(),getClassFile(), randomizeLevel());
+        randomizedCharacter.addToInventory(getWeapon(), randomizedCharacter);
+    }
+
+    public long getHitPoints(){
+        return hitPoints;
+    }
+
+    public void setHitPoints(long hitPoints){
+        this.hitPoints = hitPoints;
+    }
+
+    public long getArmorClass(){
+        return armorClass;
+    }
+
+    public void setArmorClass(long armorClass){
+        this.armorClass = armorClass;
+    }
 }

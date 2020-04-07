@@ -89,4 +89,20 @@ public class TestNPCGenerator {
         assertTrue(chosenWeapon.getCost() > 0);
         assertNotNull(chosenWeapon.getDamageType());
     }
+
+    @Test
+    public void verifyNPCGenerator() throws Exception{
+        NPCGenerator NPC = new NPCGenerator();
+        NPC.generateNPC();
+
+        assertNotNull(NPC.getClassFile());
+        assertNotNull(NPC.getClassString());
+        assertNotNull(NPC.getWeaponFile());
+        assertNotNull(NPC.getWeaponFile());
+        assertNotNull(NPC.getRaceFile());
+        assertNotNull(NPC.getRaceString());
+
+        assertTrue(NPC.getHitPoints() > 0);
+        assertTrue(NPC.getArmorClass() > 0);
+    }
 }
