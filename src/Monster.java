@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Monster extends Character{
@@ -39,7 +40,7 @@ public class Monster extends Character{
     private ArrayList damageVulnerabilities;
     private ArrayList damageResistances;
     private ArrayList damageImmunities;
-    private long challengeRating;
+    private double challengeRating;
 
     @Override
     public long getStrScore() {
@@ -150,6 +151,14 @@ public class Monster extends Character{
         this.chaMod = chaMod;
     }
 
+    public double getChallengeRating() {
+        return challengeRating;
+    }
+
+    public void setChallengeRating(double challengeRating) {
+        this.challengeRating = challengeRating;
+    }
+
     public void Load(String race) throws Exception{
         JSONParser parser = new JSONParser();
 
@@ -194,9 +203,11 @@ public class Monster extends Character{
 
             long hitPoints = (long) jsonObject.get("hit_points");
             long armorClass = (long) jsonObject.get("armor_class");
+            double challengeRating = (double) jsonObject.get("challenge_rating");
 
             setHitPoints(hitPoints + conMod);
             setArmorClass(armorClass);
+            setChallengeRating(challengeRating);
 
         }catch(Exception e){
             e.printStackTrace();
@@ -219,7 +230,7 @@ public class Monster extends Character{
         this.raceFile = raceFile;
     }
 
-    public String monsterRandomizer(int PCLevel) throws Exception{
+    public String monsterRandomizer() throws Exception{
         File monsterDirectory = new File("data/monsters");
         String monsterTypes[] = monsterDirectory.list();
 
@@ -247,17 +258,8 @@ public class Monster extends Character{
         return raceString;
     }
 
-    public void generateMonsterNPC() throws Exception{
-        monsterRandomizer(1);
+    public void generateMonster() throws Exception{
+        Monster monster = new Monster();
+        monster.Load(monsterRandomizer());
     }
-
-    public int randomizeLevel(int PCLevel){
-        NPCHostile = true;
-
-        Random levelRand = new Random();
-        level = levelRand.nextInt(PCLevel);
-
-        return level;
-    }
-
 }

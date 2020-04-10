@@ -14,5 +14,11 @@ public class TestMonster {
 
         assertEquals(goblin.getHitPoints(), 7 + goblin.getConMod());
         assertEquals(goblin.getArmorClass(), 15);
+        assertEquals(goblin.getChallengeRating(), 0.25);
+    }
+
+    @Test
+    public void verifyEncounterBuilding() throws Exception{
+        Monster encounterBuilder = new Monster();
     }
 }
