@@ -23,6 +23,20 @@ public class NPCGenerator {
     private int level;
     private boolean NPCHostile;
 
+    private int strScore;
+    private int dexScore;
+    private int conScore;
+    private int intScore;
+    private int wisScore;
+    private int chaScore;
+
+    private int strMod;
+    private int dexMod;
+    private int conMod;
+    private int intMod;
+    private int wisMod;
+    private int chaMod;
+
     public String raceRandomizer() throws Exception{
         File raceDirectory = new File("data/races");
         String raceTypes[] = raceDirectory.list();
@@ -89,8 +103,7 @@ public class NPCGenerator {
     }
 
     public void generateRace(Race race) throws Exception{
-        raceRandomizer();
-        race.Load(raceString);
+        race.Load(raceRandomizer());
     }
 
     public String classRandomizer() throws Exception{
@@ -149,11 +162,8 @@ public class NPCGenerator {
     }
 
     public void generateRaceAndClass(Race race, CharacterClass characterClass) throws Exception{
-        raceRandomizer();
-        race.Load(raceString);
-
-        classRandomizer();
-        characterClass.Load(classString);
+        race.Load(raceRandomizer());
+        characterClass.Load(classRandomizer());
     }
 
     //Character is not generated because all of its methods are dependent on instances of class. Therefore a Character
@@ -230,19 +240,6 @@ public class NPCGenerator {
         return level;
     }
 
-    public int randomizeLevel(int PCLevel){
-        NPCHostile = true;
-
-        Random levelRand = new Random();
-        level = levelRand.nextInt(PCLevel);
-
-        //build separate method to generate # and level of NPC's in EncounterBuilder
-        //build EncounterBuilder to generate a total number of NPC's whose challenge rating, which can be pulled
-        //from an enemy repository similar to race/class
-
-        return level;
-    }
-
     public void generateNPC() throws Exception{
         Race randomizedRace = new Race();
         randomizedRace.Load(raceRandomizer());
@@ -254,7 +251,26 @@ public class NPCGenerator {
         randomizedWeapon.Load(weaponRandomizer());
 
         Character randomizedCharacter = new Character();
-        randomizedCharacter.setCharacterStats(getRaceString(),getClassFile(), randomizeLevel());
+        randomizedCharacter.setCharacterStats(getRaceString(), getClassString(), randomizeLevel());
+        setHitPoints(randomizedCharacter.getHitPoints());
+        setArmorClass(randomizedCharacter.getArmorClass());
+
+        setStrScore((int)randomizedCharacter.getStrScore());
+        setDexScore((int)randomizedCharacter.getDexScore());
+        setConScore((int)randomizedCharacter.getConScore());
+        setIntScore((int)randomizedCharacter.getIntScore());
+        setWisScore((int)randomizedCharacter.getWisScore());
+        setChaScore((int)randomizedCharacter.getChaScore());
+
+        AbilityScoreModifier modifier = new AbilityScoreModifier();
+
+        strMod = modifier.setAbilityScoreModifier(strScore);
+        dexMod = modifier.setAbilityScoreModifier(dexScore);
+        conMod = modifier.setAbilityScoreModifier(conScore);
+        intMod = modifier.setAbilityScoreModifier(intScore);
+        wisMod = modifier.setAbilityScoreModifier(wisScore);
+        chaMod = modifier.setAbilityScoreModifier(chaScore);
+
         randomizedCharacter.addToInventory(getWeapon(), randomizedCharacter);
     }
 
@@ -274,36 +290,99 @@ public class NPCGenerator {
         this.armorClass = armorClass;
     }
 
-    public String monsterRandomizer(int PCLevel) throws Exception{
-        File monsterDirectory = new File("data/monsters");
-        String monsterTypes[] = monsterDirectory.list();
-
-        ArrayList<String> monsterFixedFont = new ArrayList<>();
-
-        for(String monster: monsterTypes){
-            monster = monster.replaceAll("(.json)", "");
-
-            monsterFixedFont.add(monster);
-        }
-
-        try {
-            setRaceString(raceString);
-            setRaceFile(raceFile);
-        }catch (Exception e){
-            Object[] finalizedList = monsterFixedFont.toArray();
-
-            Random monsterRandomizer = new Random();
-            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
-
-            setRaceString(finalizedList[monsterChoice].toString());
-            setRaceFile(monsterTypes[monsterChoice]);
-
-        }
-        return raceString;
+    public int getStrScore() {
+        return strScore;
     }
 
-    public void generateMonsterNPC() throws Exception{
-        monsterRandomizer(1);
+    public void setStrScore(int strScore) {
+        this.strScore = strScore;
+    }
 
+    public int getDexScore() {
+        return dexScore;
+    }
+
+    public void setDexScore(int dexScore) {
+        this.dexScore = dexScore;
+    }
+
+    public int getConScore() {
+        return conScore;
+    }
+
+    public void setConScore(int conScore) {
+        this.conScore = conScore;
+    }
+
+    public int getIntScore() {
+        return intScore;
+    }
+
+    public void setIntScore(int intScore) {
+        this.intScore = intScore;
+    }
+
+    public int getWisScore() {
+        return wisScore;
+    }
+
+    public void setWisScore(int wisScore) {
+        this.wisScore = wisScore;
+    }
+
+    public int getChaScore() {
+        return chaScore;
+    }
+
+    public void setChaScore(int chaScore) {
+        this.chaScore = chaScore;
+    }
+
+    public int getStrMod(){
+        return strMod;
+    }
+
+    public void setStrMod(int strMod) {
+        this.strMod = strMod;
+    }
+
+    public int getDexMod() {
+        return dexMod;
+    }
+
+    public void setDexMod(int dexMod) {
+        this.dexMod = dexMod;
+    }
+
+    public int getConMod() {
+        return conMod;
+    }
+
+    public void setConMod(int conMod) {
+        this.conMod = conMod;
+    }
+
+    public int getIntMod() {
+        return intMod;
+    }
+
+    public void setIntMod(int intMod) {
+        this.intMod = intMod;
+    }
+
+    public int getWisMod() {
+        return wisMod;
+    }
+
+    public void setWisMod(int wisMod) {
+        this.wisMod = wisMod;
+    }
+
+    public int getChaMod() {
+        return chaMod;
+    }
+
+    public void setChaMod(int chaMod) {
+        this.chaMod = chaMod;
     }
 }

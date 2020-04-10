@@ -151,17 +151,8 @@ public class Race {
         return racialAbility;
     }
 
-    public void setRacialAbility(String racialAbility) {
-        this.racialAbility = racialAbility;
-    }
-
     public Boolean hasRacialAbility(String ability){
-        if(getName().equalsIgnoreCase("human")){
-            System.out.println("Humans do not have racial abilities.");
-            return false;
-        }else{
-            return racialAbilities.contains(ability);
-        }
+        return racialAbilities.contains(ability);
     }
 
     Race(String name, Dice strScore, Dice dexScore, Dice conScore, Dice intScore, Dice wisScore, Dice chaScore)

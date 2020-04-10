@@ -53,8 +53,7 @@ public class TestNPCGenerator {
         assertNotNull(raceOfClass.getRaceString());
 
         assertTrue(raceOfNPC.hasRacialAbilities(raceOfNPC.getRacialAbilities()));
-        assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility())); //humans cause this to assert to false
-        //every other NPC passed will pass the test
+        assertTrue(raceOfNPC.hasRacialAbility(raceOfNPC.getRacialAbility()));
 
         assertNotNull(classOfNPC.getHitDie());
         assertNotNull(classOfNPC.getNumberOfProficiencies());
@@ -103,10 +102,20 @@ public class TestNPCGenerator {
 
         assertTrue(NPC.getHitPoints() > 0);
         assertTrue(NPC.getArmorClass() > 0);
-    }
 
-    @Test
-    public void verifyMonsterNPCGenerator() throws Exception{
+        if(NPC.getClassString().equalsIgnoreCase("monk")){
+            assertEquals(NPC.getArmorClass(), (NPC.getDexMod() + NPC.getWisMod() + 10));
+        }else if(NPC.getClassString().equalsIgnoreCase("barbarian")){
+            assertEquals(NPC.getArmorClass(), (NPC.getDexMod() + NPC.getConMod() + 10));
+        }else{
+            assertTrue(NPC.getArmorClass() == NPC.getDexMod() + 10);
+        }
 
+        assertTrue(NPC.getStrScore() > 0);
+        assertTrue(NPC.getDexScore() > 0);
+        assertTrue(NPC.getConScore() > 0);
+        assertTrue(NPC.getIntScore() > 0);
+        assertTrue(NPC.getWisScore() > 0);
+        assertTrue(NPC.getChaScore() > 0);
     }
 }

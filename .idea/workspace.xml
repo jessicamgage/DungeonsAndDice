@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/TestNPCGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestNPCGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/races/human.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/races/human.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Monster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/NPCGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/NPCGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Race.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestNPCGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestNPCGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NPCGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Race.java" afterDir="false" />
     </list>
@@ -69,22 +68,22 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestMonster.verifyMonsterGeneration">
-    <configuration name="TestCharacter.verifyCharacterStatGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCharacter" />
-      <option name="METHOD_NAME" value="verifyCharacterStatGeneration" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestNPCGenerator.verifyNPCGenerator">
     <configuration name="TestMonster.verifyMonsterGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestMonster" />
       <option name="METHOD_NAME" value="verifyMonsterGeneration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNPCGenerator.testRandomRaceAbility" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestNPCGenerator" />
+      <option name="METHOD_NAME" value="testRandomRaceAbility" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,11 +109,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNPCGenerator.verifyWeaponGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNPCGenerator.verifyNPCGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNPCGenerator" />
-      <option name="METHOD_NAME" value="verifyWeaponGeneration" />
+      <option name="METHOD_NAME" value="verifyNPCGenerator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,17 +134,17 @@
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.TestNPCGenerator.verifyClassAndRaceGeneration" />
       <item itemvalue="JUnit.TestNPCGenerator.testingHumans" />
-      <item itemvalue="JUnit.TestNPCGenerator.verifyWeaponGeneration" />
       <item itemvalue="JUnit.TestMonster.verifyMonsterGeneration" />
-      <item itemvalue="JUnit.TestCharacter.verifyCharacterStatGeneration" />
+      <item itemvalue="JUnit.TestNPCGenerator.testRandomRaceAbility" />
+      <item itemvalue="JUnit.TestNPCGenerator.verifyNPCGenerator" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestMonster.verifyMonsterGeneration" />
-        <item itemvalue="JUnit.TestCharacter.verifyCharacterStatGeneration" />
-        <item itemvalue="JUnit.TestNPCGenerator.verifyWeaponGeneration" />
+        <item itemvalue="JUnit.TestNPCGenerator.verifyNPCGenerator" />
         <item itemvalue="JUnit.TestNPCGenerator.verifyClassAndRaceGeneration" />
+        <item itemvalue="JUnit.TestNPCGenerator.testRandomRaceAbility" />
         <item itemvalue="JUnit.TestNPCGenerator.testingHumans" />
+        <item itemvalue="JUnit.TestMonster.verifyMonsterGeneration" />
       </list>
     </recent_temporary>
   </component>
@@ -199,11 +198,11 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="449" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.829@0.23.1440.829" timestamp="1585942523253" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1586296531211">
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1586552579879">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="533" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1584586800713" />
-    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1586296531211" />
+    <state x="533" y="128" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1586552579879" />
     <state x="494" y="304" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585017150553">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -229,29 +228,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586296753306">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586553756897">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586296753306" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586296753304">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586553756897" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586553756897">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586296753304" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586296753303">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586553756897" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586553756896">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586296753303" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586296753305">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586553756896" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586553756897">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586296753305" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586553756897" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1585782939626">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -296,9 +295,9 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="427" y="60" key="refactoring.ChangeSignatureDialog/0.23.1440.829@0.23.1440.829" timestamp="1585776961697" />
-    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1586219558788">
+    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1586552927280">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
-    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup/0.23.1440.829@0.23.1440.829" timestamp="1586219558788" />
+    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup/0.23.1440.829@0.23.1440.829" timestamp="1586552927280" />
   </component>
 </project>

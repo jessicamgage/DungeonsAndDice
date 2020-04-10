@@ -1,15 +1,21 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Monster extends Character{
-    private String race;
+    private String raceString;
+    private String raceFile;
     private ArrayList languages;
     private String normalAlignment; //generate method so that 70% of monsters adhere to their normal alignment
 
     private AbilityScoreModifier modifier;
+
+    private boolean NPCHostile;
+    private int level;
 
     private long strScore;
     private long dexScore;
@@ -196,4 +202,62 @@ public class Monster extends Character{
             e.printStackTrace();
         }
     }
+
+    public String getRaceString() {
+        return raceString;
+    }
+
+    public void setRaceString(String raceString) {
+        this.raceString = raceString;
+    }
+
+    public String getRaceFile() {
+        return raceFile;
+    }
+
+    public void setRaceFile(String raceFile) {
+        this.raceFile = raceFile;
+    }
+
+    public String monsterRandomizer(int PCLevel) throws Exception{
+        File monsterDirectory = new File("data/monsters");
+        String monsterTypes[] = monsterDirectory.list();
+
+        ArrayList<String> monsterFixedFont = new ArrayList<>();
+
+        for(String monster: monsterTypes){
+            monster = monster.replaceAll("(.json)", "");
+
+            monsterFixedFont.add(monster);
+        }
+
+        try {
+            setRaceString(raceString);
+            setRaceFile(raceFile);
+        }catch (Exception e){
+            Object[] finalizedList = monsterFixedFont.toArray();
+
+            Random monsterRandomizer = new Random();
+            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
+
+            setRaceString(finalizedList[monsterChoice].toString());
+            setRaceFile(monsterTypes[monsterChoice]);
+
+        }
+        return raceString;
+    }
+
+    public void generateMonsterNPC() throws Exception{
+        monsterRandomizer(1);
+    }
+
+    public int randomizeLevel(int PCLevel){
+        NPCHostile = true;
+
+        Random levelRand = new Random();
+        level = levelRand.nextInt(PCLevel);
+
+        return level;
+    }
+
 }
