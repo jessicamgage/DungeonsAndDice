@@ -220,6 +220,9 @@ public class Monster extends Character{
     }
 
     public void setRaceString(String raceString) {
+        if(raceString == null){
+            throw new NullPointerException();
+        }
         this.raceString = raceString;
     }
 
@@ -228,6 +231,9 @@ public class Monster extends Character{
     }
 
     public void setRaceFile(String raceFile) {
+        if(raceFile == null){
+            throw new NullPointerException();
+        }
         this.raceFile = raceFile;
     }
 
@@ -256,7 +262,7 @@ public class Monster extends Character{
             setRaceFile(monsterTypes[monsterChoice]);
 
         }
-        return raceString; //raceString is returning null and causing errors down the line
+        return raceString;
     }
 
     public void generateMonster() throws Exception{

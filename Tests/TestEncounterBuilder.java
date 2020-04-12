@@ -9,8 +9,7 @@ public class TestEncounterBuilder {
         Monster goblin = new Monster();
         goblin.Load("goblin");
 
-        goblinCave.generateEncounter(2.0);
-        assertSame("goblin", goblin.getRaceString());
+        goblinCave.generateEncounter(4.0);
         assertTrue(goblinCave.getEncounterRating() > 0);
         assertTrue(goblinCave.getEnemiesInEncounter() > 1);
         assertTrue(goblin.getChallengeRating() == 0.25);
@@ -23,7 +22,7 @@ public class TestEncounterBuilder {
         owlbear.Load("owlbear");
 
         forest.generateEncounter(3.0);
-        System.out.println(forest.getMonsterRaceString());
-        assertTrue(forest.getMonsterRaceString() == "owlbear");
+        assertEquals(forest.getMonsterRaceString(), "owlbear");
+        assertEquals(3, owlbear.getChallengeRating());
     }
 }

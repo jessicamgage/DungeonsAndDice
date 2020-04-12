@@ -58,42 +58,17 @@ public class EncounterBuilder {
     }
 
     public void generateEncounter(double PCLevel) throws Exception{
-//        File monsterDirectory = new File("data/monsters/");
-//        String monsterTypes[] = monsterDirectory.list();
-//
-//        ArrayList<String> monsterFixedFont = new ArrayList<>();
-//
-//        for(String monster: monsterTypes){
-//            monster = monster.replaceAll("(.json)", "");
-//
-//            monsterFixedFont.add(monster);
-//        }
-//
-//        try{
-//            setMonsterRaceString(monsterRaceString);
-//            setMonsterRaceFile(monsterRaceFile);
-//        }catch (Exception e){
-//            Object[] finalizedList = monsterFixedFont.toArray();
-//
-//            Random monsterRandomizer = new Random();
-//            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
-//
-//            setMonsterRaceString(finalizedList[monsterChoice].toString());
-//            setMonsterRaceFile(monsterTypes[monsterChoice]);
-//
-//        }
+        while(encounterRating < PCLevel * 0.75){
+            Monster monsterType = new Monster();
+            monsterType.generateMonster();
 
-        Monster monsterType = new Monster();
-        monsterType.generateMonster();
-        setMonsterRaceString(monsterType.getRaceString());
-        setMonsterRaceFile(monsterType.getRaceFile());
+            setMonsterRaceString(monsterType.getRaceString());
+            monsterType.Load(getMonsterRaceString());
+            setMonsterRaceFile(monsterType.getRaceFile());
 
-        while(encounterRating < PCLevel){
-            if(monsterType.getChallengeRating() < PCLevel*2){ //Ensuring an encounter isn't too hard
-                String monster = monsterType.monsterRandomizer();
-                setMonsterRaceString(monster);
-                monsterType.Load(getMonsterRaceString());
-                setMonsterRaceFile(monster + ".json");
+            if(monsterType.getChallengeRating() < PCLevel * 2 //Ensuring an encounter isn't too hard
+            && monsterType.getChallengeRating() >= PCLevel * 0.25){ //Ensuring that an encounter isn't made of a
+                //swarm of low-level enemies
 
                 encounter.add(monsterType);
                 encounterRating += monsterType.getChallengeRating();
@@ -103,6 +78,7 @@ public class EncounterBuilder {
                 //This is designed so that every time an enemy is added to an encounter, it gets harder.
                 //This is to prevent level-one players from being overrun by four goblins, which is significantly harder
                 //than their 0.25 challenge rating would suggest.
+
             }
         }
     }
