@@ -40,6 +40,9 @@ public class EncounterBuilder {
     }
 
     public void setMonsterRaceString(String monsterRaceString) {
+        if(monsterRaceString == null){
+            throw new NullPointerException();
+        }
         this.monsterRaceString = monsterRaceString;
     }
 
@@ -48,50 +51,59 @@ public class EncounterBuilder {
     }
 
     public void setMonsterRaceFile(String monsterRaceFile) {
+        if(monsterRaceString == null){
+            throw new NullPointerException();
+        }
         this.monsterRaceFile = monsterRaceFile;
     }
 
     public void generateEncounter(double PCLevel) throws Exception{
-        File monsterDirectory = new File("data/monsters");
-        String monsterTypes[] = monsterDirectory.list();
-
-        ArrayList<String> monsterFixedFont = new ArrayList<>();
-
-        for(String monster: monsterTypes){
-            monster = monster.replaceAll("(.json)", "");
-
-            monsterFixedFont.add(monster);
-        }
-
-        try{
-            setMonsterRaceString(monsterRaceString);
-            setMonsterRaceFile(monsterRaceFile);
-        }catch (Exception e){
-            Object[] finalizedList = monsterFixedFont.toArray();
-
-            Random monsterRandomizer = new Random();
-            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
-
-            setMonsterRaceString(finalizedList[monsterChoice].toString());
-            setMonsterRaceFile(monsterTypes[monsterChoice]);
-
-        }
+//        File monsterDirectory = new File("data/monsters/");
+//        String monsterTypes[] = monsterDirectory.list();
+//
+//        ArrayList<String> monsterFixedFont = new ArrayList<>();
+//
+//        for(String monster: monsterTypes){
+//            monster = monster.replaceAll("(.json)", "");
+//
+//            monsterFixedFont.add(monster);
+//        }
+//
+//        try{
+//            setMonsterRaceString(monsterRaceString);
+//            setMonsterRaceFile(monsterRaceFile);
+//        }catch (Exception e){
+//            Object[] finalizedList = monsterFixedFont.toArray();
+//
+//            Random monsterRandomizer = new Random();
+//            int monsterChoice = monsterRandomizer.nextInt(monsterFixedFont.size());
+//
+//            setMonsterRaceString(finalizedList[monsterChoice].toString());
+//            setMonsterRaceFile(monsterTypes[monsterChoice]);
+//
+//        }
 
         Monster monsterType = new Monster();
+        monsterType.generateMonster();
+        setMonsterRaceString(monsterType.getRaceString());
+        setMonsterRaceFile(monsterType.getRaceFile());
 
         while(encounterRating < PCLevel){
-            while(monsterType.getChallengeRating() >= PCLevel* 0.5){
+            if(monsterType.getChallengeRating() < PCLevel*2){ //Ensuring an encounter isn't too hard
                 String monster = monsterType.monsterRandomizer();
-                monsterType.setRaceString(monster);
-                monsterType.setRaceFile(monster + ".json");
+                setMonsterRaceString(monster);
+                monsterType.Load(getMonsterRaceString());
+                setMonsterRaceFile(monster + ".json");
 
+                encounter.add(monsterType);
+                encounterRating += monsterType.getChallengeRating();
+                enemiesInEncounter += 1;
+                encounterRating += 0.75;
+
+                //This is designed so that every time an enemy is added to an encounter, it gets harder.
+                //This is to prevent level-one players from being overrun by four goblins, which is significantly harder
+                //than their 0.25 challenge rating would suggest.
             }
-            encounter.add(monsterType);
-            encounterRating += monsterType.getChallengeRating();
-            enemiesInEncounter += 1;
-            encounterRating += 0.5; //This is designed so that every time an enemy is added to an encounter, it gets harder.
-            //This is to prevent level-one players from being overrun by four goblins, which is significantly harder
-            //than their 0.25 challenge rating would suggest.
         }
     }
 

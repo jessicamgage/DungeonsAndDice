@@ -10,7 +10,20 @@ public class TestEncounterBuilder {
         goblin.Load("goblin");
 
         goblinCave.generateEncounter(2.0);
+        assertSame("goblin", goblin.getRaceString());
         assertTrue(goblinCave.getEncounterRating() > 0);
         assertTrue(goblinCave.getEnemiesInEncounter() > 1);
+        assertTrue(goblin.getChallengeRating() == 0.25);
+    }
+
+    @Test
+    public void verifyProperCR() throws Exception{
+        EncounterBuilder forest = new EncounterBuilder();
+        Monster owlbear = new Monster();
+        owlbear.Load("owlbear");
+
+        forest.generateEncounter(3.0);
+        System.out.println(forest.getMonsterRaceString());
+        assertTrue(forest.getMonsterRaceString() == "owlbear");
     }
 }

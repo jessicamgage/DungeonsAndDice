@@ -192,7 +192,6 @@ public class NPCGenerator {
 
             setWeaponString(finalizedList[weaponChoice].toString());
             setWeaponFile(weaponTypes[weaponChoice]);
-
         }
 
         return weaponString;

@@ -203,7 +203,8 @@ public class Monster extends Character{
 
             long hitPoints = (long) jsonObject.get("hit_points");
             long armorClass = (long) jsonObject.get("armor_class");
-            double challengeRating = (double) jsonObject.get("challenge_rating");
+            String CRValue = (jsonObject.get("challenge_rating")).toString();
+            challengeRating = Double.parseDouble(CRValue);
 
             setHitPoints(hitPoints + conMod);
             setArmorClass(armorClass);
@@ -255,7 +256,7 @@ public class Monster extends Character{
             setRaceFile(monsterTypes[monsterChoice]);
 
         }
-        return raceString;
+        return raceString; //raceString is returning null and causing errors down the line
     }
 
     public void generateMonster() throws Exception{

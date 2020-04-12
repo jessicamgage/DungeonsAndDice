@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestMonster {
     @Test
-    public void verifyMonsterGeneration() throws Exception{
+    public void verifyManualMonsterGeneration() throws Exception{
         Monster goblin = new Monster();
         goblin.Load("goblin");
 
@@ -18,7 +18,10 @@ public class TestMonster {
     }
 
     @Test
-    public void verifyEncounterBuilding() throws Exception{
-        Monster encounterBuilder = new Monster();
+    public void verifyMonsterGenerator() throws Exception{
+        Monster randomMonster = new Monster();
+        randomMonster.generateMonster();
+
+        assertNotNull(randomMonster.getRaceString());
     }
 }
