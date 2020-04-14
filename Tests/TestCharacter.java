@@ -229,6 +229,18 @@ class TestCharacter {
                 "I do not need a set race to speak Common.");
     }
 
+    @Test
+    public void verifyTotalVSCurrentHP() throws Exception{
+        Character healthyMan = new Character();
+        healthyMan.setTotalHitPoints(60);
+        healthyMan.setHitPoints(60);
+        int gobDamageDone = new Dice("3d4").roll();
+
+        healthyMan.setHitPoints(healthyMan.getHitPoints() - gobDamageDone);
+        assertEquals(healthyMan.getTotalHitPoints(), 60);
+        assertNotEquals(healthyMan.getHitPoints(), 60);
+    }
+
     @BeforeEach
     void setUp() throws DiceFormatException {
         this.human = new Race("human", new Dice("3d6+1"), new Dice("3d6+1"),

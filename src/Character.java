@@ -29,6 +29,8 @@ public class Character {
     private long hitPoints;
     private long level;
 
+    private static long totalHitPoints;
+
     private ArrayList<Item> inventory = new ArrayList<>();
     private double goldHeld;
 
@@ -383,6 +385,10 @@ public class Character {
             level--;
         }while(level >= 1);
 
+        {
+            totalHitPoints = hitPoints;
+        }
+
         return hitPoints;
     }
 
@@ -455,6 +461,14 @@ public class Character {
     public void setHitPoints(long hitPoints){
         this.hitPoints = hitPoints;
 
+    }
+
+    public static long getTotalHitPoints() {
+        return totalHitPoints;
+    }
+
+    public static void setTotalHitPoints(long totalHitPoints) {
+        Character.totalHitPoints = totalHitPoints;
     }
 
     Character(){}

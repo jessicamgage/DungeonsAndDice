@@ -4,7 +4,6 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 public class Monster extends Character{
@@ -201,10 +200,15 @@ public class Monster extends Character{
             setWisScore(new Dice("3d6").roll() + (int)getWisMod());
             setChaScore(new Dice("3d6").roll() + (int)getChaMod());
 
+            long totalHitPoints = (long) jsonObject.get("hit_points");
             long hitPoints = (long) jsonObject.get("hit_points");
             long armorClass = (long) jsonObject.get("armor_class");
             String CRValue = (jsonObject.get("challenge_rating")).toString();
             challengeRating = Double.parseDouble(CRValue);
+
+            {
+                setTotalHitPoints(totalHitPoints);
+            }
 
             setHitPoints(hitPoints + conMod);
             setArmorClass(armorClass);

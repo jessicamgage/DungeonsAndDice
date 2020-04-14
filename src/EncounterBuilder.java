@@ -1,6 +1,5 @@
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.HashMap;
 
 public class EncounterBuilder {
     private Monster monsterSpecies;
@@ -10,6 +9,8 @@ public class EncounterBuilder {
     private ArrayList<Monster> encounter = new ArrayList<>();
     private double encounterRating;
     private int enemiesInEncounter;
+
+    private HashMap <String, String> playerEncounterInfo = new HashMap<>();
 
     public Monster getMonsterSpecies() {
         return monsterSpecies;
@@ -33,6 +34,14 @@ public class EncounterBuilder {
 
     public void setEncounter(ArrayList encounter){
         this.encounter = encounter;
+    }
+
+    public HashMap<String, String> getPlayerEncounterInfo() {
+        return playerEncounterInfo;
+    }
+
+    public void setPlayerEncounterInfo(HashMap<String, String> playerEncounterInfo) {
+        this.playerEncounterInfo = playerEncounterInfo;
     }
 
     public String getMonsterRaceString() {
@@ -79,8 +88,40 @@ public class EncounterBuilder {
                 //This is to prevent level-one players from being overrun by four goblins, which is significantly harder
                 //than their 0.25 challenge rating would suggest.
 
+                playerEncounterInfo.put(monsterRaceString, getMonsterState());
+                if(!monsterType.isCharacterAlive()){
+                    playerEncounterInfo.remove(this.monsterRaceString);
+                }
             }
         }
+    }
+
+    public String getMonsterState(){
+        Monster monster = new Monster();
+        int monsterHealthPortion = (int) monster.getHitPoints();
+        int monsterHealthTotal = (int) monster.getTotalHitPoints();
+
+        double monsterHealthSwitch = (monsterHealthTotal/monsterHealthPortion);
+
+        String status;
+
+        if(monsterHealthSwitch == 1){
+            status = "This monster appears to not be hurt at all.";
+        }else if(90 < monsterHealthSwitch && monsterHealthSwitch < 100){
+            status = "This monster appears to have taken only a little damage.";
+        }else if(75 < monsterHealthSwitch && monsterHealthSwitch < 90){
+            status = "This monster has taken some damage, but is still strong.";
+        }else if(50 < monsterHealthSwitch && monsterHealthSwitch < 75){
+            status = "This monster is starting to look a little tired.";
+        }else if (35 < monsterHealthSwitch && monsterHealthSwitch < 50){
+            status = "This monster is beginning to look hurt.";
+        }else if(15 < monsterHealthSwitch && monsterHealthSwitch < 35){
+            status = "This monster looks exhausted and wounded.";
+        }else{
+            status = "This monster looks like it could pass out any second.";
+        }
+
+        return status;
     }
 
     public int getEnemiesInEncounter() {
