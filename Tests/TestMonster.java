@@ -24,4 +24,16 @@ public class TestMonster {
 
         assertNotNull(randomMonster.getRaceString());
     }
+
+    @Test
+    public void verifyEnemyStatus() throws Exception {
+        Monster petDragon = new Monster();
+        petDragon.setRaceString("adult-red-dragon");
+        petDragon.Load("adult-red-dragon");
+
+        petDragon.setHitPoints(petDragon.getTotalHitPoints());
+        assertSame("This monster appears to not be hurt at all.", petDragon.getMonsterState(petDragon));
+        petDragon.setHitPoints(10);
+        assertSame("This monster looks like it could pass out any second.", petDragon.getMonsterState(petDragon));
+    }
 }

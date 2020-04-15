@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="edabc1c9-b051-4f37-8d11-214070f0d716" name="Default Changelist" comment="Committing a class for determining race and a test class for Race.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestMonster.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestMonster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/EncounterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/EncounterBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonsAndDice/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonsAndDice/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestEncounterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestEncounterBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestMonster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DungeonsAndDice/TestMonster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EncounterBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncounterBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
     </list>
@@ -68,7 +65,7 @@
       <recent name="$PROJECT_DIR$/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestCharacter.verifyTotalVSCurrentHP">
+  <component name="RunManager" selected="JUnit.TestMonster.verifyEnemyStatus">
     <configuration name="TestCharacter.verifyTotalVSCurrentHP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
@@ -89,6 +86,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestEncounterBuilder.verifyEnemyStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonsAndDice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEncounterBuilder" />
+      <option name="METHOD_NAME" value="verifyEnemyStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestEncounterBuilder.verifyProperCR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
@@ -99,21 +106,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMonster.verifyManualMonsterGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestMonster.verifyEnemyStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonsAndDice" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestMonster" />
-      <option name="METHOD_NAME" value="verifyManualMonsterGeneration" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMonster.verifyMonsterGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonsAndDice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestMonster" />
-      <option name="METHOD_NAME" value="verifyMonsterGenerator" />
+      <option name="METHOD_NAME" value="verifyEnemyStatus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,17 +131,17 @@
       <item itemvalue="JUnit.Tests" />
       <item itemvalue="JUnit.TestEncounterBuilder.verifyEncounterBuilder" />
       <item itemvalue="JUnit.TestEncounterBuilder.verifyProperCR" />
-      <item itemvalue="JUnit.TestMonster.verifyManualMonsterGeneration" />
-      <item itemvalue="JUnit.TestMonster.verifyMonsterGenerator" />
       <item itemvalue="JUnit.TestCharacter.verifyTotalVSCurrentHP" />
+      <item itemvalue="JUnit.TestEncounterBuilder.verifyEnemyStatus" />
+      <item itemvalue="JUnit.TestMonster.verifyEnemyStatus" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestMonster.verifyEnemyStatus" />
+        <item itemvalue="JUnit.TestEncounterBuilder.verifyEnemyStatus" />
         <item itemvalue="JUnit.TestCharacter.verifyTotalVSCurrentHP" />
         <item itemvalue="JUnit.TestEncounterBuilder.verifyProperCR" />
         <item itemvalue="JUnit.TestEncounterBuilder.verifyEncounterBuilder" />
-        <item itemvalue="JUnit.TestMonster.verifyMonsterGenerator" />
-        <item itemvalue="JUnit.TestMonster.verifyManualMonsterGeneration" />
       </list>
     </recent_temporary>
   </component>
@@ -228,29 +225,29 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="482" y="160" key="DetectedRootsChooserDialog/0.23.1440.829@0.23.1440.829" timestamp="1584417209860" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586731477959">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom" timestamp="1586910657042">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584587066598" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.829@0.0.1440.900" timestamp="1584243926796" />
-    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586731477959" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586731477959">
+    <state width="1398" height="147" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1586910657042" />
+    <state width="1398" height="147" key="GridCell.Tab.0.center" timestamp="1586910657041">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584587066593" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586731477959" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586731477958">
+    <state width="1398" height="147" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1586910657041" />
+    <state width="1398" height="147" key="GridCell.Tab.0.left" timestamp="1586910657041">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584587066590" />
-    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586731477958" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586731477959">
+    <state width="1398" height="147" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1586910657041" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right" timestamp="1586910657042">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584587066596" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.829@0.0.1440.900" timestamp="1584243926795" />
-    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586731477959" />
+    <state width="1398" height="147" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1586910657042" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1586731477949">
       <screen x="0" y="23" width="1440" height="829" />
     </state>

@@ -88,40 +88,12 @@ public class EncounterBuilder {
                 //This is to prevent level-one players from being overrun by four goblins, which is significantly harder
                 //than their 0.25 challenge rating would suggest.
 
-                playerEncounterInfo.put(monsterRaceString, getMonsterState());
+                playerEncounterInfo.put(monsterRaceString, monsterType.getMonsterState(monsterType));
                 if(!monsterType.isCharacterAlive()){
                     playerEncounterInfo.remove(this.monsterRaceString);
                 }
             }
         }
-    }
-
-    public String getMonsterState(){
-        Monster monster = new Monster();
-        int monsterHealthPortion = (int) monster.getHitPoints();
-        int monsterHealthTotal = (int) monster.getTotalHitPoints();
-
-        double monsterHealthSwitch = (monsterHealthTotal/monsterHealthPortion);
-
-        String status;
-
-        if(monsterHealthSwitch == 1){
-            status = "This monster appears to not be hurt at all.";
-        }else if(90 < monsterHealthSwitch && monsterHealthSwitch < 100){
-            status = "This monster appears to have taken only a little damage.";
-        }else if(75 < monsterHealthSwitch && monsterHealthSwitch < 90){
-            status = "This monster has taken some damage, but is still strong.";
-        }else if(50 < monsterHealthSwitch && monsterHealthSwitch < 75){
-            status = "This monster is starting to look a little tired.";
-        }else if (35 < monsterHealthSwitch && monsterHealthSwitch < 50){
-            status = "This monster is beginning to look hurt.";
-        }else if(15 < monsterHealthSwitch && monsterHealthSwitch < 35){
-            status = "This monster looks exhausted and wounded.";
-        }else{
-            status = "This monster looks like it could pass out any second.";
-        }
-
-        return status;
     }
 
     public int getEnemiesInEncounter() {

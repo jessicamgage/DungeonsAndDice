@@ -207,7 +207,7 @@ public class Monster extends Character{
             challengeRating = Double.parseDouble(CRValue);
 
             {
-                setTotalHitPoints(totalHitPoints);
+                setTotalHitPoints(totalHitPoints + conMod);
             }
 
             setHitPoints(hitPoints + conMod);
@@ -272,5 +272,32 @@ public class Monster extends Character{
     public void generateMonster() throws Exception{
         Monster monster = new Monster();
         monster.Load(monsterRandomizer());
+    }
+
+    public String getMonsterState(Monster monster){
+        int monsterHealthPortion = (int) monster.getHitPoints();
+        int monsterHealthTotal = (int) monster.getTotalHitPoints();
+
+        double monsterHealthSwitch = (monsterHealthPortion/monsterHealthTotal);
+
+        String status;
+
+        if(monsterHealthSwitch == 1){
+            status = "This monster appears to not be hurt at all.";
+        }else if(90 < monsterHealthSwitch && monsterHealthSwitch < 100){
+            status = "This monster appears to have taken only a little damage.";
+        }else if(75 < monsterHealthSwitch && monsterHealthSwitch < 90){
+            status = "This monster has taken some damage, but is still strong.";
+        }else if(50 < monsterHealthSwitch && monsterHealthSwitch < 75){
+            status = "This monster is starting to look a little tired.";
+        }else if (35 < monsterHealthSwitch && monsterHealthSwitch < 50){
+            status = "This monster is beginning to look hurt.";
+        }else if(15 < monsterHealthSwitch && monsterHealthSwitch < 35){
+            status = "This monster looks exhausted and wounded.";
+        }else{
+            status = "This monster looks like it could pass out any second.";
+        }
+
+        return status;
     }
 }
